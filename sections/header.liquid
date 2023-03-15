@@ -2,17 +2,15 @@
   <div class="container">
       <div class="header-bottominner">
           <div class="header-logo">
-            {% if settings.logo %}
-<!--               <a href="index.html"> -->
+            {% if section.settings.logo != blank %}
+              <a href="/">
                 <img
-                src=" {{ settings.logo | img_url: 'master' }} "
-                alt=""
-                  height= 100px
-                  wight= 100px
-                loading="lazy">
-              {%- else -%}
-                {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
-<!--               </a> -->
+                src=" {{ section.settings.logo | img_url: 'master' }} " alt="dialia logo"
+              </a>
+            {% else %}
+              <a href="/">
+                Dialia
+              </a>
             {% endif %}
           </div>
           <nav class="tm-navigation">
