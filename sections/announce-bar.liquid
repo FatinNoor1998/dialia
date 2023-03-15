@@ -5,10 +5,10 @@
         <div class="header-topinfo">
           <ul>
             <li>Email us :
-              <a href="mailto://contact@example.com">contact@example.com</a>
+              <a href="mailto:{{ section.settings.topheader-email }}">{{ section.settings.topheader-email }}</a>
             </li>
             <li>Call us :
-              <a href="tel://+1-800-915-6270">1-800-915-6270</a>
+              <a href="tel:{{ section.settings.topheader-id }}">{{ section.settings.topheader-id }}</a>
             </li>
           </ul>
         </div>
@@ -34,10 +34,9 @@
 
       }, {
         "type": "text",
-        "id": "topheader-phone",
+        "id": "topheader-id",
         "label": "Phone",
-        "default": "contact@example.com"
-
+        "default": "1-800-915-6270"
       }
     ]
   }
