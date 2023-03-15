@@ -2,13 +2,16 @@
   <div class="container">
       <div class="header-bottominner">
           <div class="header-logo">
+            {% if block.settings.image %}
               <a href="index.html">
                 <img
                 src=" {{ settings.logo | img_url: 'master' }} "
                 alt=""
                 loading="lazy">
+              {%- else -%}
                 {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
               </a>
+            {% endif %}
           </div>
           <nav class="tm-navigation">
                       <ul>
