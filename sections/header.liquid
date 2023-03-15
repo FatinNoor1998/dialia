@@ -3,7 +3,11 @@
       <div class="header-bottominner">
           <div class="header-logo">
               <a href="index.html">
-                             {{ settings.logo | image_tag: alt: logo_alt }}
+                <img
+                src=" {{ settings.logo | img_url: 'master' }} "
+                alt=""
+                loading="lazy">
+                {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
               </a>
           </div>
           <nav class="tm-navigation">
