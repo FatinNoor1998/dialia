@@ -1,0 +1,43 @@
+<div class="header-toparea">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-sm-6 col-12">
+        <div class="header-topinfo">
+          <ul>
+            <li>Email us :
+              <a href="mailto:{{ section.settings.topheader-email }}">{{ section.settings.topheader-email }}</a>
+            </li>
+            <li>Call us :
+              <a href="tel:{{ section.settings.topheader-id }}">{{ section.settings.topheader-id }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-6 col-12">
+        <div class="header-topbutton">
+          <a href="#" class="tm-button tm-button-white">Book an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "announcement-bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "topheader-email",
+        "label": "Email",
+        "default": "contact@example.com"
+
+      }, {
+        "type": "text",
+        "id": "topheader-id",
+        "label": "Phone",
+        "default": "1-800-915-6270"
+      }
+    ]
+  }
+{% endschema %}
