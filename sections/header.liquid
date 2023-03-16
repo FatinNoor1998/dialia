@@ -16,23 +16,22 @@
           <nav class="tm-navigation">
                       <ul>
                         {%- for link in section.settings.menu.links -%}
-                          <li class="tm-navigation-dropdown">
-                          {%- if link.links != blank -%}
-                              <a href="{{ link.url }}">{{ link.title }}
-                                  {% comment %} <i class="fa-solid fa-chevron-down"></i> {% endcomment %}
-                              </a>
+                           {%- if link.links != blank -%}
+                          <li class="tm-navigation-dropdown">                     
+                              <a href="{{ link.url }}">{{ link.title }}</a>
                               <ul>
-                                {%- for childlink in link.links -%}
+                                {%- for childlink in linklist[link.handle].links -%}
                                   <li>
                                     <a href="{{ childlink.url }}">{{ childlink.title }}</a>
                                   </li>
                                 {%- endfor -%}
                               </ul>
-                          {% else %}
-                                <a href="{{ link.url }}">{{ link.title }}
-                                </a>
-                              {% endif %}
                           </li>
+                          {% else %}
+                             <li>
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                             </li>
+                            {% endif %}
                         {% endfor %}
                       </ul>
           </nav>
