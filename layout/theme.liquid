@@ -11,8 +11,8 @@
     <!-- Header hook for plugins -->
     {{ content_for_header }}
     <!-- Style & script tag -->
-    {% comment %} <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"> {% endcomment %}
-    {% comment %} <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700" rel="stylesheet">  {% endcomment %}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700" rel="stylesheet"> 
 
     {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
     {{ 'plugins.css' | asset_url | stylesheet_tag }}
@@ -42,6 +42,8 @@
     <main role="main">
       {{ content_for_layout }}
     </main>
+
+   <script src="https://kit.fontawesome.com/75c46bc2bc.js" crossorigin="anonymous"></script>
 
     {% comment %} js script link  {% endcomment %}
 
