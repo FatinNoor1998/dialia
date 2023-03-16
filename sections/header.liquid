@@ -20,9 +20,9 @@
                           <li class="tm-navigation-dropdown">                     
                               <a href="{{ link.url }}">{{ link.title }}</a>
                               <ul>
-                                {%- for sublink in linklist[link.handle].links -%}
+                                 {%- for childlink in link.links -%}
                                   <li>
-                                    <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                                    <a href="{{ childlink.url }}">{{ childlink.title }}</a>
                                   </li>
                                 {%- endfor -%}
                               </ul>
