@@ -1,5 +1,24 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "announce-bar": {
+        "type": "announce-bar",
+        "settings": {
+          "topheader-email": "contact@example.com",
+          "topheader-id": "1-800-915-6270"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
     "Default": {
     }
