@@ -1,5 +1,5 @@
 <!-- Heroslider Area -->
-<div class="heroslider-area" data-bgimage="{{ section.settings.slider_bg | img_url: 'master' }}" data-black-overlay="3">
+<div class="heroslider-area" data-bgimage="{{ section.settings.background-img | img_url: 'master' }}" data-black-overlay="3">
 
     <!-- Heroslider Slider -->
     <div class="heroslider-slider heroslider-animated tm-slider-dots tm-slider-dots-left" data-white-overlay="7">
@@ -12,8 +12,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-7 col-md-6 col-12 order-2 order-md-1">
                             <div class="heroslider-content">
-                                <h1>{{ block.settings.slider_heading }}</h1>
-                                <p>{{ block.settings.slider_sub_text }}</p>
+                                <h1>{{ block.settings.slider_title }}</h1>
+                                <p>{{ block.settings.slider_sub_title }}</p>
                                 <a href="about-us.html" class="tm-button">{{ block.settings.slider_button_text }}</a>
                             </div>
                         </div>
@@ -48,34 +48,36 @@
 
 {% schema %}
 {
-   "name": "Slider",
-   "max_blocks":5,
+   "name": "heroslider-area",
    "settings":[
     {
        "type": "image_picker",
-       "id":"slider_bg",
-       "label":"Slider Background Image"
+       "id":"background-img",
+       "label":"Hero Background Image"
     }
    ],
    "blocks":[
     {
        "type": "slide",
-       "name": " Slide Item",
+       "name": " Slide content",
        "settings":[
         {
            "type": "text",
-           "id":"slider_heading",
-           "label":"Slider Heading Text"
+           "id":"slider_title",
+           "label":"Slider Title",
+           "default": "Pain makes People change"
         },
         {
            "type": "text",
-           "id":"slider_sub_text",
-           "label":"Slider Sub Heading"
+           "id":"slider_sub_title",
+           "label":"Slider Sub Title",
+           "default": "Massage has"
         },
         {
            "type": "text",
            "id":"slider_button_text",
-           "label":"Slider Button Text"
+           "label":"Slider Button Text",
+           "default": "About Us"
         },
         {
            "type": "url",
@@ -89,12 +91,6 @@
         }
        ]
     }
-   ],
-  "presets": [
-      {
-          "category": "Slider",
-          "name":"Slider"
-      }
-  ]
+   ]
 }
 {% endschema %}
