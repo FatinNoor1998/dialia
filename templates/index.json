@@ -148,6 +148,11 @@
       "type": "pricing-area",
       "settings": {
       }
+    },
+    "7ad9764b-cac8-4d9d-8748-d857d5623ab2": {
+      "type": "testimonial-area",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -156,6 +161,7 @@
     "314e6d61-ca8b-4668-8bca-bf717e012a3d",
     "a39595e3-8717-4d78-83dc-1349f7374367",
     "01439754-68c5-4d98-8d72-ae31c70cd07f",
-    "df4f60e9-e201-47c9-84ed-a19731f902f8"
+    "df4f60e9-e201-47c9-84ed-a19731f902f8",
+    "7ad9764b-cac8-4d9d-8748-d857d5623ab2"
   ]
 }
