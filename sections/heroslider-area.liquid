@@ -38,7 +38,7 @@
 <!--         {% endfor %} -->
         
 <!--         {% for block in section.blocks %} -->
-                        <div class="heroslider-singleslider d-flex align-items-center">
+                  <div class="heroslider-singleslider d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-5 col-md-6 col-sm-8 col-12">
@@ -46,7 +46,7 @@
                                     <svg viewBox="0 0 665 645">
                                         <defs>
                                             <pattern id="attachedImage2" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-                                                <image xlink:href="assets/images/heroslider/heroslider-image-2.jpg"
+                                                <image xlink:href="{{ block.settings.slider_image  | img_url: 'master'}}"
                                                     preserveAspectRatio="none" width="1" height="1" />
                                             </pattern>
                                         </defs>
@@ -56,13 +56,9 @@
                             </div>
                             <div class="col-lg-7 col-md-6 col-12">
                                 <div class="heroslider-content">
-                                    <h1>Pain makes People change</h1>
-                                    <p>Massage has a positive effect on
-                                        every
-                                        medical condition we have looked
-                                        at massage is to work and act on the body with pressure.</p>
-                                    <a href="about-us.html" class="tm-button">About
-                                        Us</a>
+                                     <h1>{{ block.settings.slider_title }}</h1>
+                                     <p>{{ block.settings.slider_sub_title }}</p>
+                                     <a href="about-us.html" class="tm-button">{{ block.settings.slider_button_text }}</a>
                                 </div>
                             </div>
                         </div>
