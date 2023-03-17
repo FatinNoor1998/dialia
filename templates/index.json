@@ -75,10 +75,16 @@
       ],
       "settings": {
       }
+    },
+    "314e6d61-ca8b-4668-8bca-bf717e012a3d": {
+      "type": "about-us-section",
+      "settings": {
+      }
     }
   },
   "order": [
     "heroslider-area",
-    "cdda9fd3-9984-472e-b491-058047324baa"
+    "cdda9fd3-9984-472e-b491-058047324baa",
+    "314e6d61-ca8b-4668-8bca-bf717e012a3d"
   ]
 }
