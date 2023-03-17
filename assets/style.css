@@ -3423,8 +3423,8 @@ button.tm-videobutton:hover span {
 }
 
 .tm-navigation .tm-navigation-dropdown ul li.has-child > a::after {
-  content: "\f2fb";
-  font-family: 'Material-Design-Iconic-Font';
+/*   content: "\f2fb"; */
+/*   font-family: 'Material-Design-Iconic-Font'; */
   font-size: 18px;
   float: right;
 }
