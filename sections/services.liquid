@@ -23,10 +23,8 @@
                                     <span class="tm-service-backicon">
                                         <i class="flaticon-rehabilitation"></i>
                                     </span>
-                                    <h5><a href="service-details.html">Sports Rehabilitation</a></h5>
-                                    <p>Aromatherapy uses plant materials and arom
-                                        atic plant oils, including essential oils. It can
-                                        be offered as a complementary therapy.</p>
+                                    <h5><a href="service-details.html">{{ block.settings.title }}</a></h5>
+                                    <p>{{ block.settings.description }}</p>
                                     <a href="service-details.html" class="tm-readmore">Read more</a>
                                 </div>
                             </div>
@@ -41,15 +39,37 @@
 {% schema %}
   {
     "name": "services",
-    "settings": [
-      
+    "blocks": [
+      {
+        "name": "services",
+        "type": "services",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Service Title",
+            "default": "Sports Rehabilitation"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Service Description",
+            "default": "Aromatherapy uses plant materials and arom atic plant oils, including essential oils. It can be offered as a complementary therapy."
+          }         
+        ]
+      }
     ],
     "presets": [
       {
-          "category": "content",
-          "name":"services"
+        "category": "content",
+        "name":"services",
+        "blocks": [
+          {
+            "type":"services"
+          }
+        ]
       }
-  ]
+    ]
   }
 {% endschema %}
 
