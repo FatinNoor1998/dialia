@@ -1,3 +1,43 @@
+            <div class="tm-section services-area tm-padding-section bg-white">
+                <span class="bg-shape-left"><img src="assets/images/icons/bg-shape-1.png" alt="background shape"></span>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8 col-md-10 col-12">
+                            <div class="tm-section-title text-center">
+                                <h2>Our Services</h2>
+                                <p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem
+                                    an cule dicta iriure at phaedrum. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-30-reverse">
+
+                       {% for block in section.blocks %}
+                        <!-- Single Service -->
+                        <div class="col-lg-4 col-md-6 col-12 mt-30">
+                            <div class="tm-service text-center wow fadeInUp">
+                                <div class="tm-service-inner">
+                                    <span class="tm-service-icon">
+                                        <i class="flaticon-rehabilitation"></i>
+                                    </span>
+                                    <span class="tm-service-backicon">
+                                        <i class="flaticon-rehabilitation"></i>
+                                    </span>
+                                    <h5><a href="service-details.html">Sports Rehabilitation</a></h5>
+                                    <p>Aromatherapy uses plant materials and arom
+                                        atic plant oils, including essential oils. It can
+                                        be offered as a complementary therapy.</p>
+                                    <a href="service-details.html" class="tm-readmore">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Service -->
+                     {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
 {% schema %}
   {
     "name": "Section name",
