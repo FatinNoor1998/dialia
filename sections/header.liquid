@@ -23,14 +23,15 @@
                                  {%- for childlink in link.links -%}
                                   <li>
                                     <a href="{{ childlink.url }}">{{ childlink.title }}</a>
-                                  </li>
-                                     <ul>
+                                    <ul>
                                        {%- for grandchildlink in childlink.links -%}
                                          <li>
                                            <a href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
                                          </li>
                                        {%- endfor -%}
                                      </ul>
+                                  </li>
+                                     
                                 {%- endfor -%}
                               </ul>
                           </li>
