@@ -3,6 +3,7 @@
     "heroslider-area": {
       "type": "heroslider-area",
       "settings": {
+        "background-img": "shopify:\/\/shop_images\/logo.png"
       }
     }
   },
