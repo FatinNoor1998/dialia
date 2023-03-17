@@ -137,12 +137,19 @@
       ],
       "settings": {
       }
+    },
+    "01439754-68c5-4d98-8d72-ae31c70cd07f": {
+      "type": "call-to-action",
+      "settings": {
+        "background-img": "shopify:\/\/shop_images\/call-to-action-bg.jpg"
+      }
     }
   },
   "order": [
     "heroslider-area",
     "cdda9fd3-9984-472e-b491-058047324baa",
     "314e6d61-ca8b-4668-8bca-bf717e012a3d",
-    "a39595e3-8717-4d78-83dc-1349f7374367"
+    "a39595e3-8717-4d78-83dc-1349f7374367",
+    "01439754-68c5-4d98-8d72-ae31c70cd07f"
   ]
 }
