@@ -143,6 +143,11 @@
       "settings": {
         "background-img": "shopify:\/\/shop_images\/call-to-action-bg.jpg"
       }
+    },
+    "df4f60e9-e201-47c9-84ed-a19731f902f8": {
+      "type": "pricing-area",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -150,6 +155,7 @@
     "cdda9fd3-9984-472e-b491-058047324baa",
     "314e6d61-ca8b-4668-8bca-bf717e012a3d",
     "a39595e3-8717-4d78-83dc-1349f7374367",
-    "01439754-68c5-4d98-8d72-ae31c70cd07f"
+    "01439754-68c5-4d98-8d72-ae31c70cd07f",
+    "df4f60e9-e201-47c9-84ed-a19731f902f8"
   ]
 }
