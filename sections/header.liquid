@@ -27,7 +27,7 @@
                                   </li>
                                     {% else %}
                                     <li>
-                                        <a href="{{ childlink.url }}">{{ childlink.title }}</a> <i class="fa-solid fa-angle-right"></i>
+                                        <a href="{{ childlink.url }}">{{ childlink.title }}<i class="fa-solid fa-angle-right"></i></a> 
                                    
                                      <ul>
                                        {%- for grandchildlink in childlink.links -%}
