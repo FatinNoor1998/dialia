@@ -42,9 +42,43 @@
       "settings": {
         "background-img": "shopify:\/\/shop_images\/heroslider-image-2.jpg"
       }
+    },
+    "cdda9fd3-9984-472e-b491-058047324baa": {
+      "type": "features-area",
+      "blocks": {
+        "template--18222626570523__cdda9fd3-9984-472e-b491-058047324baa-1679050597d4c1b6a8-0": {
+          "type": "feature-content",
+          "settings": {
+            "title": "Massage Therapy",
+            "description": "Massage therapy is the manipulation of the soft tissues of the body including muscles, connective tissue, tendons, ligaments and joints."
+          }
+        },
+        "187ecfe9-f359-41c3-80e8-2dafd5a52040": {
+          "type": "feature-content",
+          "settings": {
+            "title": "Massage Therapy",
+            "description": "Massage therapy is the manipulation of the soft tissues of the body including muscles, connective tissue, tendons, ligaments and joints."
+          }
+        },
+        "17f35019-cc4e-4c78-8421-afada4fee4ae": {
+          "type": "feature-content",
+          "settings": {
+            "title": "Massage Therapy",
+            "description": "Massage therapy is the manipulation of the soft tissues of the body including muscles, connective tissue, tendons, ligaments and joints."
+          }
+        }
+      },
+      "block_order": [
+        "template--18222626570523__cdda9fd3-9984-472e-b491-058047324baa-1679050597d4c1b6a8-0",
+        "187ecfe9-f359-41c3-80e8-2dafd5a52040",
+        "17f35019-cc4e-4c78-8421-afada4fee4ae"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "heroslider-area"
+    "heroslider-area",
+    "cdda9fd3-9984-472e-b491-058047324baa"
   ]
 }
