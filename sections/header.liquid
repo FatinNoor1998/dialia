@@ -18,7 +18,7 @@
                         {%- for link in section.settings.menu.links -%}
                            {%- if link.links != blank -%}
                           <li class="tm-navigation-dropdown">   
-                              <a href="{{ link.url }}">{{ link.title }}</a><i class="fa-light fa-caret-down"></i>                            
+                              <a href="{{ link.url }}">{{ link.title }}</a> <i class="fa-solid fa-chevron-down"></i>                          
                               <ul>
                                  {%- for childlink in link.links -%}
                                   {%- if childlink.links == blank -%}
