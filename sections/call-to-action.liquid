@@ -1,8 +1,34 @@
+            <div class="tm-section call-to-action-area tm-padding-section" data-bgimage="{{ section.settings.background-img | img_url: 'master' }}"
+                data-overlay="8">
+                <div class="container">
+                    <div class="tm-cta">
+                        <div class="tm-cta-content">
+                            <h3>New Patient Special Offer</h3>
+                            <h2>For your convenience, you can book your appointment</h2>
+                        </div>
+                        <div class="tm-cta-button">
+                            <a href="#" class="tm-button tm-button-white">Book an Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+   "name": "call-to-action",
+   "settings":[
+    {
+       "type": "image_picker",
+       "id":"background-img",
+       "label":"Background Image"
+    }
+   ],
+   "presets": [
+      {
+          "category": "content",
+          "name":"call-to-action"
+      }
+  ]
+}
 {% endschema %}
 
 {% stylesheet %}
