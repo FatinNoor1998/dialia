@@ -24,7 +24,9 @@
                                   {%- if childlink.links == blank -%}
                                   <li>
                                      <a href="{{ childlink.url }}">{{ childlink.title }}</a>
+                                  </li>
                                     {% else %}
+                                    
                                      <ul>
                                        {%- for grandchildlink in childlink.links -%}
                                          <li>
@@ -32,7 +34,7 @@
                                          </li>
                                        {%- endfor -%}
                                      </ul>
-                                  </li>
+
                                      {% endif %}
                                 {%- endfor -%}
                               </ul>
