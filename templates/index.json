@@ -1,1 +1,12 @@
-hello
+{
+  "sections": {
+    "heroslider-area": {
+      "type": "heroslider-area",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "heroslider-area"
+  ]
+}
