@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <div class="row product-slider-active tm-slider-arrow tm-slider-arrow-hovervisible">
-                    {% for product in collection[section.settings.collection] %}
+                    {% for product in collections[section.settings.collection].products %}
                       {{ product.id }}
                       {% endfor %}
                         <!-- Single Product -->
