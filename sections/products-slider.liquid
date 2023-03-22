@@ -14,8 +14,6 @@
     </div>
     <div class="row product-slider-active tm-slider-arrow tm-slider-arrow-hovervisible">
       {% for product in collections[section.settings.collection].products %}
-        {{ product.id }}
-
         <!-- Single Product -->
         <div class="col">
           <div class="tm-product">
@@ -48,7 +46,7 @@
                 <span class="active"><i class="zmdi zmdi-star"></i></span>
                 <span class="active"><i class="zmdi zmdi-star"></i></span>
               </div>
-              <h6 class="tm-product-price">{{ product.price }} <del>$120.00</del></h6>
+              <h6 class="tm-product-price">{{ product.price }}</h6>
             </div>
           </div>
         </div>
