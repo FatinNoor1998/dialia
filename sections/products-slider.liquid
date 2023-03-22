@@ -1,69 +1,80 @@
-            <div class="tm-section products-area tm-padding-section bg-white">
-                <span class="bg-shape-right"><img src="assets/images/icons/bg-shape-2.png" alt="background shape"></span>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-6 col-lg-8 col-md-10 col-12">
-                            <div class="tm-section-title text-center">
-                                <h2>Welcome to our shop</h2>
-                                <p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem
-                                    an cule dicta iriure at phaedrum. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row product-slider-active tm-slider-arrow tm-slider-arrow-hovervisible">
-                   {% for product in collections[section.settings['collection']].products %}
-                      {{ product.id }}
-                      {% endfor %}
-                        <!-- Single Product -->
-                        <div class="col">
-                            <div class="tm-product">
-                                <div class="tm-product-image">
-                                    <a class="tm-product-imagelink" href="product-details.html">
-                                        <img src="assets/images/product/product-image-1.jpg" alt="product image">
-                                    </a>
-                                    <ul class="tm-product-actions">
-                                        <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
-                                                    class="zmdi zmdi-eye"></i></button></li>
-                                        <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
-                                        <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="tm-product-content">
-                                    <h5 class="tm-product-title"><a href="product-details.html">Cosmetology Essential
-                                            oil</a></h5>
-                                    <div class="tm-product-rating">
-                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                    </div>
-                                    <h6 class="tm-product-price">$99.99 <del>$120.00</del></h6>
-                                </div>
-                            </div>
-                        </div>
-                        <!--// Single Product -->
-                    </div>
-                </div>
+<div class="tm-section products-area tm-padding-section bg-white">
+  <span class="bg-shape-right"><img src="assets/images/icons/bg-shape-2.png" alt="background shape"></span>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-8 col-md-10 col-12">
+        <div class="tm-section-title text-center">
+          <h2>Welcome to our shop</h2>
+          <p>
+            Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at
+            phaedrum.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row product-slider-active tm-slider-arrow tm-slider-arrow-hovervisible">
+      {% for product in collections[section.settings.collection].products %}
+        {{ product.id }}
+
+        <!-- Single Product -->
+        <div class="col">
+          <div class="tm-product">
+            <div class="tm-product-image">
+              <a class="tm-product-imagelink" href="product-details.html">
+                <img src="{{ product.featured_image }}" alt="product image">
+              </a>
+              <ul class="tm-product-actions">
+                <li>
+                  <button type="button" data-fancybox data-src="#tm-product-quickview">
+                    <i
+                      class="zmdi zmdi-eye"
+                    ></i>
+                  </button>
+                </li>
+                <li>
+                  <a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a>
+                </li>
+                <li>
+                  <a href="cart.html"><i class="zmdi zmdi-favorite"></i></a>
+                </li>
+              </ul>
             </div>
+            <div class="tm-product-content">
+              <h5 class="tm-product-title"><a href="product-details.html">{{ product.title }}</a></h5>
+              <div class="tm-product-rating">
+                <span class="active"><i class="zmdi zmdi-star"></i></span>
+                <span class="active"><i class="zmdi zmdi-star"></i></span>
+                <span class="active"><i class="zmdi zmdi-star"></i></span>
+                <span class="active"><i class="zmdi zmdi-star"></i></span>
+                <span class="active"><i class="zmdi zmdi-star"></i></span>
+              </div>
+              <h6 class="tm-product-price">{{ product.price }} <del>$120.00</del></h6>
+            </div>
+          </div>
+        </div>
+        <!-- // Single Product -->
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
 {% schema %}
-  {
-    "name": "products-slider",
-    "settings": [
-      {
-        "type": "collection",
-        "id": "collection",
-          "label": "Collection list"
-      }
-    ],
-    "presets": [
-      {
-          "category": "content",
-          "name":"products-slider"
-      }
-  ]
-  }
+{
+  "name": "products-slider",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+        "label": "Collection list"
+    }
+  ],
+  "presets": [
+    {
+        "category": "content",
+        "name":"products-slider"
+    }
+]
+}
 {% endschema %}
 
 {% stylesheet %}
