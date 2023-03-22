@@ -11,7 +11,9 @@
                         </div>
                     </div>
                     <div class="row product-slider-active tm-slider-arrow tm-slider-arrow-hovervisible">
-
+                    {% for product in collection %}
+                      {{ product.id }}
+                      {% endfor %}
                         <!-- Single Product -->
                         <div class="col">
                             <div class="tm-product">
