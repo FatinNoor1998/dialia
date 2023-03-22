@@ -211,7 +211,7 @@
                     slidesToScroll: 1,
                     arrows: true,
                     prevArrow: '<button class="tm-slider-arrow-prev"><i class="zmdi zmdi-long-arrow-left"></i></button>',
-                    nextArrow: '<button class="tm-slider-arrow-next"><i class="zmdi zmdi-long-arrow-right"></i></button>',
+                    nextArrow: '<button class="tm-slider-arrow-next"><i class="fa-solid fa-arrow-right"></i></i></button>',
                     dots: false,
                     fade: true,
                     adaptiveHeight: true,
@@ -229,7 +229,7 @@
                     slidesToScroll: 4,
                     arrows: true,
                     prevArrow: '<button class="tm-slider-arrow-prev"><i class="zmdi zmdi-arrow-left"></i></button>',
-                    nextArrow: '<button class="tm-slider-arrow-next"><i class="zmdi zmdi-arrow-right"></i></button>',
+                    nextArrow: '<button class="tm-slider-arrow-next"><i class="fa-solid fa-arrow-right"></i></i></button>',
                     dots: false,
                     responsive: [{
                             breakpoint: 992,
@@ -267,7 +267,7 @@
                     slidesToScroll: 4,
                     arrows: true,
                     prevArrow: '<button class="tm-slider-arrow-prev"><i class="zmdi zmdi-arrow-left"></i></button>',
-                    nextArrow: '<button class="tm-slider-arrow-next"><i class="zmdi zmdi-arrow-right"></i></button>',
+                    nextArrow: '<button class="tm-slider-arrow-next"><i class="fa-solid fa-arrow-right"></i></button>',
                     dots: false,
                     responsive: [{
                             breakpoint: 992,
@@ -332,7 +332,7 @@
                     slidesToScroll: 1,
                     arrows: true,
                     prevArrow: '<button class="tm-slider-arrow-prev"><i class="zmdi zmdi-arrow-left"></i></button>',
-                    nextArrow: '<button class="tm-slider-arrow-next"><i class="zmdi zmdi-arrow-right"></i></button>',
+                    nextArrow: '<button class="tm-slider-arrow-next"><i class="fa-solid fa-arrow-right"></i></button>',
                     dots: false,
                 });
             },
@@ -356,7 +356,7 @@
                     centerMode: true,
                     arrows: true,
                     prevArrow: '<button class="tm-slider-arrow-prev"><i class="zmdi zmdi-arrow-left"></i></button>',
-                    nextArrow: '<button class="tm-slider-arrow-next"><i class="zmdi zmdi-arrow-right"></i></button>',
+                    nextArrow: '<button class="tm-slider-arrow-next"><i class="fa-solid fa-arrow-right"></i></button>',
                     focusOnSelect: true
                 });
             },
@@ -371,7 +371,7 @@
                     slidesToScroll: 1,
                     arrows: true,
                     prevArrow: '<button class="tm-slider-arrow-prev"><i class="zmdi zmdi-arrow-left"></i></button>',
-                    nextArrow: '<button class="tm-slider-arrow-next"><i class="zmdi zmdi-arrow-right"></i></button>',
+                    nextArrow: '<button class="tm-slider-arrow-next"><i class="fa-solid fa-arrow-right"></i></button>',
                     dots: false,
                     responsive: [{
                             breakpoint: 992,
