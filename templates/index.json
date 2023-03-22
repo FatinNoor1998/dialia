@@ -149,15 +149,15 @@
       "settings": {
       }
     },
-    "7ad9764b-cac8-4d9d-8748-d857d5623ab2": {
-      "type": "testimonial-area",
-      "settings": {
-      }
-    },
     "f8f149ce-7d57-4ff4-8e2f-d9490f372913": {
       "type": "products-slider",
       "settings": {
         "collection": "rice"
+      }
+    },
+    "7ad9764b-cac8-4d9d-8748-d857d5623ab2": {
+      "type": "testimonial-area",
+      "settings": {
       }
     }
   },
@@ -168,7 +168,7 @@
     "a39595e3-8717-4d78-83dc-1349f7374367",
     "01439754-68c5-4d98-8d72-ae31c70cd07f",
     "df4f60e9-e201-47c9-84ed-a19731f902f8",
-    "7ad9764b-cac8-4d9d-8748-d857d5623ab2",
-    "f8f149ce-7d57-4ff4-8e2f-d9490f372913"
+    "f8f149ce-7d57-4ff4-8e2f-d9490f372913",
+    "7ad9764b-cac8-4d9d-8748-d857d5623ab2"
   ]
 }
