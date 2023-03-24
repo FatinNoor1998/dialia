@@ -11,7 +11,7 @@
                     </div>
                     <div class="row blog-slider-active tm-slider-dots">
 
-                      {%- for article in blog.articles -%}
+                      {%- for article in blog[section.settings.articles].articles -%}
                         <!-- Single Blog -->
                         <div class="col">
                             <div class="tm-blog">
