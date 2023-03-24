@@ -20,8 +20,9 @@
                     </div>
                     <div class="testimonial-slider-active tm-slider-arrow-2">
 
+                        {% for block in section.blocks %}
                         <!-- Testimonial Single -->
-                        <div class="tm-testimonial-slideritem">
+                        <div class="tm-testimonial-slideritem {{ block.id }}">
                             <div class="tm-testimonial">
                                 <div class="tm-testimonial-author">
                                     <div class="tm-testimonial-authorimage">
@@ -45,6 +46,7 @@
                             </div>
                         </div>
                         <!--// Testimonial Single -->
+                      {% endfor %}
 
                     </div>
                 </div>
