@@ -62,9 +62,10 @@
                             <!--// Single Widget (Widget Blog) -->
                         </div>
 
-                      {%- case block.type -%}
-                      {% when 'link_list' %}
+
                         {% for block in section.blocks %}
+                        {%- case block.type -%}
+                        {% when 'link_list' %}
                           <div class="col-lg-3 col-md-6 col-12">
                               <!-- Single Wiget (Widget Quicklinks) -->
                               <div class="single-widget widget-quicklinks">
@@ -79,8 +80,9 @@
                               </div>
                               <!--// Single Wiget (Widget Quicklinks) -->
                           </div>
-                         {% endfor %}
+                         
                         {%- endcase -%}
+                        {% endfor %}
                       
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget (Widget Newsletter) -->
