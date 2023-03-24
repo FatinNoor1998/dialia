@@ -25,19 +25,15 @@
                             <div class="tm-testimonial">
                                 <div class="tm-testimonial-author">
                                     <div class="tm-testimonial-authorimage">
-                                        <img src="assets/images/authors/author-image-1.jpg" alt="author image">
+                                        <img src="{{ block.settings.author-image| image_url: 'master' }}" alt="author image">
                                     </div>
                                     <div class="tm-testimonial-authorinfo">
-                                        <h5>Penny Beaird</h5>
-                                        <h6>Financer</h6>
+                                        <h5>{{ block.settings.author-name }}</h5>
+                                        <h6>{{ block.settings.author-designation }}</h6>
                                     </div>
                                 </div>
                                 <div class="tm-testimonial-content">
-                                    <p>I started seeing Dr. Robinson on the recommendation of my massage therapist.
-                                        Massage
-                                        therapy is the science of movement and function. Massage therapy will help
-                                        anybody
-                                        who experiences difficulty with movement strength and pain.</p>
+                                    <p></p>
                                     <div class="tm-rating">
                                         <span class="active"><i class="zmdi zmdi-star"></i></span>
                                         <span class="active"><i class="zmdi zmdi-star"></i></span>
@@ -70,17 +66,20 @@
        {
          "type": "text",
          "id": "author-name",
-         "label": "Author Name"
+         "label": "Author Name",
+         "default": "Daniel"
        },
        {
          "type": "text",
          "id": "author-designation",
-         "label": "Author Designation"
+         "label": "Author Designation",
+         "default": "Supervisor"
        },
        {
          "type": "text",
          "id": "author-comment",
-         "label": "Author Testimonial"
+         "label": "Author Testimonial",
+         "default": "I started seeing Dr. Robinson on the recommendation of my massage therapist. Massage therapy is the science of movement and function. Massage therapy will help anybody who experiences difficulty with movement strength and pain."
        }
        ]
      }     
