@@ -118,13 +118,19 @@
 {% schema %}
   {
     "name": "footer",
-    "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "default": "footer",
-      "label": "Footer Menu"
-    }
+    "blocks":[
+      {
+        "type":"link_list",
+        "name": "footer menu",
+        "settings":[
+          {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Footer Menu"
+          }
+        ]
+      }
     ]
   }
 {% endschema %}
