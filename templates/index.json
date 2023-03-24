@@ -166,10 +166,19 @@
             "author-designation": "Supervisor",
             "author-comment": "I started seeing Dr. Robinson on the recommendation of my massage therapist. Massage therapy is the science of movement and function. Massage therapy will help anybody who experiences difficulty with movement strength and pain."
           }
+        },
+        "d0c29ec5-a8fd-4f9e-9c04-e94ab7c9badf": {
+          "type": "slide",
+          "settings": {
+            "author-name": "Daniel",
+            "author-designation": "Supervisor",
+            "author-comment": "I started seeing Dr. Robinson on the recommendation of my massage therapist. Massage therapy is the science of movement and function. Massage therapy will help anybody who experiences difficulty with movement strength and pain."
+          }
         }
       },
       "block_order": [
-        "28d33dd7-dddd-4e91-837d-a04abcfe20de"
+        "28d33dd7-dddd-4e91-837d-a04abcfe20de",
+        "d0c29ec5-a8fd-4f9e-9c04-e94ab7c9badf"
       ],
       "settings": {
       }
