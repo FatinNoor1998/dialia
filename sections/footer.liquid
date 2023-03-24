@@ -62,23 +62,26 @@
                             <!--// Single Widget (Widget Blog) -->
                         </div>
 
+                      {%- case block.type -%}
+                      {% when 'link_list' %}
                         {% for block in section.blocks %}
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <!-- Single Wiget (Widget Quicklinks) -->
-                            <div class="single-widget widget-quicklinks">
-                                <h5 class="widget-title">Customer services</h5>
-                              {%- if block.settings.menu != blank -%}
-                                <ul>
-                                 {%- for link in block.settings.menu.links -%}
-                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                                   {% endfor %}
-                                </ul>
-                                {% endif %}
-                            </div>
-                            <!--// Single Wiget (Widget Quicklinks) -->
-                        </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <!-- Single Wiget (Widget Quicklinks) -->
+                              <div class="single-widget widget-quicklinks">
+                                  <h5 class="widget-title">Customer services</h5>
+                                {%- if block.settings.menu != blank -%}
+                                  <ul>
+                                   {%- for link in block.settings.menu.links -%}
+                                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                     {% endfor %}
+                                  </ul>
+                                  {% endif %}
+                              </div>
+                              <!--// Single Wiget (Widget Quicklinks) -->
+                          </div>
                          {% endfor %}
-                          
+                        {%- endcase -%}
+                      
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget (Widget Newsletter) -->
                             <div class="single-widget widget-newsletter">
