@@ -62,6 +62,7 @@
                             <!--// Single Widget (Widget Blog) -->
                         </div>
 
+                        {% for block in section.blocks %}
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Wiget (Widget Quicklinks) -->
                             <div class="single-widget widget-quicklinks">
@@ -76,7 +77,8 @@
                             </div>
                             <!--// Single Wiget (Widget Quicklinks) -->
                         </div>
-
+                         {% endfor %}
+                          
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget (Widget Newsletter) -->
                             <div class="single-widget widget-newsletter">
