@@ -18,6 +18,12 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "6d4e0c23-d14b-4be5-819d-22ebc5655297": {
+            "type": "blog",
+            "settings": {
+              "blog": "recent-post-3"
+            }
+          },
           "a9d8adfd-4b69-4dbf-b4a0-370665b09b7c": {
             "type": "link_list",
             "settings": {
@@ -26,6 +32,7 @@
           }
         },
         "block_order": [
+          "6d4e0c23-d14b-4be5-819d-22ebc5655297",
           "a9d8adfd-4b69-4dbf-b4a0-370665b09b7c"
         ],
         "settings": {
