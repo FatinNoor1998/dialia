@@ -192,6 +192,7 @@
     "af5fd670-42f8-421a-a107-a5bd82e8fb11": {
       "type": "blogs-section",
       "settings": {
+        "blog": "news"
       }
     }
   },
