@@ -66,14 +66,18 @@
                             <!-- Single Wiget (Widget Quicklinks) -->
                             <div class="single-widget widget-quicklinks">
                                 <h5 class="widget-title">Customer services</h5>
+                              {%- if section.settings.menu != blank -%}
                                 <ul>
+                                 {%- for link in section.settings.menu.links -%}
                                     <li><a href="#">Physiotherapy</a></li>
                                     <li><a href="#">Massage Therapy</a></li>
                                     <li><a href="#">Vehicle Injury Treatment</a></li>
                                     <li><a href="#">Acupuncture</a></li>
                                     <li><a href="#">Neurological Rehabilitation</a></li>
                                     <li><a href="#">Custom-Made Orthotics</a></li>
+                                   {% endfor %}
                                 </ul>
+                                {% endif %}
                             </div>
                             <!--// Single Wiget (Widget Quicklinks) -->
                         </div>
