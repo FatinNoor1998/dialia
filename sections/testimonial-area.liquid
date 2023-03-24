@@ -57,7 +57,29 @@
 {% schema %}
 {
    "name": "testimonial-area",
-   "settings":[
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "author testimonial",
+       "settings":[
+         {
+       "type": "image_picker",
+       "id": "author-image",
+       "label": "Author Image"       
+     },
+     {
+       "type": "text",
+       "id": "author-name",
+       "label": "Author Name"
+     },
+     {
+       "type": "text",
+       "id": "author-designation",
+       "label": "Author Designation"
+     }
+       ]
+     }
+     
    ],
    "presets": [
       {
