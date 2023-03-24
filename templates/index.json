@@ -188,6 +188,11 @@
       "type": "appoinment-information",
       "settings": {
       }
+    },
+    "af5fd670-42f8-421a-a107-a5bd82e8fb11": {
+      "type": "blogs-section",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -199,6 +204,7 @@
     "df4f60e9-e201-47c9-84ed-a19731f902f8",
     "f8f149ce-7d57-4ff4-8e2f-d9490f372913",
     "739e2b7a-bdd9-4207-9fd2-720270cff416",
-    "6be5527d-c502-4ea8-8386-515a72c5c0df"
+    "6be5527d-c502-4ea8-8386-515a72c5c0df",
+    "af5fd670-42f8-421a-a107-a5bd82e8fb11"
   ]
 }
