@@ -155,8 +155,21 @@
         "collection": "rice"
       }
     },
-    "7ad9764b-cac8-4d9d-8748-d857d5623ab2": {
+    "739e2b7a-bdd9-4207-9fd2-720270cff416": {
       "type": "testimonial-area",
+      "blocks": {
+        "28d33dd7-dddd-4e91-837d-a04abcfe20de": {
+          "type": "slide",
+          "settings": {
+            "author-name": "Daniel",
+            "author-designation": "Supervisor",
+            "author-comment": "I started seeing Dr. Robinson on the recommendation of my massage therapist. Massage therapy is the science of movement and function. Massage therapy will help anybody who experiences difficulty with movement strength and pain."
+          }
+        }
+      },
+      "block_order": [
+        "28d33dd7-dddd-4e91-837d-a04abcfe20de"
+      ],
       "settings": {
       }
     }
@@ -169,6 +182,6 @@
     "01439754-68c5-4d98-8d72-ae31c70cd07f",
     "df4f60e9-e201-47c9-84ed-a19731f902f8",
     "f8f149ce-7d57-4ff4-8e2f-d9490f372913",
-    "7ad9764b-cac8-4d9d-8748-d857d5623ab2"
+    "739e2b7a-bdd9-4207-9fd2-720270cff416"
   ]
 }
