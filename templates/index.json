@@ -194,6 +194,12 @@
       "settings": {
         "blog": "news"
       }
+    },
+    "597b784d-0b59-4ba0-b689-f33a9aa4f117": {
+      "type": "breadcrumb-area",
+      "settings": {
+        "breadcrumb-header": "About Us"
+      }
     }
   },
   "order": [
@@ -206,6 +212,7 @@
     "f8f149ce-7d57-4ff4-8e2f-d9490f372913",
     "739e2b7a-bdd9-4207-9fd2-720270cff416",
     "6be5527d-c502-4ea8-8386-515a72c5c0df",
-    "af5fd670-42f8-421a-a107-a5bd82e8fb11"
+    "af5fd670-42f8-421a-a107-a5bd82e8fb11",
+    "597b784d-0b59-4ba0-b689-f33a9aa4f117"
   ]
 }
