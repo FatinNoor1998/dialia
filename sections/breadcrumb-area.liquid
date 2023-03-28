@@ -3,8 +3,10 @@
             <div class="container">
                 <div class="tm-breadcrumb text-center">
                     <h2>{{ section.settings.breadcrumb-header }}</h2>
-                    <ul>
-                        <li><a href="">{{ request.page_type }}</a></li>
+                    <ul> 
+                        <li><a href="https://dialia-rmt-store.myshopify.com/">Home</a></li>
+                        
+                        <li><a href="">{{ request.path | split: "/" }}</a></li>
                     </ul>
                 </div>
             </div>
