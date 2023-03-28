@@ -1,12 +1,12 @@
 {
   "sections": {
-    "main": {
+    "breadcrumb-area": {
       "type": "breadcrumb-area",
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "breadcrumb-area"
   ]
 }
