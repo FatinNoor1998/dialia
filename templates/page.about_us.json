@@ -3,10 +3,17 @@
     "breadcrumb-area": {
       "type": "breadcrumb-area",
       "settings": {
+        "breadcrumb-header": "About Us"
+      }
+    },
+    "293a1f83-1651-44b9-b872-0f82c54410ee": {
+      "type": "about-us",
+      "settings": {
       }
     }
   },
   "order": [
-    "breadcrumb-area"
+    "breadcrumb-area",
+    "293a1f83-1651-44b9-b872-0f82c54410ee"
   ]
 }
