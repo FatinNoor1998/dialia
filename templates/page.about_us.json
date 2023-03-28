@@ -3,6 +3,7 @@
     "breadcrumb-area": {
       "type": "breadcrumb-area",
       "settings": {
+        "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
         "breadcrumb-header": "About Us"
       }
     },
