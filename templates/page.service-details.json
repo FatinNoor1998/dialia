@@ -6,9 +6,15 @@
         "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
         "breadcrumb-header": "Service Details"
       }
+    },
+    "e3417d79-08ed-4369-8caa-855ee118ccfc": {
+      "type": "service-details",
+      "settings": {
+      }
     }
   },
   "order": [
-    "breadcrumb-area"
+    "breadcrumb-area",
+    "e3417d79-08ed-4369-8caa-855ee118ccfc"
   ]
 }
