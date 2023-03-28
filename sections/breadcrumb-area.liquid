@@ -1,11 +1,10 @@
-<div class="tm-breadcrumb-area tm-padding-section" data-bgimage="assets/images/bg/breadcrumb-bg.jpg"
+<div class="tm-breadcrumb-area tm-padding-section" data-bgimage="{{ section.settings.background-img | img_url: 'master' }}"
             data-black-overlay="4">
             <div class="container">
                 <div class="tm-breadcrumb text-center">
-                    <h2>About us</h2>
+                    <h2>{{ section.settings.breadcrumb-header }}</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li>About</li>
+                        <li><a href="">{{ request.path }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -25,7 +24,7 @@
         "id": "breadcrumb-header",
         "label": "Breadcrumb Header",
         "default": "About Us"
-      }
+      }     
     ],
     "presets": [
       {
