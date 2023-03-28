@@ -1,7 +1,38 @@
+<div class="tm-breadcrumb-area tm-padding-section" data-bgimage="assets/images/bg/breadcrumb-bg.jpg"
+            data-black-overlay="4">
+            <div class="container">
+                <div class="tm-breadcrumb text-center">
+                    <h2>About us</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>About</li>
+                    </ul>
+                </div>
+            </div>
+</div>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "breadcrumb-area",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background-img",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "breadcrumb-header",
+        "label": "Breadcrumb Header",
+        "default": "About Us"
+      }
+    ],
+    "presets": [
+      {
+          "category": "content",
+          "name":"breadcrumb-area"
+      }
+  ]
   }
 {% endschema %}
 
