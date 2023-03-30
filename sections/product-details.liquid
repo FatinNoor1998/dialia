@@ -15,12 +15,14 @@
                                         <!-- Product Details Images -->
                                         <div class="tm-prodetails-images">
                                             <div class="tm-prodetails-largeimages">
+                                              {% for image in product.images %}
                                                 <div class="tm-prodetails-largeimage">
-                                                    <a data-fancybox="tm-prodetails-imagegallery" href="{{ product.images | img_url : 'large' }}"
+                                                    <a data-fancybox="tm-prodetails-imagegallery" href="{{ product.image | img_url }}"
                                                         data-caption="Product Zoom Image 1">
-                                                        <img src="{{ product.images | img_url : 'large' }}" alt="">
+                                                        <img src="{{ product.image | img_url }}" alt="">
                                                     </a>
-                                                </div>                                                
+                                                </div> 
+                                                {% endfor %}
                                             </div>
                                             <div class="tm-prodetails-thumbnails">
                                               {% for image in product.images %}
