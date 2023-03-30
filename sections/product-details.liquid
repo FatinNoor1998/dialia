@@ -37,6 +37,7 @@
                                     </div>
 
                                   {% form 'product', product %}
+                                    
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="tm-prodetails-content">
                                             <h3 class="tm-prodetails-title">{{ product.title }}</h3>
@@ -54,7 +55,7 @@
                                             <p>{{ product.content }}</p>
                                             <div class="tm-prodetails-quantitycart">
                                                 <div class="tm-quantitybox">
-                                                    <input type="text" value="1">
+                                                    <input type="number" value="1" min="1" name="quantity" id="Quantity-{{ section.id }}">
                                                 </div>
                                                 <a href="#" class="tm-button tm-button-dark">Add To Cart<b></b></a>
                                             </div>
