@@ -241,6 +241,23 @@
                             <div class="tm-similliar-products tm-padding-section-sm-top">
                                 <h3 class="small-title">Similliar Products</h3>
                                 <div class="tm-similliar-products-slider tm-slider-arrow tm-slider-arrow-hovervisible row">
+
+                                  <script>
+                                    fetch(window.Shopify.routes.root + "recommendations/products.json?product_id={ product-id }&limit=4&intent={intent}")
+                                        .then(response => response.json())
+                                        .then(({ products }) => {
+                                          if (products.length > 0) {
+                                            const firstRecommendedProduct = products[0];
+                                      
+                                            alert(
+                                              `The title of the first recommended product is: ${firstRecommendedProduct.title}`
+                                            );
+                                          }
+                                        }
+                                      );
+                                  </script>
+                                  
+
                                   
                                     <!-- Single Product -->
                                     <div class="col-12">
