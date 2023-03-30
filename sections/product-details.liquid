@@ -16,9 +16,9 @@
                                         <div class="tm-prodetails-images">
                                             <div class="tm-prodetails-largeimages">
                                                 <div class="tm-prodetails-largeimage">
-                                                    <a data-fancybox="tm-prodetails-imagegallery" href="#"
+                                                    <a data-fancybox="tm-prodetails-imagegallery" href="{{ product.images | img_url : 'large' }}"
                                                         data-caption="Product Zoom Image 1">
-                                                        <img src="{{ product.featured_image | img_url : 'large' }}" alt="">
+                                                        <img src="{{ product.images | img_url : 'large' }}" alt="">
                                                     </a>
                                                 </div>                                                
                                             </div>
