@@ -247,49 +247,37 @@
                                         .then(response => response.json())
                                         .then(({ products }) => {
                                           if (products.length > 0) {
-                                            const firstRecommendedProduct = products[0];
-                                      
-                                            alert(
-                                              `The title of the first recommended product is: ${firstRecommendedProduct.title}`
-                                            );
+                                                <div class="col-12">
+                                                  <div class="tm-product">
+                                                      <div class="tm-product-image">
+                                                          <a class="tm-product-imagelink" href="product-details.html">
+                                                              <img src="{{ product.featured_image }}" alt="product image">
+                                                          </a>
+                                                          <ul class="tm-product-actions">
+                                                              <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
+                                                                          class="zmdi zmdi-eye"></i></button></li>
+                                                              <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                                              <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
+                                                          </ul>
+                                                      </div>
+                                                      <div class="tm-product-content">
+                                                          <h5 class="tm-product-title"><a href="{{ product.url }}">{{ product.title }}</a></h5>
+                                                          <div class="tm-product-rating">
+                                                              <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                                              <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                                              <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                                              <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                                              <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                                          </div>
+                                                          <h6 class="tm-product-price">{{ product.compare_at_price }}<del>{{ product.price }}</del></h6>
+                                                      </div>
+                                                  </div>
+                                              </div>
                                           }
                                         }
                                       );
                                   </script>
-                                  
-
-                                  
-                                    <!-- Single Product -->
-                                    <div class="col-12">
-                                        <div class="tm-product">
-                                            <div class="tm-product-image">
-                                                <a class="tm-product-imagelink" href="product-details.html">
-                                                    <img src="assets/images/product/product-image-1.jpg" alt="product image">
-                                                </a>
-                                                <ul class="tm-product-actions">
-                                                    <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
-                                                                class="zmdi zmdi-eye"></i></button></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tm-product-content">
-                                                <h5 class="tm-product-title"><a href="product-details.html">Cosmetology
-                                                        Essential
-                                                        oil</a></h5>
-                                                <div class="tm-product-rating">
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                </div>
-                                                <h6 class="tm-product-price">$99.99 <del>$120.00</del></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--// Single Product -->      
-                                  
+                                                                       
                                 </div>
                             </div>
 
