@@ -2,11 +2,6 @@
 {% assign product_image = current_product.featured_image | default: product.featured_image %}
         
         <main class="main-content">
-           {% for image in product.images %}
-                                                <div class="tm-prodetails-thumbnail">
-                                                    <img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt }}">
-                                                </div>
-                                              {% endfor %}
 
             <!-- Product Details Area -->
             <div class="tm-section product-details-area bg-white tm-padding-section">
@@ -30,7 +25,7 @@
                                             <div class="tm-prodetails-thumbnails">
                                               {% for image in product.images %}
                                                 <div class="tm-prodetails-thumbnail">
-                                                    <img src="{{ image.src | image_url: 'medium' }}" alt="{{ image.alt }}">
+                                                    <img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt }}">
                                                 </div>
                                               {% endfor %}
                                             </div>
