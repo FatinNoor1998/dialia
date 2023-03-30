@@ -48,7 +48,7 @@
                                             </div>
                                             <p class="tm-prodetails-availability">Availalbe: <span>{% if product.available %} Stoke In {% else %} Stoke Out{% endif %}</span></p>
                                             <div class="tm-prodetails-price">
-                                                <span><del>{{ product.price_max }}</del>{{ product.price | money }}</span>
+                                                <span><del>{{ product.compare_at_price }}</del>{{ product.price | money }}</span>
                                             </div>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mi
                                                 dolor,
