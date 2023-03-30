@@ -17,9 +17,9 @@
                                             <div class="tm-prodetails-largeimages">
                                               {% for image in product.images %}
                                                 <div class="tm-prodetails-largeimage">
-                                                    <a data-fancybox="tm-prodetails-imagegallery" href="{{ image | img_url }}"
+                                                    <a data-fancybox="tm-prodetails-imagegallery" href="{{ image | img_url : 'master' }}"
                                                         data-caption="Product Zoom Image 1">
-                                                        <img src="{{ image | img_url }}" alt="">
+                                                        <img src="{{ image | img_url: 'master' }}" alt="">
                                                     </a>
                                                 </div> 
                                                 {% endfor %}
