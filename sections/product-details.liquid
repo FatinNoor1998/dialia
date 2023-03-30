@@ -247,6 +247,7 @@
                                         .then(response => response.json())
                                         .then(({ products }) => {
                                           if (products.length > 0) {
+                                            {% for product in recommendations.products %}
                                                 <div class="col-12">
                                                   <div class="tm-product">
                                                       <div class="tm-product-image">
@@ -273,6 +274,7 @@
                                                       </div>
                                                   </div>
                                               </div>
+                                            {% endfor %}}
                                           }
                                         }
                                       );
