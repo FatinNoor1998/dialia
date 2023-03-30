@@ -1,12 +1,12 @@
 {
   "sections": {
-    "breadcrumb-area": {
-      "type": "breadcrumb-area",
+    "product-details": {
+      "type": "product-details",
       "settings": {
       }
     }
   },
   "order": [
-    "breadcrumb-area"
+    "product-details"
   ]
 }
