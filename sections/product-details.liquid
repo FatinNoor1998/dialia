@@ -242,11 +242,12 @@
                                 <h3 class="small-title">Similliar Products</h3>
                                 <div class="tm-similliar-products-slider tm-slider-arrow tm-slider-arrow-hovervisible row">
                                     <!-- Single Product -->
+                                   {% for recommendation in recommendations.products %}
                                     <div class="col-12">
                                         <div class="tm-product">
                                             <div class="tm-product-image">
                                                 <a class="tm-product-imagelink" href="product-details.html">
-                                                    <img src="assets/images/product/product-image-1.jpg" alt="product image">
+                                                    <img src="{{ recommendation.featured_image }}" alt="product image">
                                                 </a>
                                                 <ul class="tm-product-actions">
                                                     <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
@@ -270,98 +271,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--// Single Product -->
-
-                                    <!-- Single Product -->
-                                    <div class="col-12">
-                                        <div class="tm-product">
-                                            <div class="tm-product-image">
-                                                <a class="tm-product-imagelink" href="product-details.html">
-                                                    <img src="assets/images/product/product-image-2.jpg" alt="product image">
-                                                </a>
-                                                <ul class="tm-product-actions">
-                                                    <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
-                                                                class="zmdi zmdi-eye"></i></button></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tm-product-content">
-                                                <h5 class="tm-product-title"><a href="product-details.html">Lavender
-                                                        oil Aroma</a></h5>
-                                                <div class="tm-product-rating">
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                </div>
-                                                <h6 class="tm-product-price">$99.99</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--// Single Product -->
-
-                                    <!-- Single Product -->
-                                    <div class="col-12">
-                                        <div class="tm-product">
-                                            <div class="tm-product-image">
-                                                <a class="tm-product-imagelink" href="product-details.html">
-                                                    <img src="assets/images/product/product-image-3.jpg" alt="product image">
-                                                </a>
-                                                <ul class="tm-product-actions">
-                                                    <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
-                                                                class="zmdi zmdi-eye"></i></button></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tm-product-content">
-                                                <h5 class="tm-product-title"><a href="product-details.html">Jojoba
-                                                        oil
-                                                        Carrie</a></h5>
-                                                <div class="tm-product-rating">
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                </div>
-                                                <h6 class="tm-product-price">$99.99</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--// Single Product -->
-
-                                    <!-- Single Product -->
-                                    <div class="col-12">
-                                        <div class="tm-product">
-                                            <div class="tm-product-image">
-                                                <a class="tm-product-imagelink" href="product-details.html">
-                                                    <img src="assets/images/product/product-image-4.jpg" alt="product image">
-                                                </a>
-                                                <ul class="tm-product-actions">
-                                                    <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
-                                                                class="zmdi zmdi-eye"></i></button></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
-                                                    <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tm-product-content">
-                                                <h5 class="tm-product-title"><a href="product-details.html">White
-                                                        Bamboo Massage</a></h5>
-                                                <div class="tm-product-rating">
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                </div>
-                                                <h6 class="tm-product-price">$99.99</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--// Single Product -->
+                                  {% endfor %}
+                                    <!--// Single Product -->                               
                                 </div>
                             </div>
 
