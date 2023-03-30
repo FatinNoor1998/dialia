@@ -58,19 +58,37 @@
                                             <p>{{ product.content }}</p>
                                           
                                           <div class="mb-3">
-                                            <select name="id" id="productSelect" class="form-select">
-                                          {% for variant in product.variants %}
-                                            {% if variant.available %}
-                                              <option value="{{ variant.id }}">
-                                              {{ variant.title }}
-                                              </option>
-                                              {% else %}
-                                               <option value="{{ variant.id }}" disabled="disabled">
-                                              {{ variant.title }}
-                                              </option>
-                                              {% endif %}
-                                          {% endfor %}
-                                            </select>
+                                             {% unless product.has_only_default_variant %}
+                                    <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
+                                        {% for option in product.options_with_values %}
+                                            <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+
+                                            <div class="my-2">
+                                                <select 
+                                                    name="options[{{ option.name | escape }}]" 
+                                                    id="Option-{{ section.id }}-{{ forloop.index0 }}" 
+                                                    class="w-full border py-3 px-3"
+                                                >
+                                                    {% for value in option.values %}
+                                                        <option 
+                                                            value="{{ value | escape }}"
+                                                            {% if option.selected_value == value %}
+                                                                selected="selected"
+                                                            {% endif %}
+                                                        >
+                                                            {{ value }}
+                                                        </option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+
+                                            <script type="application/json">
+                                                {{ product.variants | json }}
+                                            </script>
+
+                                        {% endfor %}
+                                    </variant-selector>
+                                {% endunless %}
                                           </div>
                                           
                                             <div class="tm-prodetails-quantitycart">
