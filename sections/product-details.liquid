@@ -56,6 +56,17 @@
                                                 <span><del>{{ product.compare_at_price | money }}</del> {{ product.price | money }}</span>
                                             </div>
                                             <p>{{ product.content }}</p>
+                                          {% for variant in product.variants %}
+                                            {% if variant.available %}
+                                              <option value="{{ variant.id }}">
+                                              {{ variant.title }}
+                                              </option>
+                                              {% else %}
+                                               <option value="{{ variant.id }}" disabled="disabled">
+                                              {{ variant.title }}
+                                              </option>
+                                              {% endif %}
+                                          {% endfor %}
                                             <div class="tm-prodetails-quantitycart">
                                                 <div class="tm-quantitybox">
                                                     <input type="number" value="1" min="1" name="quantity" id="Quantity-{{ section.id }}">
