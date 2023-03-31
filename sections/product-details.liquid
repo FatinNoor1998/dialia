@@ -272,7 +272,7 @@
                                     <ul>
                                         <li>
                                             <a href="product-details.html" class="widget-popularproduct-image">
-                                                <img src="{{ product.featured_image }}" alt="product thumbnail">
+                                                <img src="{{ product.featured_image | img_url: 'master'}}" alt="product thumbnail">
                                             </a>
                                             <div class="widget-popularproduct-content">
                                                 <h6><a href="product-details.html">{{ product.title }}</a></h6>
