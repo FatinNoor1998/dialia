@@ -3,6 +3,7 @@
     "template": {
       "type": "product-details",
       "settings": {
+        "collection": "puma"
       }
     }
   },
