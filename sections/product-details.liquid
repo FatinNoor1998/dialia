@@ -326,7 +326,6 @@
                                       .then(response => response.json())
                                       .then(({ products }) => {
                                         if (products.length > 0) {
-                                         console.log("hi",products);
                                           let recommendedProducts = '';
                                           products.forEach( e => {
                                             recommendedProducts+= `
@@ -357,7 +356,7 @@
                                         </div>
                                     </div>
                                             `;
-                                            document.querySelector(".tm-similliar-products-slider.tm-slider-arrow.tm-slider-arrow-hovervisible.row").insertAdjacentHTML('beforeend', recommendedProducts);
+                                            document.querySelector(".tm-similliar-products-slider.tm-slider-arrow.tm-slider-arrow-hovervisible.row").insertAdjacentHTML('afterbegin', recommendedProducts);
                                           })
                                         }
                                       }
