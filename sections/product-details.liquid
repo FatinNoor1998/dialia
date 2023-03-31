@@ -270,8 +270,9 @@
                                 <div class="single-widget widget-popularproduct">
                                     <h5 class="widget-title">Popular Product</h5>
                                     
-                                    {% for product in products %}
+                                    
                                     <ul>
+                                      {% for product in products %}
                                         <li>
                                             <a href="product-details.html" class="widget-popularproduct-image">
                                                 <img src="{{ product.featured_image | img_url: 'master'}}" alt="product thumbnail">
@@ -281,9 +282,9 @@
                                                 <span>{{ product.price | money}}</span>
                                             </div>
                                         </li>
-                                         
+                                            {% endfor %}
                                     </ul>
-                                    {% endfor %}
+                                 
                                 </div>
                                 <!--// Single Widget -->
 
