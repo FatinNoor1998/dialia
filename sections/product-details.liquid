@@ -270,8 +270,7 @@
                                     <h5 class="widget-title">Popular Product</h5>
                                   {% for product in collections[section.settings.collection].products %}
                                     <ul>
-                                      {%- for option in collection.sort_options %}
-                                        {% if option.value == best-selling %}
+
                                         <li>
                                             <a href="product-details.html" class="widget-popularproduct-image">
                                                 <img src="assets/images/product/thumbnail/product-image-1.jpg" alt="product thumbnail">
@@ -299,8 +298,6 @@
                                                 <span>$99.99</span>
                                             </div>
                                         </li>
-                                          {% endif %}
-                                        {% endfor %}
                                     </ul>
                                     {% endfor %}
                                 </div>
