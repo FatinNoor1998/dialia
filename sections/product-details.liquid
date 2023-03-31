@@ -268,9 +268,9 @@
                                 <!-- Single Widget -->
                                 <div class="single-widget widget-popularproduct">
                                     <h5 class="widget-title">Popular Product</h5>
-                                 
+                                  {% for product in collections[section.settings.collection].products %}
                                     <ul>
-                                       {% for product in collections[section.settings.collection].products %}
+                                      
                                         <li>
                                             <a href="product-details.html" class="widget-popularproduct-image">
                                                 <img src="{{ product.featured_image | img_url: 'master'}}" alt="product thumbnail">
@@ -280,9 +280,9 @@
                                                 <span>{{ product.price }}</span>
                                             </div>
                                         </li>
-                                         {% endfor %}
+                                         
                                     </ul>
-                                    
+                                    {% endfor %}
                                 </div>
                                 <!--// Single Widget -->
 
