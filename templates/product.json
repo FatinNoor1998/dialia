@@ -1,5 +1,12 @@
 {
   "sections": {
+    "69b0204f-6c40-4b35-926c-0fe001e0130d": {
+      "type": "breadcrumb-area",
+      "settings": {
+        "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
+        "breadcrumb-header": "Product Details"
+      }
+    },
     "template": {
       "type": "product-details",
       "settings": {
@@ -8,6 +15,7 @@
     }
   },
   "order": [
+    "69b0204f-6c40-4b35-926c-0fe001e0130d",
     "template"
   ]
 }
