@@ -270,13 +270,12 @@
                                     <h5 class="widget-title">Popular Product</h5>
                                   {% for product in collections[section.settings.collection].products %}
                                     <ul>
-
                                         <li>
                                             <a href="product-details.html" class="widget-popularproduct-image">
-                                                <img src="assets/images/product/thumbnail/product-image-1.jpg" alt="product thumbnail">
+                                                <img src="{{ product.featured_image }}" alt="product thumbnail">
                                             </a>
                                             <div class="widget-popularproduct-content">
-                                                <h6><a href="product-details.html">Brown liquid inside</a></h6>
+                                                <h6><a href="product-details.html">{{ product.title }}</a></h6>
                                                 <span>$20.00</span>
                                             </div>
                                         </li>
