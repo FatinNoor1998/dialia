@@ -365,18 +365,22 @@
                                   </script>
 
 {% schema %}
-  {
-    "name": "product-details",
-    "settings": [
-      
-    ],
-    "presets": [
-      {
-          "category": "content",
-          "name":"product-details"
-      }
-  ]
-  }
+{
+  "name": "product-details",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection list"
+    }
+  ],
+  "presets": [
+    {
+        "category": "content",
+        "name":"product-details"
+    }
+]
+}
 {% endschema %}
 
 {% stylesheet %}
