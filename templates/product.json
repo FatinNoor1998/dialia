@@ -1,5 +1,11 @@
 {
   "sections": {
+    "db2b2c92-8d1b-4d01-878a-268a3b61017d": {
+      "type": "breadcrumb-area",
+      "settings": {
+        "breadcrumb-header": "Product Details"
+      }
+    },
     "product-details": {
       "type": "product-details",
       "settings": {
@@ -8,6 +14,7 @@
     }
   },
   "order": [
+    "db2b2c92-8d1b-4d01-878a-268a3b61017d",
     "product-details"
   ]
 }
