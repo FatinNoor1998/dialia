@@ -268,37 +268,21 @@
                                 <!-- Single Widget -->
                                 <div class="single-widget widget-popularproduct">
                                     <h5 class="widget-title">Popular Product</h5>
-                                  {% for product in collections[section.settings.collection].products %}
+                                 
                                     <ul>
+                                       {% for product in collections[section.settings.collection].products %}
                                         <li>
                                             <a href="product-details.html" class="widget-popularproduct-image">
                                                 <img src="{{ product.featured_image | img_url: 'master'}}" alt="product thumbnail">
                                             </a>
                                             <div class="widget-popularproduct-content">
                                                 <h6><a href="product-details.html">{{ product.title }}</a></h6>
-                                                <span>$20.00</span>
+                                                <span>{{ product.price }}</span>
                                             </div>
                                         </li>
-                                        <li>
-                                            <a href="product-details.html" class="widget-popularproduct-image">
-                                                <img src="assets/images/product/thumbnail/product-image-2.jpg" alt="product thumbnail">
-                                            </a>
-                                            <div class="widget-popularproduct-content">
-                                                <h6><a href="product-details.html">Top of amber bottle</a></h6>
-                                                <span>$35.99</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="product-details.html" class="widget-popularproduct-image">
-                                                <img src="assets/images/product/thumbnail/product-image-3.jpg" alt="product thumbnail">
-                                            </a>
-                                            <div class="widget-popularproduct-content">
-                                                <h6><a href="product-details.html">Mario badescu bottle</a></h6>
-                                                <span>$99.99</span>
-                                            </div>
-                                        </li>
+                                         {% endfor %}
                                     </ul>
-                                    {% endfor %}
+                                    
                                 </div>
                                 <!--// Single Widget -->
 
