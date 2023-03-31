@@ -1,5 +1,7 @@
 {% comment %} {% assign current_product = product.selected_or_first_available_variant %}
 {% assign product_image = current_product.featured_image | default: product.featured_image %} {% endcomment %}
+
+{% assign selected_variant = product.selected_or_first_available_variant %}
 <style>
   .pt-3, .py-3{
     padding-top: 0px !important;
@@ -44,8 +46,8 @@
                                   
                                     
                                     <div class="col-lg-6 col-md-6 col-12">
-                                      {% form 'product', product %}
-                                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                                      {% form 'product', product, novalidate: 'novalidate' %}
+                                        <input type="hidden" name="id" value="{{ selected_variant.id }}">
                                         <div class="tm-prodetails-content">
                                             <h3 class="tm-prodetails-title">{{ product.title }}</h3>
                                             <div class="tm-rating">
@@ -62,7 +64,7 @@
                                             <p>{{ product.content }}</p>
                                           
                                           <div class="mb-3">
-                                             {% unless product.has_only_default_variant %}
+                                            {% unless product.has_only_default_variant %}
                                            <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
                                         {% for option in product.options_with_values %}
                                             <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
@@ -93,7 +95,7 @@
                                         {% endfor %}
                                     </variant-selector>
                                 {% endunless %}
-                                          </div>
+                               </div>
                                           
                                             <div class="tm-prodetails-quantitycart">
                                                 <div class="tm-quantitybox">
@@ -238,16 +240,18 @@
                             </div>
                             <!--// Product Details Description & Review -->
 
+                                        
+
                             <div class="tm-similliar-products tm-padding-section-sm-top">
                                 <h3 class="small-title">Similliar Products</h3>
                                 <div class="tm-similliar-products-slider tm-slider-arrow tm-slider-arrow-hovervisible row">
 
-                                 
-                                                                       
+                                                                     
                                 </div>
                             </div>
-
                         </div>
+
+                                        
                         <div class="col-lg-3">
                             <div class="widgets sidebar-widgets3 sticky-sidebar">
 
@@ -281,8 +285,7 @@
                                             </div>
                                         </li>
                                      {% endfor %}
-                                    </ul>
-                                 
+                                    </ul>                                
                                 </div>
                                 <!--// Single Widget -->
 
