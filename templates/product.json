@@ -10,7 +10,7 @@
     "template": {
       "type": "product-details",
       "settings": {
-        "collection": "kid"
+        "collection": "painting"
       }
     }
   },
