@@ -3,6 +3,7 @@
     "db2b2c92-8d1b-4d01-878a-268a3b61017d": {
       "type": "breadcrumb-area",
       "settings": {
+        "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
         "breadcrumb-header": "Product Details"
       }
     },
