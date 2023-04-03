@@ -1,0 +1,27 @@
+{% unless settings.shipping_calculator == 'Disabled' %}
+<div id="shipping-calculator">
+  <h3>{{ settings.shipping_calculator_heading | default: 'Get shipping estimates' }}</h3>
+  <div>
+    <p class="field">
+      <label for="address_country">Country</label>
+      <select id="address_country" name="address[country]" data-default="{% if shop.customer_accounts_enabled and customer %}{{ customer.default_address.country }}{% elsif settings.shipping_calculator_default_country != '' %}{{ settings.shipping_calculator_default_country }}{% endif %}">{{ country_option_tags }}</select>
+    </p>
+    <p class="field" id="address_province_container" style="display:none;">
+      <label for="address_province" id="address_province_label">Province</label>
+      <select id="address_province" name="address[province]" data-default="{% if shop.customer_accounts_enabled and customer and customer.default_address.province != '' %}{{ customer.default_address.province }}{% endif %}"></select>
+    </p>
+    <p class="field">
+      <label for="address_zip">Zip/Postal Code</label>
+      <input type="text" id="address_zip" name="address[zip]"{% if shop.customer_accounts_enabled and customer %} value="{{ customer.default_address.zip }}"{% endif %} />
+    </p>
+    <p class="field">
+      <input type="button" class="get-rates btn button" value="{{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' }}" />
+    </p>
+  </div>
+  <div id="wrapper-response">
+    {% comment %} Price: {{ shipping_method.price | money }} {% endcomment %}
+  </div>
+</div>
+{% endunless %}
+ 
+<img src="data&colon;image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20id%3D%22shipping-calculator-response-template%22%20type%3D%22text%2Ftemplate%22%3E%0A%20%20%7B%25%20raw%20%25%7D%0A%20%20%3Cwp-p%20id%3D%22shipping-rates-feedback%22%20%7B%7B%23if%20success%7D%7D%20class%3D%22success%22%20%7B%7Belse%7D%7D%20class%3D%22error%22%20%7B%7B%2Fif%7D%7D%3E%0A%20%20%7B%7B%23if%20success%7D%7D%0A%20%20%20%20%7B%7B%23if%20rates%7D%7D%0A%20%20%20%20%20%20%3Cspan%3E%20%3Cstrong%3E%20Here%20are%20some%20available%20shipping%20method%20%3C%2Fstrong%3E%3C%2Fspan%3E%3C%2Fwp-br%3E%0A%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%7B%7B%23rates%7D%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%7B%7Bname%7D%7D%3A%20%3Cstrong%3E%20%7B%7Bprice%7D%7D%20%3C%2Fstrong%3E%20%3C%2Fli%3E%0A%0A%20%20%20%20%20%20%7B%7B%2Frates%7D%7D%0A%20%20%20%20%20%20%3C%2Ful%3E%0A%20%20%20%20%7B%7Belse%7D%7D%0A%20%20%20%20%20%20We%20do%20not%20ship%20to%20this%20destination.%0A%20%20%20%20%7B%7B%2Fif%7D%7D%0A%20%20%7B%7Belse%7D%7D%0A%20%20%20%20%7B%7B%20errorFeedback%20%7D%7D%0A%20%20%7B%7B%2Fif%7D%7D%0A%20%20%3C%2Fwp-p%3E%0A%20%20%7B%25%20endraw%20%25%7D%0A%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="&lt;script&gt;" title="&lt;script&gt;" />
