@@ -258,13 +258,11 @@
                                 <!-- Single Widget -->
                                 <div class="single-widget widget-categories">
                                     <h5 class="widget-title">Categories</h5>
+                                 
                                     <ul>
-                                        <li><a href="#">Electronic Devices <span>25</span></a></li>
-                                        <li><a href="#">Electronic Accessories <span>34</span></a></li>
-                                        <li><a href="#">Health & Beauty <span>12</span></a></li>
-                                        <li><a href="#">Babies & Toys <span>28</span></a></li>
-                                        <li><a href="#">Home & Lifestyle <span>30</span></a></li>
-                                        <li><a href="#">Sports & Outdoor <span>08</span></a></li>
+                                       {% for collection in collections %}
+                                        <li><a href="#">{{ collection.all_types }} <span>25</span></a></li>
+                                      {% endfor %}
                                     </ul>
                                 </div>
                                 <!--// Single Widget -->
