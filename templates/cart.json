@@ -6,9 +6,15 @@
         "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
         "breadcrumb-header": "Shopping Cart"
       }
+    },
+    "2b6333cc-7020-4b0c-b503-e6ae80cf9be7": {
+      "type": "cart",
+      "settings": {
+      }
     }
   },
   "order": [
-    "breadcrumb-area"
+    "breadcrumb-area",
+    "2b6333cc-7020-4b0c-b503-e6ae80cf9be7"
   ]
 }
