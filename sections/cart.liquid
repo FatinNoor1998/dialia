@@ -4,7 +4,7 @@
             <!-- Shopping Cart Area -->
             <div class="tm-section shopping-cart-area bg-white tm-padding-section">
                 <div class="container">
-                   <form action="{{ routes.cart_url }}"
+                   <form action="{{ routes.cart_url }}" method="POST" novalidate>
                     <!-- Shopping Cart Table -->
                     <div class="tm-cart-table table-responsive">
                         <table class="table table-bordered mb-0">
@@ -19,14 +19,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                              {% for item in cart.items %}
                                 <tr>
                                     <td>
-                                        <a href="{{  }}" class="tm-cart-productimage">
-                                            <img src="assets/images/product/thumbnail/product-image-1.jpg" alt="product image">
+                                        <a href="{{ item.url }}" class="tm-cart-productimage">
+                                            <img src="{{ item.image | img_url: 'small'}}" alt="{{ item.title | escape }}">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="product-details.html" class="tm-cart-productname">Latest Smartwatch
+                                        <a href="{{ item.url }}" class="tm-cart-productname">Latest Smartwatch
                                             H-250
                                             2018</a>
                                     </td>
@@ -43,29 +44,7 @@
                                         <button class="tm-cart-removeproduct"><i class="zmdi zmdi-close"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <a href="product-details.html" class="tm-cart-productimage">
-                                            <img src="assets/images/product/thumbnail/product-image-2.jpg" alt="product image">
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="product-details.html" class="tm-cart-productname">Awesome Minimal
-                                            Flower Tub</a>
-                                    </td>
-                                    <td class="tm-cart-price">$75.00</td>
-                                    <td>
-                                        <div class="tm-quantitybox">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="tm-cart-totalprice">$75.00</span>
-                                    </td>
-                                    <td>
-                                        <button class="tm-cart-removeproduct"><i class="zmdi zmdi-close"></i></button>
-                                    </td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
