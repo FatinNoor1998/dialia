@@ -29,7 +29,7 @@
                                     <td>
                                         <a href="{{ item.url }}" class="tm-cart-productname">{{ item.product.title }}</a>
                                     </td>
-                                    <td class="tm-cart-price">$75.00</td>
+                                    <td class="tm-cart-price">{{ item.line_price | money }}</td>
                                     <td>
                                         <div class="tm-quantitybox">
                                             <input type="text" value="1">
