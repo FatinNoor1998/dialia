@@ -32,7 +32,7 @@
                                     <td class="tm-cart-price">{{ item.line_price | money }}</td>
                                     <td>
                                         <div class="tm-quantitybox">
-                                            <input type="text" value="1">
+                                            <input type="number" value="{{ item.quantity }}" name="updates[]" min="1" id="updates_{{ forloop.index }}">
                                         </div>
                                     </td>
                                     <td>
