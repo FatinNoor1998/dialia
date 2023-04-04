@@ -58,7 +58,6 @@
                         {% render 'pagination', pagination: paginate %}
                       {% endpaginate %}
                             </div>
-
                         </div>
                         <div class="col-lg-3 col-12">
                             <div class="sticky-sidebar">
@@ -158,7 +157,24 @@
   {
     "name": "all-products",
     "settings": [
-      
+       {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "default": 12,
+      "label": "Products Per Page"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Column per page"
+    }
     ],
     "presets": [
     {
