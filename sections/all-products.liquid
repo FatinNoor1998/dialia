@@ -10,7 +10,7 @@
                                 <form action="#" class="tm-shop-header">
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
                                     {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
-                                    <div class="collection-sort" x-data="{
+                                    <div class="collection_sort" x-data="{
                                       sort: '{{ sort_by }}',
                                       sortCollection(){
                                       fetch('/collection/{{ collection.handle }}?sort_by=' + this.sort)
