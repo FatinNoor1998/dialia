@@ -9,14 +9,18 @@
                             <div class="sticky-sidebar">
                                 <form action="#" class="tm-shop-header">
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
-                                         {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+                                         
     
         <script>
-
+          document.querySelector('#sort-by').addEventListener('onchange', myfunction);
+          function myfunction(){
+            let a = document.querySelector('#sort-by').value;
+             console.log(a);
+            
+          }
 
         </script>
-      
-  
+      {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
         <select id="sort-by" x-model="sort">
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
@@ -24,11 +28,7 @@
             </option>
           {% endfor %}
         </select>
-        
-    
-                                  
-
-          
+              
                                 </form>
                               {% paginate collection.products by section.settings.products_per_page %}
                                 <div class="tm-shop-products">
