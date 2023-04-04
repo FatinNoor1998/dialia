@@ -21,13 +21,14 @@
 
                                       let html_dom = html_div.querySelector('.tm-shop-products').innerHTML;
                                       document.querySelector('.tm-shop-products').innerHTML = html_dom;
+                                      // update url without refreshing the page
+                                      history.replaceState(null, null, '?sort_by=' + this.sort);
                                       })
+                                      .catch(error => console.error('Error:', error))
                                       }
                                       
                                     }">
-                                      <select id="sort-by">
-                                        
-                                      
+                                      <select id="sort-by" x-model="sort" @change="sortCollection()">                                                                            
                                         {% for option in collection.sort_options %}
                                           <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
                                             {{ option.name }}
