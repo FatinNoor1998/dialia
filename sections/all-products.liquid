@@ -34,7 +34,7 @@
         
       
   
-        <select id="sort-by" x-model="sort" @change="sortCollection()" class="py-3 px-4 my-3 border border-black">
+        <select id="sort-by" x-model="sort" @onchange="sortCollection()" class="py-3 px-4 my-3 border border-black">
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
               {{ option.name }}
