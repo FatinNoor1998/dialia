@@ -22,7 +22,7 @@
         </script>
       
   
-        <select id="sort-by" x-model="sort" onchange=" sortCollection()">
+        <select id="sort-by" x-model="sort">
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
               {{ option.name }}
