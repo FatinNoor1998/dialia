@@ -15,7 +15,7 @@
           
           sort: '{{ sort_by }}',
           sortCollection(){
-            this.loading = true;
+         
             fetch('/collections/{{ collection.handle }}?sort_by=' + this.sort)
               .then(response => response.text())
               .then(data => {
