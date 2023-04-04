@@ -11,7 +11,7 @@
       "type": "all-products",
       "settings": {
         "products_per_page": 9,
-        "collection": "puma"
+        "collection": "adidas"
       }
     }
   },
