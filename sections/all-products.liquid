@@ -105,38 +105,23 @@
                                     <!--// Single Widget -->
 
                                     <!-- Single Widget -->
-                                    <div class="single-widget widget-popularproduct">
-                                        <h5 class="widget-title">Popular Product</h5>
-                                        <ul>
-                                            <li>
-                                                <a href="product-details.html" class="widget-popularproduct-image">
-                                                    <img src="assets/images/product/thumbnail/product-image-1.jpg" alt="product thumbnail">
-                                                </a>
-                                                <div class="widget-popularproduct-content">
-                                                    <h6><a href="product-details.html">Brown liquid inside</a></h6>
-                                                    <span>$20.00</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="product-details.html" class="widget-popularproduct-image">
-                                                    <img src="assets/images/product/thumbnail/product-image-2.jpg" alt="product thumbnail">
-                                                </a>
-                                                <div class="widget-popularproduct-content">
-                                                    <h6><a href="product-details.html">Top of amber bottle</a></h6>
-                                                    <span>$35.99</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="product-details.html" class="widget-popularproduct-image">
-                                                    <img src="assets/images/product/thumbnail/product-image-3.jpg" alt="product thumbnail">
-                                                </a>
-                                                <div class="widget-popularproduct-content">
-                                                    <h6><a href="product-details.html">Mario badescu bottle</a></h6>
-                                                    <span>$99.99</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    {% assign products = collections[section.settings.collection].products | sort: 'best-sellers' %}
+                                <div class="single-widget widget-popularproduct">
+                                    <h5 class="widget-title">Popular Product</h5>
+                                    <ul>
+                                      {% for product in products %}
+                                        <li>
+                                            <a href="product-details.html" class="widget-popularproduct-image">
+                                                <img src="{{ product.featured_image | img_url: 'master'}}" alt="{{ product.featured_image.alt }}">
+                                            </a>
+                                            <div class="widget-popularproduct-content">
+                                                <h6><a href="{{ product.url }}">{{ product.title }}</a></h6> 
+                                                <span>{{ product.price | money}}</span>
+                                            </div>
+                                        </li>
+                                     {% endfor %}
+                                    </ul>                                
+                                </div>
                                     <!--// Single Widget -->
 
                                 </div>
