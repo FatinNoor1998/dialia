@@ -12,7 +12,7 @@
                                          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
       <div class="collection__sort flex justify-end" 
         x-data="{
-          loading: false,
+          
           sort: '{{ sort_by }}',
           sortCollection(){
             this.loading = true;
@@ -28,13 +28,13 @@
                 history.replaceState(null, null, '?sort_by=' + this.sort);
               })
               .catch(error => console.error('Error:', error))
-              .finally(() => this.loading = false);
+              
           }
         }">
         
       
   
-        <select id="sort-by" x-model="sort" onchange="sortCollection()" class="py-3 px-4 my-3 border border-black">
+        <select id="sort-by" x-model="sort" onchange="sortCollection" class="py-3 px-4 my-3 border border-black">
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
               {{ option.name }}
