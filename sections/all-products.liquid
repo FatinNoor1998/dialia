@@ -6,9 +6,9 @@
                     <div class="row">
                       
                     
-                        
+                    {% paginate collection.products by 6 %}              
                         <div class="col-lg-9 col-12">
-                            {% paginate collection.products by 6 %}
+
                             <div class="sticky-sidebar">
                                 <form action="#" class="tm-shop-header">
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
@@ -57,9 +57,10 @@
                                     </div>
                                 </div>
                             </div>
-                          {% render 'pagination', pagination: paginate %}
-                      {% endpaginate %}
+
                         </div>
+                        {% render 'pagination', pagination: paginate %}
+                      {% endpaginate %}
                         <div class="col-lg-3 col-12">
                             <div class="sticky-sidebar">
                                 <div class="widgets">
