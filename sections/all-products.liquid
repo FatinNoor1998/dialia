@@ -10,28 +10,12 @@
 <!--                                 <form action="#" class="tm-shop-header"> -->
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
                                          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
-      <div class="collection__sort flex justify-end" 
-        x-data="{
-          
-          sort: '{{ sort_by }}',
-          sortCollection(){
-         
-            fetch('/collections/{{ collection.handle }}?sort_by=' + this.sort)
-              .then(response => response.text())
-              .then(data => {
-                let html_div = document.createElement('div');
-                html_div.innerHTML = data;
-  
-                let html_dom = html_div.querySelector('.tm-shop-products').innerHTML;
-                document.querySelector('.tm-shop-products').innerHTML = html_dom;
-                // update url without refreshing the page 
-                history.replaceState(null, null, '?sort_by=' + this.sort);
-              })
-              .catch(error => console.error('Error:', error))
-              
-          }
-        }">
-        
+    
+        <script>
+          document.querySelector('#sort-by').addEventListener('onchange', function() {
+              alert(this.value);
+            }, false);
+        </script>
       
   
         <select id="sort-by" x-model="sort" onchange=" sortCollection()">
