@@ -7,7 +7,7 @@
                         <div class="col-lg-9 col-12">
                             
                             <div class="sticky-sidebar">
-<!--                                 <form action="#" class="tm-shop-header"> -->
+                                <form action="#" class="tm-shop-header">
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
                                          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
     
@@ -26,11 +26,11 @@
           {% endfor %}
         </select>
         
-      </div>
+    
                                   
 
           
-<!--                                 </form> -->
+                                </form>
                               {% paginate collection.products by section.settings.products_per_page %}
                                 <div class="tm-shop-products">
                                     <div class="row mt-30-reverse">
