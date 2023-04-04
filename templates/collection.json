@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "breadcrumb-area": {
+      "type": "breadcrumb-area",
+      "settings": {
+      }
+    },
+    "all-products": {
+      "type": "all-products",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "breadcrumb-area",
+    "all-products"
+  ]
+}
