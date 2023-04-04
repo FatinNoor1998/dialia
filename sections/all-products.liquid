@@ -9,33 +9,42 @@
                             <div class="sticky-sidebar">
                                 <form action="#" class="tm-shop-header">
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
-                                    {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
-                                    <div class="collection_sort" x-data="{
-                                      sort: '{{ sort_by }}',
-                                      sortCollection(){
-                                      fetch('/collection/{{ collection.handle }}?sort_by=' + this.sort)
-                                      .then(response => response.text())
-                                      .then(data => {
-                                      let html_div = document.createElement('div');
-                                      html_div.innerHTML = data;
-
-                                      let html_dom = html_div.querySelector('.tm-shop-products').innerHTML;
-                                      document.querySelector('.tm-shop-products').innerHTML = html_dom;
-                                      // update url without refreshing the page
-                                      history.replaceState(null, null, '?sort_by=' + this.sort);
-                                      })
-                                      .catch(error => console.error('Error:', error))
-                                      }
+                                      <select id="sort-by">
+                                        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
                                       
-                                    }">
-                                      <select id="sort_by" x-model="sort" @change="sortCollection()">                                                                            
                                         {% for option in collection.sort_options %}
                                           <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
                                             {{ option.name }}
                                           </option>
                                         {% endfor %}
                                       </select>
-                                    </div>
+                                      
+                                      <script>
+                                        Shopify.queryParams = {};
+                                      
+                                        // Preserve existing query parameters
+                                        if (location.search.length) {
+                                          var params = location.search.substr(1).split('&');
+                                      
+                                          for (var i = 0; i < params.length; i++) {
+                                            var keyValue = params[i].split('=');
+                                      
+                                            if (keyValue.length) {
+                                              Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+                                            }
+                                          }
+                                        }
+                                      
+                                        // Update sort_by query parameter on select change
+                                        document.querySelector('#sort-by').addEventListener('change', function(e) {
+                                          var value = e.target.value;
+                                      
+                                          Shopify.queryParams.sort_by = value;
+                                          location.search = new URLSearchParams(Shopify.queryParams).toString();
+                                        });
+                                      </script>
+
+
                                       
                                 </form>
                               {% paginate collection.products by section.settings.products_per_page %}
