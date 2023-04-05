@@ -4,6 +4,7 @@
             <div class="tm-section blogs-area bg-whtie tm-padding-section">
                 <div class="container">
                     <div class="row">
+                      {% for article in articles %}
                         <div class="col-lg-8">
                             <div class="sticky-sidebar">
                                 <div class="tm-blog blogitem">
@@ -163,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-
+              {% endfor %}
                         <div class="col-lg-4">
                             <div class="sticky-sidebar">
                                 <div class="widgets widgets-blog">
