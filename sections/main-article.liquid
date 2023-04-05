@@ -61,11 +61,11 @@
                                     <div class="blogitem-comments mt-50">
                                     
                                      {% if article.comments_count > 0 %}
-                                       {% for comment in article.comments %}
+                                      
                                         <h5 class="small-title">Comments ({{ article.comments_count }})</h5>
 
                                         <div class="tm-comment-wrapper">
-
+                                      {% for comment in article.comments %}
                                             <!-- Comment Single -->
                                             <div class="tm-comment">
                                                 <div class="tm-comment-thumb">
@@ -80,9 +80,9 @@
                                                 </div>
                                             </div>
                                             <!--// Comment Single -->
-
-                                        </div>
                                          {% endfor %}
+                                        </div>
+                                        
                                        {% endif %}
 
                                     </div>
