@@ -22,8 +22,9 @@
                                      </form>
                                                     
 <script>
+ sort: '{{ sort_by }}';
   document.getElementById('sort-by').onchange = ()=> {
-            fetch('/collections/{{ collection.handle }}?sort_by=' + {{ sort_by }})
+            fetch('/collections/{{ collection.handle }}?sort_by=' + this.sort)
               .then(response => response.text())
               .then(data => {
                 let html_div = document.createElement('div');
