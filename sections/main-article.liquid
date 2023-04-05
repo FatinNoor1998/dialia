@@ -91,14 +91,15 @@
                                     <!-- Blogitem Commentbox -->
                                     <div class="blogitem-commentbox mt-50">
                                         <h5 class="small-title">Leave a Comment </h5>
-                                        <form action="#" class="tm-commentbox">
+                                      {% form 'new_comment', article, class:'tm-commentbox' %}
+                                        
                                             <div class="tm-commentbox-singlefield">
                                                 <p>Your email address will not be published. Required fields are
                                                     marked *</p>
                                             </div>
                                             <div class="tm-commentbox-singlefield w-33">
-                                                <label for="tm-comment-namefield">Name*</label>
-                                                <input type="text" id="tm-comment-namefield">
+                                                <label for="comment_author">Name*</label>
+                                                <input type="text" id="tm-comment-namefield comment_author" name="comment[author]" required>
                                             </div>
                                             <div class="tm-commentbox-singlefield w-33">
                                                 <label for="tm-comment-email">Email*</label>
@@ -116,7 +117,7 @@
                                             <div class="tm-commentbox-singlefield">
                                                 <button type="submit" class="tm-button tm-button-dark">Post Comment</button>
                                             </div>
-                                        </form>
+                                       {% endform %}
                                     </div>
                                     <!--// Blogitem Commentbox -->
                                 </div>
