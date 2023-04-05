@@ -5,167 +5,30 @@
                 <div class="container">
                     <div class="row tm-blog-list blog-masonry-active mt-50-reverse">
 
+                      {% for article in blog.articles %}
                         <!-- Single Blog -->
                         <div class="col-lg-6 blog-masonry-item">
                             <div class="tm-blog mt-50">
                                 <div class="tm-blog-top">
-                                    <a href="blog-details.html">
-                                        <img src="assets/images/blog/post-image/blog-post-image-1.jpg" alt="blog image">
+                                    <a href="{{ article.url }}">
+                                        <img src="{{ article.image }}" alt="{{ article.image.alt }}">
                                     </a>
-                                    <span class="tm-blog-date">18 Nov, 2019</span>
+                                    <span class="tm-blog-date">{{ article.created_at }}</span>
                                 </div>
                                 <div class="tm-blog-bottom">
                                     <div class="tm-blog-meta">
                                         <span><a href="blog.html"><i class="zmdi zmdi-account"></i> Admin</a></span>
-                                        <span><a href="blog-details.html"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
+                                        <span><a href="#"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
                                         <span><a href="blog.html"><i class="zmdi zmdi-folder"></i> Services</a></span>
                                     </div>
-                                    <h5 class="tm-blog-title"><a href="blog-details.html">Positive Effects of massage is the
-                                            complementary and alternative treatment that uses massage therapy</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt utlabore etdolore magna aliqua. Ut enim admin.</p>
-                                    <a href="blog-details.html" class="tm-button tm-button-dark">Read more</a>
+                                    <h5 class="tm-blog-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                                    <p>{{ article.content }}</p>
+                                    <a href="{{ article.url }}" class="tm-button tm-button-dark">Read more</a>
                                 </div>
                             </div>
                         </div>
                         <!--// Single Blog -->
-
-                        <!-- Single Blog -->
-                        <div class="col-lg-6 blog-masonry-item">
-                            <div class="tm-blog mt-50">
-                                <div class="tm-blog-top">
-                                    <div class="blogitem-imageslider tm-slider-arrow">
-                                        <a href="blog-details-gallery.html" class="blogitem-imageslider-image">
-                                            <img src="assets/images/blog/post-image/blog-post-image-2.jpg" alt="blog image">
-                                        </a>
-                                        <a href="blog-details-gallery.html" class="blogitem-imagesalider-image">
-                                            <img src="assets/images/blog/post-image/blog-post-image-3.jpg" alt="blog image">
-                                        </a>
-                                        <a href="blog-details-gallery.html" class="blogitem-imageslider-image">
-                                            <img src="assets/images/blog/post-image/blog-post-image-4.jpg" alt="blog image">
-                                        </a>
-                                    </div>
-                                    <span class="tm-blog-date">18 Nov, 2019</span>
-                                </div>
-                                <div class="tm-blog-bottom">
-                                    <div class="tm-blog-meta">
-                                        <span><a href="blog.html"><i class="zmdi zmdi-account"></i> Admin</a></span>
-                                        <span><a href="blog-details-gallery.html"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
-                                        <span><a href="blog.html"><i class="zmdi zmdi-folder"></i> Services</a></span>
-                                    </div>
-                                    <h5 class="tm-blog-title"><a href="blog-details-gallery.html">Back pain is defined as pain
-                                            affecting
-                                            the lower lumber region of the spine</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt utlabore etdolore magna aliqua. Ut enim admin.</p>
-                                    <a href="blog-details-gallery.html" class="tm-button tm-button-dark">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--// Single Blog -->
-
-                        <!-- Single Blog -->
-                        <div class="col-lg-6 blog-masonry-item">
-                            <div class="tm-blog mt-50">
-                                <div class="tm-blog-top">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Sv511KEiIJQ"
-                                            allowfullscreen></iframe>
-                                    </div>
-                                    <span class="tm-blog-date">18 Nov, 2019</span>
-                                </div>
-                                <div class="tm-blog-bottom">
-                                    <div class="tm-blog-meta">
-                                        <span><a href="blog.html"><i class="zmdi zmdi-account"></i> Admin</a></span>
-                                        <span><a href="blog-details-video.html"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
-                                        <span><a href="blog.html"><i class="zmdi zmdi-folder"></i> Services</a></span>
-                                    </div>
-                                    <h5 class="tm-blog-title"><a href="blog-details-video.html">Back pain is defined as pain
-                                            affecting
-                                            the lower lumber region of the spine</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt utlabore etdolore magna aliqua. Ut enim admin.</p>
-                                    <a href="blog-details-video.html" class="tm-button tm-button-dark">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--// Single Blog -->
-
-                        <!-- Single Blog -->
-                        <div class="col-lg-6 blog-masonry-item">
-                            <div class="tm-blog mt-50">
-                                <div class="tm-blog-top">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/519580935&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-                                    </div>
-                                    <span class="tm-blog-date">18 Nov, 2019</span>
-                                </div>
-                                <div class="tm-blog-bottom">
-                                    <div class="tm-blog-meta">
-                                        <span><a href="blog.html"><i class="zmdi zmdi-account"></i> Admin</a></span>
-                                        <span><a href="blog-details-audio.html"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
-                                        <span><a href="blog.html"><i class="zmdi zmdi-folder"></i> Services</a></span>
-                                    </div>
-                                    <h5 class="tm-blog-title"><a href="blog-details-audio.html">Primary techniques used in
-                                            Physiotherapy</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt utlabore etdolore magna aliqua. Ut enim admin.</p>
-                                    <a href="blog-details-audio.html" class="tm-button tm-button-dark">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--// Single Blog -->
-
-                        <!-- Single Blog -->
-                        <div class="col-lg-6 blog-masonry-item">
-                            <div class="tm-blog mt-50">
-                                <div class="tm-blog-top">
-                                    <a href="blog-details.html">
-                                        <img src="assets/images/blog/post-image/blog-post-image-3.jpg" alt="blog image">
-                                    </a>
-                                    <span class="tm-blog-date">18 Nov, 2019</span>
-                                </div>
-                                <div class="tm-blog-bottom">
-                                    <div class="tm-blog-meta">
-                                        <span><a href="blog.html"><i class="zmdi zmdi-account"></i> Admin</a></span>
-                                        <span><a href="blog-details.html"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
-                                        <span><a href="blog.html"><i class="zmdi zmdi-folder"></i> Services</a></span>
-                                    </div>
-                                    <h5 class="tm-blog-title"><a href="blog-details.html">Aromatherapy uses plant materials and
-                                            other aroma compounds for improving psychological.</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt utlabore etdolore magna aliqua. Ut enim admin.</p>
-                                    <a href="blog-details.html" class="tm-button tm-button-dark">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--// Single Blog -->
-
-                        <!-- Single Blog -->
-                        <div class="col-lg-6 blog-masonry-item">
-                            <div class="tm-blog mt-50">
-                                <div class="tm-blog-top">
-                                    <a href="blog-details.html">
-                                        <img src="assets/images/blog/post-image/blog-post-image-4.jpg" alt="blog image">
-                                    </a>
-                                    <span class="tm-blog-date">18 Nov, 2019</span>
-                                </div>
-                                <div class="tm-blog-bottom">
-                                    <div class="tm-blog-meta">
-                                        <span><a href="blog.html"><i class="zmdi zmdi-account"></i> Admin</a></span>
-                                        <span><a href="blog-details.html"><i class="zmdi zmdi-comments"></i> Comments (0)</a></span>
-                                        <span><a href="blog.html"><i class="zmdi zmdi-folder"></i> Services</a></span>
-                                    </div>
-                                    <h5 class="tm-blog-title"><a href="blog-details.html">Aromatherapy uses plant materials and
-                                            other aroma.</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt utlabore etdolore magna aliqua. Ut enim admin.</p>
-                                    <a href="blog-details.html" class="tm-button tm-button-dark">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--// Single Blog -->
-
+                        {% endfor %}
                     </div>
 
                     <div class="tm-pagination mt-50">
