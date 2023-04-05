@@ -164,7 +164,7 @@
                                             {%- for article in blogs[section.settings.blog].articles -%}
                                             <li>
                                                 <a href="blog-details.html" class="widget-recentpost-image">
-                                                    <img src="{{ article.image | image_url }}" alt="blog thumbnail">
+                                                    <img src="{{ article.image | image_url }}" alt="{{ article.image.alt }}">
                                                 </a>
                                                 <div class="widget-recentpost-content">
                                                     <h6><a href="blog-details.html">{{ article.title }}</a></h6>
