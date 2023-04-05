@@ -23,14 +23,19 @@
                                                     
 <script>
   document.getElementById('sort-by').onchange = ()=> {
-    var select = document.getElementById('sort-by');
-    var sortOption = select.options[select.selectedIndex].value;
-    var url = window.location.href;
-    var baseUrl = url.split('?')[0];
-    var query = url.split('?')[1];
-    var params = new URLSearchParams(query);
-    params.set('sort_by', sortOption);
-    window.location.href = baseUrl + '?' + params.toString();
+            fetch('/collections/{{ collection.handle }}?sort_by=' + {{ sort_by }})
+              .then(response => response.text())
+              .then(data => {
+                let html_div = document.createElement('div');
+                html_div.innerHTML = data;
+  
+                let html_dom = html_div.querySelector('.tm-shop-products').innerHTML;
+                document.querySelector('.tm-shop-products').innerHTML = html_dom;
+                // update url without refreshing the page 
+                history.replaceState(null, null, '?sort_by=' + this.sort);
+              })
+              .catch(error => console.error('Error:', error));
+          }
   };
 </script>
 
