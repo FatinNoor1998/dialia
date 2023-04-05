@@ -181,7 +181,7 @@
                                     <div class="single-widget widget-tags">
                                         <h5 class="widget-title">Tags</h5>
                                         <ul>
-                                          {% for article in articles %}
+                                          {% for tag in article.tags %}
                                             <li><a href="blog.html">{{ article.tags }}</a></li>
                                             {% endfor %}
                                         </ul>
