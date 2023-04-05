@@ -22,7 +22,7 @@
                                      </form>
                                                     
 <script>
-  document.getElementById('sort-by').addEventListener('change', function () {
+  document.getElementById('sort-by').onchange = ()=> {
     var select = document.getElementById('sort-by');
     var sortOption = select.options[select.selectedIndex].value;
     var url = window.location.href;
@@ -31,7 +31,7 @@
     var params = new URLSearchParams(query);
     params.set('sort_by', sortOption);
     window.location.href = baseUrl + '?' + params.toString();
-  });
+  };
 </script>
 
 
