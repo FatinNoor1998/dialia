@@ -59,6 +59,9 @@
                                   {% if blog.comments_enabled? %}
                                     <!-- Blogitem Comments -->
                                     <div class="blogitem-comments mt-50">
+                                    
+                                     {% if article.comments_count > 0 %}
+                                       
                                         <h5 class="small-title">Comments (2)</h5>
 
                                         <div class="tm-comment-wrapper">
@@ -85,6 +88,7 @@
                                             <!--// Comment Single -->
 
                                         </div>
+                                       {% endif %}
 
                                     </div>
                                     <!--// Blogitem Comments -->
