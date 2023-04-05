@@ -161,36 +161,18 @@
                                     <div class="single-widget widget-recentpost">
                                         <h5 class="widget-title">Recent Posts</h5>
                                         <ul>
+                                            {%- for article in blogs[block.settings.blog].articles -%}
                                             <li>
                                                 <a href="blog-details.html" class="widget-recentpost-image">
-                                                    <img src="assets/images/blog/thumbnails/blog-thumbnail-1.jpg" alt="blog thumbnail">
+                                                    <img src="{{ article.image | image_url }}" alt="blog thumbnail">
                                                 </a>
                                                 <div class="widget-recentpost-content">
-                                                    <h6><a href="blog-details.html">Fundamental analysis
-                                                            services</a></h6>
-                                                    <span>August 01, 2019</span>
+                                                    <h6><a href="blog-details.html">{{ article.title }}</a></h6>
+                                                    <span>{{ article.created_at }}</span>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <a href="blog-details.html" class="widget-recentpost-image">
-                                                    <img src="assets/images/blog/thumbnails/blog-thumbnail-2.jpg" alt="blog thumbnail">
-                                                </a>
-                                                <div class="widget-recentpost-content">
-                                                    <h6><a href="blog-details.html">Steps to a successful
-                                                            Business</a></h6>
-                                                    <span>August 01, 2019</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="blog-details.html" class="widget-recentpost-image">
-                                                    <img src="assets/images/blog/thumbnails/blog-thumbnail-3.jpg" alt="blog thumbnail">
-                                                </a>
-                                                <div class="widget-recentpost-content">
-                                                    <h6><a href="#blog-details.html">Development Progress
-                                                            Conference</a></h6>
-                                                    <span>August 01, 2019</span>
-                                                </div>
-                                            </li>
+                                     {% endfor %}
+                                           
                                         </ul>
                                     </div>
                                     <!--// Single Widget -->
