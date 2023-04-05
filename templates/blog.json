@@ -3,6 +3,7 @@
     "breadcrumb-area": {
       "type": "breadcrumb-area",
       "settings": {
+        "breadcrumb-header": "Blogs"
       }
     }
   },
