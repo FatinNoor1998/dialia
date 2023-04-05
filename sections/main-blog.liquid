@@ -1,5 +1,5 @@
         <main class="main-content">
-
+       {% paginate blog.articles by section.settings.number_of_blog_posts %}
             <!-- Blog Area -->
             <div class="tm-section blogs-area bg-whtie tm-padding-section">
                 <div class="container">
@@ -180,7 +180,7 @@
                 </div>
             </div>
             <!-- Blog Area -->
-
+  {% endpaginate %}
         </main>
 
 
