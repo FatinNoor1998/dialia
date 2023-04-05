@@ -4,13 +4,15 @@
             <div class="tm-section blogs-area bg-whtie tm-padding-section">
                 <div class="container">
                     <div class="row">
+                      
                       {% for article in articles %}
+                        
                         <div class="col-lg-8">
                             <div class="sticky-sidebar">
                                 <div class="tm-blog blogitem">
                                     <div class="tm-blog-top">
-                                        <img src="assets/images/blog/post-image/blog-post-image-1.jpg" alt="blog image">
-                                        <span class="tm-blog-date">18 Nov, 2019</span>
+                                        <img src="{{ article.image | link_to: article.url }}" alt="blog image">
+                                        <span class="tm-blog-date"></span>
                                     </div>
                                     <div class="tm-blog-bottom">
                                         <div class="tm-blog-meta">
@@ -165,6 +167,8 @@
                             </div>
                         </div>
               {% endfor %}
+
+                      
                         <div class="col-lg-4">
                             <div class="sticky-sidebar">
                                 <div class="widgets widgets-blog">
