@@ -6,9 +6,15 @@
         "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
         "breadcrumb-header": "Blog Details"
       }
+    },
+    "9aa675d2-299d-40b9-987c-5f48d565bc2b": {
+      "type": "main-article",
+      "settings": {
+      }
     }
   },
   "order": [
-    "breadcrumb-area"
+    "breadcrumb-area",
+    "9aa675d2-299d-40b9-987c-5f48d565bc2b"
   ]
 }
