@@ -5,6 +5,7 @@
                 <div class="container">
                     <div class="row tm-blog-list blog-masonry-active mt-50-reverse">
 
+                      {% for blog in blogs %}
                       {% for article in blog.articles %}
                         <!-- Single Blog -->
                         <div class="col-lg-6 blog-masonry-item">
@@ -28,6 +29,7 @@
                             </div>
                         </div>
                         <!--// Single Blog -->
+                        {% endfor %}
                         {% endfor %}
                     </div>
 
