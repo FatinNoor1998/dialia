@@ -13,7 +13,7 @@
                                     <a href="{{ article.url }}">
                                         <img src="{{ article.image | img_url: "large" }}" alt="{{ article.image.alt }}">
                                     </a>
-                                    <span class="tm-blog-date">{{ article.created_at }}</span>
+                                    <span class="tm-blog-date">{{ article.created_at | date:"%e, %b, %Y" }}</span>
                                 </div>
                                 <div class="tm-blog-bottom">
                                     <div class="tm-blog-meta">
