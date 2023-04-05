@@ -26,13 +26,10 @@
           constructor() {
             super();
             this.onchange = (e)=> {
-            this.onTargetChange();
+               var value = e.target.value;
+              console.log(value);
             }
           }
-           onTargetChange(){
-             	var value = this.target.value;
-                console.log(value);
-           }
           
       
         }
