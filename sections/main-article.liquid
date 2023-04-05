@@ -4,15 +4,13 @@
             <div class="tm-section blogs-area bg-whtie tm-padding-section">
                 <div class="container">
                     <div class="row">
-                      
-                      
-                        
+                            
                         <div class="col-lg-8">
                             <div class="sticky-sidebar">
                                 <div class="tm-blog blogitem">
                                     <div class="tm-blog-top">
                                         <img src="{{ article.image | img_url: "large" }}" alt="{{ article.image.alt }}">
-                                        <span class="tm-blog-date"></span>
+                                        <span class="tm-blog-date">{{ article.created_at | date:"%e, %b, %Y" }}</span>
                                     </div>
                                     <div class="tm-blog-bottom">
                                         <div class="tm-blog-meta">
