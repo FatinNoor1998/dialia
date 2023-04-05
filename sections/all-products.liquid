@@ -21,8 +21,17 @@
                                             </select>                                                         
                                      </form>
                                                     
-    <script>
-
+<script>
+  document.getElementById('sort-by').addEventListener('change', function () {
+    var select = document.getElementById('sort-by');
+    var sortOption = select.options[select.selectedIndex].value;
+    var url = window.location.href;
+    var baseUrl = url.split('?')[0];
+    var query = url.split('?')[1];
+    var params = new URLSearchParams(query);
+    params.set('sort_by', sortOption);
+    window.location.href = baseUrl + '?' + params.toString();
+  });
 </script>
 
 
