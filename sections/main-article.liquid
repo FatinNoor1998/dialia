@@ -192,12 +192,14 @@
                                     <div class="single-widget widget-archives">
                                         <h5 class="widget-title">Archives</h5>
                                         <ul>
-                                            <li><a href="blog.html">January 2019</a></li>
-                                            <li><a href="blog.html">March 2019</a></li>
+                                          {% for article in blog.articles %}
+                                            <li><a href="blog.html">{{ article.created_at }}</a></li>
+                                            {% endfor %}
+<!--                                             <li><a href="blog.html">March 2019</a></li>
                                             <li><a href="blog.html">April 2019</a></li>
                                             <li><a href="blog.html">July 2019</a></li>
                                             <li><a href="blog.html">September 2019</a></li>
-                                            <li><a href="blog.html">October 2019</a></li>
+                                            <li><a href="blog.html">October 2019</a></li> -->
                                         </ul>
                                     </div>
                                     <!--// Single Widget -->
