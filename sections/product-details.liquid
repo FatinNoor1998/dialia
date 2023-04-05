@@ -19,7 +19,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
 
-                                        <!-- Product Details Images -->
+                <!-- Product Details Images -->
                                         <div class="tm-prodetails-images">
                                             <div class="tm-prodetails-largeimages">
                                               {% for image in product.images %}
@@ -39,12 +39,12 @@
                                               {% endfor %}
                                             </div>
                                         </div>
-                                        <!--// Product Details Images -->
+                    <!--// Product Details Images -->
 
                                     </div>
 
                                   
-                                    
+                  <!-- Product Details -->         
                                     <div class="col-lg-6 col-md-6 col-12">
                                       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
                                         <input type="hidden" name="id" value="{{ selected_variant.id }}">
@@ -135,11 +135,11 @@
                                     </div>
                                 </div>
                                   {% endform %}
-                            </div>
+                            </div>                                               
+                      <!--// Product Details --> 
+
                           
-                       
-                           
-                            <!-- Product Details Description & Review -->
+                   <!-- Product Details Description & Review -->
                             <div class="tm-prodetails-desreview tm-padding-section-sm-top">
                                 <ul class="nav tm-tabgroup2" id="prodetails" role="tablist">
                                     <li class="nav-item">
@@ -237,10 +237,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--// Product Details Description & Review -->
+                     <!--// Product Details Description & Review -->
 
                                         
-
+                    <!-- Similar products slide-->
+                          
                             <div class="tm-similliar-products tm-padding-section-sm-top">
                                 <h3 class="small-title">Similliar Products</h3>
                                 <div class="tm-similliar-products-slider tm-slider-arrow tm-slider-arrow-hovervisible row">
@@ -249,12 +250,13 @@
                                 </div>
                             </div>
                         </div>
+                 <!--// Similar products slide-->  
 
-                                        
+                      
                         <div class="col-lg-3">
                             <div class="widgets sidebar-widgets3 sticky-sidebar">
 
-                                <!-- Single Widget -->
+                     <!-- Single Widget -->
                                 <div class="single-widget widget-categories">
                                     <h5 class="widget-title">Categories</h5>
                                  
@@ -264,9 +266,10 @@
                                       {% endfor %}
                                     </ul>
                                 </div>
-                                <!--// Single Widget -->
+                       <!--// Single Widget -->
+                              
 
-                                <!-- Single Widget -->
+                       <!-- Single Widget popular products -->
                               {% assign products = collections[section.settings.collection].products | sort: 'best-sellers' %}
                                 <div class="single-widget widget-popularproduct">
                                     <h5 class="widget-title">Popular Product</h5>
@@ -284,7 +287,8 @@
                                      {% endfor %}
                                     </ul>                                
                                 </div>
-                                <!--// Single Widget -->
+                        <!--// Single Widget popular products -->
+                              
 
                                 <!-- Single Widget -->
                                 <div class="single-widget widget-size">
