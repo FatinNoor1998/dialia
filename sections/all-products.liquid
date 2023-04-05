@@ -10,92 +10,9 @@
                             <div class="sticky-sidebar">
                                 <form class="tm-shop-header filter-form">
                                     <p class="tm-shop-countview">Showing 1 to 9 of 16 </p>
-                                                  {%- for filter in collection.filters -%}
-                                                    <details class="filter-group">
-                                                      <summary class="filter-group-summary">
-                                                        <div>
-                                                          <span>{{ filter.label }}</span>
-                                                
-                                                          {%- if filter.active_values.size > 0 -%}
-                                                            <span>({{ filter.active_values.size }})</span>
-                                                          {%- endif -%}
-                                                        </div>
-                                                      </summary>
-                                                
-                                                      <div class="filter-group-display">
-                                                        <div class="filter-group-display__header">
-                                                          <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
-                                                
-                                                          {%- if filter.active_values.size > 0 -%}
-                                                            <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
-                                                          {%- endif -%}
-                                                        </div>
-                                                
-                                                        {%- case filter.type -%}
-                                                          {%- when 'boolean' or 'list' -%}
-                                                            <ul class="filter-group-display__list">
-                                                              {%- for filter_value in filter.values -%}
-                                                                <li class="filter-group-display__list-item">
-                                                                  <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
-                                                                  <input type="checkbox"
-                                                                    name="{{ filter_value.param_name }}"
-                                                                    value="{{ filter_value.value }}"
-                                                                    id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
-                                                                    {% if filter_value.active -%}checked{%- endif %}
-                                                                    {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
-                                                                  >{{ filter_value.label }}</label>
-                                                                </li>
-                                                              {%- endfor -%}
-                                                            </ul>
-                                                
-                                                            <div class="filter-group-display__submit">
-                                                              <input type="submit" value="Apply">
-                                                            </div>
-                                                        
-                                                          {%- when 'price_range' -%}
-                                                         <div class="single-widget widget-pricefilter">
-                                                              <h5 class="widget-title">Filter by Price</h5>
-                                                              <div class="widget-pricefilter-inner">
-                                                                  <div class="tm-rangeslider" data-range_min="0" data-range_max="800"
-                                                                      data-cur_min="200" data-cur_max="550">
-                                                                      <div class="tm-rangeslider-bar nst-animating"></div>
-                                                                      <span class="tm-rangeslider-leftgrip nst-animating" tabindex="0"></span>
-                                                                      <span class="tm-rangeslider-rightgrip nst-animating" tabindex="0"></span>
-                                                                  </div>
-                                                                  <div class="widget-pricefilter-actions">
-                                                                      <p class="widget-pricefilter-price">Price: $<span class="tm-rangeslider-leftlabel">200</span>
-                                                                          - $<span class="tm-rangeslider-rightlabel">500</span></p>
-                                                                      <button class="widget-pricefilter-button" type="submit">Filter</button>
-                                                                  </div> 
-                                                              </div>
-                                                          </div>                                           
-                                                        {%- endcase -%}
-                                                      </div>
-                                                    </details>
-                                                  {%- endfor -%}
-                                                
-                                                  <div class="active-filters">
-                                                    <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
-                                                
-                                                    {%- for filter in collection.filters -%}
-                                                      {%- if filter.type == "price_range" -%}
-                                                        {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-                                                          <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
-                                                            {%- assign min_value = filter.min_value.value | default: 0 -%}
-                                                            {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
-                                                            {{ min_value | money }} - {{ max_value | money }} X
-                                                          </a>
-                                                        {%- endif -%}
-                                                      {%- else -%}
-                                                        {%- for filter_value in filter.active_values -%}
-                                                          <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
-                                                            {{ filter.label }}: {{ filter_value.label }} X
-                                                          </a>
-                                                        {%- endfor -%}
-                                                      {%- endif- %}
-                                                    {%- endfor -%}
-                                                  </div>
-                                                </form>
+                                                  
+                                                 
+                                     </form>
                                                     
     
 
