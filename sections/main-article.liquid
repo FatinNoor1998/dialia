@@ -161,7 +161,7 @@
                                     <div class="single-widget widget-recentpost">
                                         <h5 class="widget-title">Recent Posts</h5>
                                         <ul>
-                                            {%- for article in blogs[section.setting.blog].articles -%}
+                                            {%- for article in blogs['Recent post'].articles -%}
                                             <li>
                                                 <a href="blog-details.html" class="widget-recentpost-image">
                                                     <img src="{{ article.image | image_url }}" alt="blog thumbnail">
