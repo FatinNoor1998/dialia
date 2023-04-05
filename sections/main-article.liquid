@@ -168,7 +168,7 @@
                                                 </a>
                                                 <div class="widget-recentpost-content">
                                                     <h6><a href="blog-details.html">{{ article.title }}</a></h6>
-                                                    <span>{{ article.created_at }}</span>
+                                                    <span>{{ article.created_at | date:"%e, %b, %Y" }}</span>
                                                 </div>
                                             </li>
                                      {% endfor %}
