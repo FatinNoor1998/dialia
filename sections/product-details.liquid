@@ -65,7 +65,7 @@
                                           
                                           <div class="my-3 variants_selector">
                                             {% unless product.has_only_default_variant %}
-                                           <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
+                                           <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}" class="variants_options">
                                         {% for option in product.options_with_values %}
                                             <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
