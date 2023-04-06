@@ -24,6 +24,7 @@
                         <div class="col-lg-6">
                           {% form 'customer_login', class:'tm-form tm-login-form' %}
                                 <h4>Login</h4>
+                            {% if form.errors %}
                                 <div class="tm-form-inner">
                                     <div class="tm-form-field">
                                         <label for="login-email">Username or email address*</label>
@@ -44,6 +45,7 @@
                                         <a href="#">Forgot your password?</a>
                                     </div>
                                 </div>
+                          {% endif %}
                            {% endform %}
                         </div>
 
