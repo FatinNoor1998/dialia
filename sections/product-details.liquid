@@ -1,468 +1,552 @@
-{% comment %} {% assign current_product = product.selected_or_first_available_variant %}
-{% assign product_image = current_product.featured_image | default: product.featured_image %} {% endcomment %}
-
 {% assign selected_variant = product.selected_or_first_available_variant %}
 <style>
-  .pt-3, .py-3{
-    padding-top: 0px !important;
+  .variants_options {
+    display: flex;
+    gap: 10px;
   }
+  .variants_options .nice-select,
+  select {
+    height: fit-content;
+    line-height: inherit;
+  }
+  .quantity-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  {% comment %}
+    .quantity-input {
+      width: 100%;
+      border: 1px solid #d2d2d5;
+      padding: 3px;
+      height: fit-content;
+    }
+  {% endcomment %}
+  .quantity {
+    display: flex;
+    gap: 10px;
+    width: 40%;
+  }
+  .variants_selector {
+    margin: 10px 0;
+  }
+  {% comment %}
+    .add-to-cart-btn {
+      width: 100%;
+      padding: 6px 4px;
+      background: #090909;
+      color: white;
+    }
+    .add-to-cart-btn:hover {
+      width: 100%;
+      padding: 6px 4px;
+      background: #474747;
+      color: white;
+    }
+  {% endcomment %}
 </style>
-        
-        <main class="main-content">
-
-            <!-- Product Details Area -->
-            <div class="tm-section product-details-area bg-white tm-padding-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <div class="tm-prodetails">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-
-                <!-- Product Details Images -->
-                                        <div class="tm-prodetails-images">
-                                            <div class="tm-prodetails-largeimages">
-                                              {% for image in product.images %}
-                                                <div class="tm-prodetails-largeimage">
-                                                    <a data-fancybox="tm-prodetails-imagegallery" href="{{ image | img_url : 'master' }}"
-                                                        data-caption="Product Zoom Image 1">
-                                                        <img src="{{ image | img_url: 'master' }}" alt="" style="margin: 0 auto !important">
-                                                    </a>
-                                                </div> 
-                                                {% endfor %}
-                                            </div>
-                                            <div class="tm-prodetails-thumbnails">
-                                              {% for image in product.images %}
-                                                <div class="tm-prodetails-thumbnail">
-                                                    <img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt }}">
-                                                </div>
-                                              {% endfor %}
-                                            </div>
-                                        </div>
-                    <!--// Product Details Images -->
-
-                                    </div>
-
-                                  
-                  <!-- Product Details -->         
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                      {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
-                                        <input type="hidden" name="id" value="{{ selected_variant.id }}">
-                                        <div class="tm-prodetails-content">
-                                            <h3 class="tm-prodetails-title">{{ product.title }}</h3>
-                                            <div class="tm-rating">
-                                                <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                            </div>
-                                            <p class="tm-prodetails-availability">Availalbe: <span>{% if product.available %} Stoke In {% else %} Stoke Out{% endif %}</span></p>
-                                            <div class="tm-prodetails-price">
-                                                <span><del>{{ product.compare_at_price | money }}</del> {{ product.price | money }}</span>
-                                            </div>
-                                            <p>{{ product.content }}</p>
-                                          
-                                          <div class="my-3">
-                                            {% unless product.has_only_default_variant %}
-                                           <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
-                                        {% for option in product.options_with_values %}
-                                            <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
-
-                                            <div class="my-2">
-                                                <select 
-                                                    name="options[{{ option.name | escape }}]" 
-                                                    id="Option-{{ section.id }}-{{ forloop.index0 }}" 
-                                                    class="w-full border py-3 px-3"
-                                                >
-                                                    {% for value in option.values %}
-                                                        <option 
-                                                            value="{{ value | escape }}"
-                                                            {% if option.selected_value == value %}
-                                                                selected="selected"
-                                                            {% endif %}
-                                                        >
-                                                            {{ value }}
-                                                        </option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-
-                                              <script type="application/json">
-                                                 {{ product.variants | json }}
-                                              </script>
-                                          
-                                              {% endfor %}
-                                            </variant-selector>
-                                          {% endunless %}
-                                         </div>
-                                          
-                                            <div class="tm-prodetails-quantitycart">
-                                                <div class="tm-quantitybox">
-                                                    <input type="number" value="1" min="1" name="quantity" id="Quantity-{{ section.id }}">
-                                                </div>
-                                                <button class="tm-button tm-button-dark" type="submit" name="add" id="AddToCard">Add To Cart</button>
-                                            </div>
-
-                                            <div class="tm-prodetails-categories">
-                                                <h6>Categories :</h6>
-                                                <ul>
-                                                    <li><a href="shop.html">Accessories</a></li>
-                                                    <li><a href="shop.html">Electronics</a></li>
-                                                    <li><a href="shop.html">White</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="tm-prodetails-tags">
-                                                <h6>Tags :</h6>
-                                                <ul>
-                                                  {% for tag in product.tags %}
-                                                    <li><a href="#">{{ tag }}</a></li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-
-                                            <div class="tm-prodetails-share">
-                                                <h6>Share :</h6>
-                                                <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-linkedin"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                  {% endform %}
-                            </div>                                               
-                      <!--// Product Details --> 
-
-                          
-                   <!-- Product Details Description & Review -->
-                            <div class="tm-prodetails-desreview tm-padding-section-sm-top">
-                                <ul class="nav tm-tabgroup2" id="prodetails" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="prodetails-area1-tab" data-toggle="tab" href="#prodetails-area1"
-                                            role="tab" aria-controls="prodetails-area1" aria-selected="true">Description</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="prodetails-area2-tab" data-toggle="tab" href="#prodetails-area2"
-                                            role="tab" aria-controls="prodetails-area2" aria-selected="false">Reviews
-                                            (1)</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content" id="prodetails-content">
-                                    <div class="tab-pane fade show active" id="prodetails-area1" role="tabpanel"
-                                        aria-labelledby="prodetails-area1-tab">
-                                        <div class="tm-prodetails-description">
-                                            <p>{{ product.description }}</p>
-                                            <ul>
-                                                <li><b>Brand Name:</b> Cosmetology</li>
-                                                <li><b>Model:</b> {{ product.title }}</li>
-                                                <li><b>Language:</b>
-                                                    Polish,Korean,Russian,Spanish,English,German,Italian,FrenchBand</li>
-                                                <li><b>Material:</b> Silica</li>
-                                                <li><b>Function:</b> Passometer,Sleep Tracker,Calendar,Push
-                                                    Message,Heart Rate
-                                                    Tracker,Alarm Clock,Fitness Tracker,Social Media
-                                                    Notifications,Message Reminder,Week,Call Reminder</li>
-                                                <li><b>Type:</b> {{ product.type }}</li>
-                                                <li><b>System Support :</b> Android 4.4 /IOS 9.0 and above</li>
-                                                <li><b>Battery Life:</b> 110mAh /20 days</li>
-                                                <li><b>Material:</b> RubberScreen</li>
-                                                <li><b>Size:</b> 78 inch</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="prodetails-area2" role="tabpanel" aria-labelledby="prodetails-area2-tab">
-                                        <div class="tm-prodetails-review">
-                                            <h5 class="text-uppercase">1 Review For Cosmetology Essential oil</h5>
-                                            <div class="tm-comment-wrapper mb-50">
-                                                <!-- Comment Single -->
-                                                <div class="tm-comment">
-                                                    <div class="tm-comment-thumb">
-                                                        <img src="assets/images/authors/author-image-1.jpg" alt="author image">
-                                                    </div>
-                                                    <div class="tm-comment-content">
-                                                        <h6 class="tm-comment-authorname"><a href="#">Kareem Todd</a></h6>
-                                                        <span class="tm-comment-date">Wednesday, October 17, 2018 at
-                                                            4:00PM.</span>
-                                                        <div class="tm-rating">
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                        </div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                            sed do
-                                                            eiusmod
-                                                            tempor incididunt ut labore dolore magna aliqua. Ut enim ad
-                                                            minim
-                                                            veniam.</p>
-                                                    </div>
-                                                </div>
-                                                <!--// Comment Single -->
-                                            </div>
-
-                                            <h5 class="text-uppercase">Add a review</h5>
-                                            <form action="#" class="tm-form">
-                                                <div class="tm-form-inner">
-                                                    <div class="tm-form-field">
-                                                        <div class="tm-rating tm-rating-input">
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                            <span><i class="zmdi zmdi-star"></i></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tm-form-field tm-form-fieldhalf">
-                                                        <input type="text" placeholder="Your Name*" required="required">
-                                                    </div>
-                                                    <div class="tm-form-field tm-form-fieldhalf">
-                                                        <input type="Email" placeholder="Your Email*" required="required">
-                                                    </div>
-                                                    <div class="tm-form-field">
-                                                        <textarea name="product-review" cols="30" rows="5" placeholder="Your Review"></textarea>
-                                                    </div>
-                                                    <div class="tm-form-field">
-                                                        <button type="submit" class="tm-button">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                     <!--// Product Details Description & Review -->
-
-                                        
-                    <!-- Similar products slide-->
-                          
-                            <div class="tm-similliar-products tm-padding-section-sm-top">
-                                <h3 class="small-title">Similliar Products</h3>
-                                <div class="tm-similliar-products-slider tm-slider-arrow tm-slider-arrow-hovervisible row">
-
-                                                                     
-                                </div>
-                            </div>
-                        </div>
-                 <!--// Similar products slide-->  
-
-                      
-                        <div class="col-lg-3">
-                            <div class="widgets sidebar-widgets3 sticky-sidebar">
-
-                     <!-- Single Widget -->
-                                <div class="single-widget widget-categories">
-                                    <h5 class="widget-title">Categories</h5>
-                                 
-                                    <ul>
-                                       {% for collection in collections limit:10 %}
-                                        <li><a href="{{ collection.url }}">{{ collection.title}} <span>{{ collection.all_products_count }}</span></a></li>
-                                      {% endfor %}
-                                    </ul>
-                                </div>
-                       <!--// Single Widget -->
-                              
-
-                       <!-- Single Widget popular products -->
-                              {% assign products = collections[section.settings.collection].products | sort: 'best-sellers' %}
-                                <div class="single-widget widget-popularproduct">
-                                    <h5 class="widget-title">Popular Product</h5>
-                                    <ul>
-                                      {% for product in products %}
-                                        <li>
-                                            <a href="{{ product.url }}" class="widget-popularproduct-image">
-                                                <img src="{{ product.featured_image | img_url: 'master'}}" alt="{{ product.featured_image.alt }}">
-                                            </a>
-                                            <div class="widget-popularproduct-content">
-                                                <h6><a href="{{ product.url }}">{{ product.title }}</a></h6> 
-                                                <span>{{ product.price | money}}</span>
-                                            </div>
-                                        </li>
-                                     {% endfor %}
-                                    </ul>                                
-                                </div>
-                        <!--// Single Widget popular products -->
-                              
-
-                                <!-- Single Widget -->
-                                <div class="single-widget widget-size">
-                                    <h5 class="widget-title">Size Options</h5>
-                                    <ul>
-                                        <li><a href="#">Small </a></li>
-                                        <li><a href="#">Medium</a></li>
-                                        <li><a href="#">Large</a></li>
-                                        <li><a href="#">Extra Large </a></li>
-                                    </ul>
-                                </div>
-                                <!--// Single Widget -->
-
-                            </div>
-                        </div>
+<!-- Product Details Area -->
+<div class="tm-section product-details-area bg-white tm-padding-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="tm-prodetails">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+              <!-- Product Details Images -->
+              <div class="tm-prodetails-images">
+                <div class="tm-prodetails-largeimages">
+                  {% for image in product.images %}
+                    <div class="tm-prodetails-largeimage">
+                      <a
+                        data-fancybox="tm-prodetails-imagegallery"
+                        href="{{image | img_url:'master'}}"
+                        data-caption="Product Zoom Image {{forloop.index}}">
+                        <img
+                          src="{{image | img_url:'master'}}"
+                          alt="product image"
+                          loading="lazy"
+                          width
+                          height>
+                      </a>
                     </div>
+                  {% endfor %}
                 </div>
+                <div class="tm-prodetails-thumbnails">
+                  {% for image in product.images %}
+                    <div class="tm-prodetails-thumbnail">
+                      <img
+                        src="{{image | img_url:'master'}}"
+                        alt="product image"
+                        loading="lazy"
+                        width
+                        height>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <!-- // Product Details Images -->
             </div>
-            <!--// Product Details Area -->
-
-        </main>
-
-                            <script>
-                                    fetch(window.Shopify.routes.root + "recommendations/products.json?product_id={{ product.id }}&limit=4&intent=related")
-                                      .then(response => response.json())
-                                      .then(({ products }) => {
-                                        if (products.length > 0) {
-                                          let recommendedProducts = '';
-                                          products.forEach( e => {
-                                            recommendedProducts+= `
-                                            <div class="col-12">
-                                              <div class="tm-product">
-                                                  <div class="tm-product-image">
-                                                      <a class="tm-product-imagelink" href=${e.url}>
-                                                          <img src=${e.featured_image} alt="product image">
-                                                      </a>
-                                                      <ul class="tm-product-actions">
-                                                          <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
-                                                                      class="zmdi zmdi-eye"></i></button></li>
-                                                          <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
-                                                          <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
-                                                      </ul>
-                                                  </div>
-                                                  <div class="tm-product-content">
-                                                      <h5 class="tm-product-title"><a href="product-details.html">${e.title}</a></h5>
-                                                      <div class="tm-product-rating">
-                                                          <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                          <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                          <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                          <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                          <span class="active"><i class="zmdi zmdi-star"></i></span>
-                                                      </div>
-                                                      <h6 class="tm-product-price">$99.99 <del>$120.00</del></h6>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                            `;
-                                            document.querySelector(".tm-similliar-products-slider.tm-slider-arrow.tm-slider-arrow-hovervisible.row").insertAdjacentHTML('beforeend', recommendedProducts);
-                                          })
-                                        }
-                                      }
-                                    );
-
-                                  </script>
-
-    <script>
-        class VariantSelector extends HTMLElement {
-          constructor() {
-            super();
-            this.onchange = (e)=> {
-            this.onVariantChange();
-            }
-          }
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="tm-prodetails-content">
+                {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
+                  <input
+                    type="hidden"
+                    name="id"
+                    value="{{selected_variant.id}}">
+                  {% for block in section.blocks %}
+                    {% case block.type %}
+                      {% when 'vendor' %}
+                      <div>
+                        <span>{{ product.vendor }}</span>
+                      </div>
+                      {% when 'title' %}
+                      <h3 class="tm-prodetails-title">{{ product.title }}</h3>
+                      {% when 'price' %}
+                      <div class="tm-prodetails-price" id="price-{{ section.id }}">
+                        <span>
+                          <del>{{ selected_variant.compare_at_price | money }}</del>
+                          {{ selected_variant.price | money -}}
+                        </span>
+                      </div>
+                      {% when 'variant_selector' %}
+                      <div class="variants_selector">
+                        {% unless product.has_only_default_variant %}
+                          <variant-selector
+                            data-url="{{product.url}}"
+                            data-section="{{section.id}}"
+                            class="variants_options">
+                            {% for option in product.options_with_values %}
+                              <label for="Option-{{section.id}}-{{forloop.index0}}">{{ option.name }}</label>
+                              <div>
+                                <select name="options[{{option.name | escape}}]" id="Option-{{section.id}}-{{forloop.index0}}">
+                                  {% for value in option.values %}
+                                    <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                                      {{ value | upcase }}
+                                    </option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+                              <script type="application/json">
+                                {{ product.variants | json }}
+                              </script>
+                            {% endfor %}
+                          </variant-selector>
+                        {% endunless %}
+                      </div>
+                      {% when 'quantity' %}
+                      <div class="tm-prodetails-quantitycart quantity-btn">
+                        <div class="tm-quantitybox quantity">
+                          <label for="Quantity-{{section.id}}">Quantity</label>
+                          <input
+                            type="number"
+                            value="1"
+                            min="1"
+                            class="quantity-input">
+                        </div>
+                      </div>
+                      {% when 'description' %}
+                      <p>{{ product.description }}</p>
+                      {% when 'chekout_button' %}
+                      <button
+                        type="submit"
+                        name="add"
+                        class="tm-button tm-button-dark"
+                        {% if selected_variant.available == false %}disabled{% endif %}>
+                        {% if selected_variant.available == true %}
+                          Add To Cart
+                        {% else %}
+                          Sold Out
+                        {% endif %}
+                      </button>
+                    {% endcase %}
+                  {% endfor %}
+                  <div class="tm-rating">{{ product.rating }}</div>
+                  <p class="tm-prodetails-availability">
+                    Availalbe:
+                    <span>
+                      {%- if selected_variant.available == true %}
+                        In Stock
+                      {% else %}
+                        Not in stock
+                      {% endif -%}
+                    </span>
+                  </p>
+                  {% comment %} <div class="quantity"> <label for="Quantity-{{section.id}}">Quantity</label> <div> <input type="number" value="1" min="1" class="quantity-input"> </div> </div> <div class="add-to-cart"> <button type="submit" name="add" class="add-to-cart-btn">Add To Cart</button> </div> {% endcomment %}
+                {% endform %}
+                <div class="tm-prodetails-categories">
+                  <h6>Categories :</h6>
+                  <ul>
+                    {% for collection in collections %}
+                      <li>
+                        <a href="{{collection.url}}">{{ collection.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <div class="tm-prodetails-tags">
+                  <h6>Tags :</h6>
+                  <ul>
+                    {% for tag in product.tags %}
+                      <li>
+                        <a href="/">{{ tag | capitalize }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <div class="tm-prodetails-share">
+                  <h6>Share :</h6>
+                  <ul>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Product Details Description & Review -->
+        <div class="tm-prodetails-desreview tm-padding-section-sm-top">
+          <ul
+            class="nav tm-tabgroup2"
+            id="prodetails"
+            role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="prodetails-area1-tab"
+                data-toggle="tab"
+                href="#prodetails-area1"
+                role="tab"
+                aria-controls="prodetails-area1"
+                aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="prodetails-area2-tab"
+                data-toggle="tab"
+                href="#prodetails-area2"
+                role="tab"
+                aria-controls="prodetails-area2"
+                aria-selected="false">Reviews ({{ product.reviews_count }})</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="prodetails-content">
+            <div
+              class="tab-pane fade show active"
+              id="prodetails-area1"
+              role="tabpanel"
+              aria-labelledby="prodetails-area1-tab">
+              <div class="tm-prodetails-description">
+                <p>{{ product.description }}</p>
+                <ul>
+                  <li>
+                    <b>Brand Name:</b>
+                    {{ product.vendor }}</li>
+                  <li>
+                    <b>Model:</b>
+                    {{ product.title }}</li>
+                  <li>
+                    <b>Language:</b>
+                    {{ shop.locale }}</li>
+                  <li>
+                    <b>Material:</b>
+                    Silica</li>
+                  <li>
+                    <b>Function:</b>
+                    Passometer,Sleep Tracker,Calendar,Push Message,Heart Rate Tracker,Alarm
+                    Clock,Fitness Tracker,Social Media Notifications,Message Reminder,Week,Call Reminder
+                  </li>
+                  <li>
+                    <b>Type:</b>
+                    OLEDScreen</li>
+                  <li>
+                    <b>System Support :</b>
+                    Android 4.4 /IOS 9.0 and above</li>
+                  <li>
+                    <b>Battery Life:</b>
+                    110mAh /20 days</li>
+                  <li>
+                    <b>Material:</b>
+                    RubberScreen</li>
+                  <li>
+                    <b>Size:</b>
+                    78 inch</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="prodetails-area2"
+              role="tabpanel"
+              aria-labelledby="prodetails-area2-tab">
+              <div class="tm-prodetails-review">
+                <h5 class="text-uppercase">{{ product.reviews_count }} Review For {{ product.title }}</h5>
+                <div class="tm-comment-wrapper mb-50">
+                  {{ product.reviews }}
+                  {% for review in product.reviews %}
+                    <!-- Comment Single -->
+                    <div class="tm-comment">
+                      <div class="tm-comment-thumb">
+                        <img
+                          src="{{ review.author.avatar_url | img_url:'master'}}"
+                          alt="{{ review.author.name }}"
+                          loading="lazy"
+                          width
+                          height>
+                      </div>
+                      <div class="tm-comment-content">
+                        <h6 class="tm-comment-authorname">
+                          <a href="{{ review.author }}">{{ review.author.name }}</a>
+                        </h6>
+                        <span class="tm-comment-date">{{ review.created_at | date: '%b %d, %Y' }}</span>
+                        <div class="tm-rating">
+                          {{ product.reviews_count }}
+                          {{ product.reviews_count | pluralize: 'review', 'reviews' }}
+                        </div>
+                        <p>{{ review.body }}</p>
+                      </div>
+                    </div>
+                    <!-- // Comment Single -->
+                  {% endfor %}
+                </div>
+                <h5 class="text-uppercase">Add a review</h5>
+                <form action="#" class="tm-form">
+                  <div class="tm-form-inner">
+                    <div class="tm-form-field">
+                      <div class="tm-rating tm-rating-input">
+                        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                      </div>
+                    </div>
+                    <div class="tm-form-field tm-form-fieldhalf">
+                      <div id="shopify-product-reviews" data-id="{{product.id}}">
+                        {{ product.metafields.spr.reviews }}
+                      </div>
+                      {% comment %} <input type="text" placeholder="Your Name*" required="required"> {% endcomment %}
+                    </div>
+                    {% comment %} <div class="tm-form-field tm-form-fieldhalf"> <input type="Email" placeholder="Your Email*" required="required"> </div> <div class="tm-form-field"> <textarea name="product-review" cols="30" rows="5" placeholder="Your Review"></textarea> </div> <div class="tm-form-field"> <button type="submit" class="tm-button">Submit</button> </div> {% endcomment %}
+                  </div>
+                </form>
+                {% comment %} <h5 class="text-uppercase">Add a review</h5> <form action="#" class="tm-form"> <div class="tm-form-inner"> <div class="tm-form-field"> <div class="tm-rating tm-rating-input"> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> <span><i class="zmdi zmdi-star"></i></span> </div> </div> <div class="tm-form-field tm-form-fieldhalf"> <input type="text" placeholder="Your Name*" required="required"> </div> <div class="tm-form-field tm-form-fieldhalf"> <input type="Email" placeholder="Your Email*" required="required"> </div> <div class="tm-form-field"> <textarea name="product-review" cols="30" rows="5" placeholder="Your Review"></textarea> </div> <div class="tm-form-field"> <button type="submit" class="tm-button">Submit</button> </div> </div> </form> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // Product Details Description & Review -->
+        <div class="tm-similliar-products tm-padding-section-sm-top">
+          <h3 class="small-title">Similliar Products</h3>
+          <div class="tm-similliar-products-slider tm-slider-arrow tm-slider-arrow-hovervisible row"></div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="widgets sidebar-widgets3 sticky-sidebar">
+          <!-- Single Widget -->
+          <div class="single-widget widget-categories">
+            <h5 class="widget-title">Categories</h5>
+            <ul>
+              {% for collection in collections limit: 4 %}
+                <li>
+                  <a href="{{collection.url}}">{{ collection.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- // Single Widget -->
+          <!-- Single Widget -->
+          <div class="single-widget widget-popularproduct">
+            <h5 class="widget-title">Popular Product</h5>
+            <ul>
+              {% assign collections[section.settings.collections].sort_by = 'best-selling' %}
+              {%- assign products = collections[section.settings.collections].products -%}
+              {%- for product in products limit: 3 %}
+                <li>
+                  <a href="{{product.url}}" class="widget-popularproduct-image">
+                    <img
+                      src="{{product.featured_image | img_url:'small'}}"
+                      alt="product thumbnail"
+                      loading="lazy"
+                      width
+                      height>
+                  </a>
+                  <div class="widget-popularproduct-content">
+                    <h6>
+                      <a href="{{product.url}}">{{ product.title }}</a>
+                    </h6>
+                    <span>${{ product.price | money }}</span>
+                  </div>
+                </li>
+              {% endfor -%}
+            </ul>
+          </div>
+          <!-- // Single Widget -->
+          <!-- Single Widget -->
+          <div class="single-widget widget-size">
+            <h5 class="widget-title">Size Options</h5>
+            <ul>
+              {%- for value in product.options_by_name.size.values %}
+                <li>{{ value }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+          <!-- // Single Widget -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // Product Details Area -->
+<script>
+  class VariantSelector extends HTMLElement {
+    constructor() {
+      super();
+      this.onchange = (e) => {
+        this.onVariantChange();
+      };
+    }
+    {% comment %}
+      console.log(this);{% endcomment %}
+    onVariantChange() {
+      this.getSelectedOptions();
+      this.getSelectedVariant();
+      if (this.currentVariant) {
+        this.updateURL();
+        this.updateFormID();
+        this.updatePrice();
+      }
+    }
+    getSelectedOptions() {
+      this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+      console.log(this.options);
+    }
+    getVariantJSON() {
+      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+      return this.variantData;
+    }
+    getSelectedVariant() {
+      this.currentVariant = this.getVariantJSON().find((variant) => {
+        const findings = !variant.options.map((option, index) => {
+            console.log(option, index);
+          return this.options[index] === option;
+        }).includes(false);
+        if (findings) 
+          return variant;
+        
+      });
+      console.log(this.currentVariant);
+    }
+    updateURL() {
+      if (!this.currentVariant) 
+        return;
       
-          onVariantChange() {
-            this.getSelectedOptions();
-            this.getSelectedVariant();
-      
-            if (this.currentVariant) {
-              this.updateURL();
-              this.updateFormID();
-              this.updatePrice();
-            }
-          }
-      
-          getSelectedOptions() {
-            this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
-            console.log(this.options);
-          }
-      
-          getVariantJSON() {
-            this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
-            return this.variantData;
-          }
-      
-          getSelectedVariant() {
-            this.currentVariant = this.getVariantJSON().find((variant) => {
-              const findings = !variant.options.map((option, index) => {
-                return this.options[index] === option;
-              }).includes(false);
-  
-              if (findings) 
-                return variant;
-              
-            });
-      
-            console.log(this.currentVariant);
-          }
-      
-          updateURL() {
-            if (!this.currentVariant) 
-              return;
-            
-            window.history.replaceState({}, '', `${
-              this.dataset.url
-            }?variant=${
-              this.currentVariant.id
-            }`);
-          }
-      
-          updateFormID() {
-            const form_input = document.querySelector("#product-form").querySelector('input[name="id"]');
-            form_input.value = this.currentVariant.id;
-          }
-      
-          updatePrice() {
-            fetch(`${
-              this.dataset.url
-            }?variant=${
-              this.currentVariant.id
-            }&section_id=${
-              this.dataset.section
-            }`).then((response) => response.text()).then((responseText) => {
-              const id = `price-${
-                this.dataset.section
-              }`;
-              const html = new DOMParser().parseFromString(responseText, 'text/html');
-      
-              const oldPrice = document.getElementById(id);
-              const newPrice = html.getElementById(id);
-      
-              if (oldPrice && newPrice) 
-                oldPrice.innerHTML = newPrice.innerHTML;
-              
-            });
-          }
+      window.history.replaceState({}, '', `${
+        this.dataset.url
+      }?variant=${
+        this.currentVariant.id
+      }`);
+    }
+    updateFormID() {
+      const form_input = document.querySelector('#product-form').querySelector('input[name="id"]');
+      form_input.value = this.currentVariant.id;
+    }
+    updatePrice() {
+      fetch(`${
+        this.dataset.url
+      }?variant=${
+        this.currentVariant.id
+      }&section_id=${
+        this.dataset.section
+      }`).then((response) => response.text()).then((responseText) => {
+        const id = `price-${
+          this.dataset.section
+        }`;
+        const html = new DOMParser().parseFromString(responseText, 'text/html');
+        const oldPrice = document.getElementById(id);
+        const newPrice = html.getElementById(id);
+        if (oldPrice && newPrice) {
+          oldPrice.innerHTML = newPrice.innerHTML;
         }
-      
-        customElements.define("variant-selector", VariantSelector);
+      })
+    }
+  }
+  customElements.define("variant-selector", VariantSelector);
 </script>
-
-                                  
-
+<script>
+  fetch(window.Shopify.routes.root + 'recommendations/products.json?product_id= {{product.id}} &limit=6&intent=related').then((response) => response.json()).then(({products}) => {
+    if (products.length > 0) {
+      const firstRecommendedProduct = products[0];
+      let new_products = ``;
+      products.forEach((e) => {
+        new_products += ` <!-- Single Product --> <div class="col-12"> <div class="tm-product"> <div class="tm-product-image"> <a class="tm-product-imagelink" href="product-details.html"> <img src="${
+          e.images[0]
+        }" alt="product image" loading="lazy" width height> </a> <ul class="tm-product-actions"> <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i class="zmdi zmdi-eye"></i></button></li> <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li> <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li> </ul> </div> <div class="tm-product-content"> <h5 class="tm-product-title"><a href="${
+          e.url
+        }">${
+          e.title
+        }</a></h5> <div class="tm-product-rating"> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> <span class="active"><i class="zmdi zmdi-star"></i></span> </div> <h6 class="tm-product-price">${
+          e.price
+        } ${
+          e.compare_at_price
+            ? `<del>${
+              e.compare_at_price
+            }</del>`
+            : ``
+          }</h6> </div> </div> </div> <!--// Single Product --> `;
+      });
+      document.querySelector('.tm-similliar-products-slider.tm-slider-arrow.tm-slider-arrow-hovervisible.row').insertAdjacentHTML('beforeend', new_products);
+    }
+  });
+</script>
 {% schema %}
-{
-  "name": "product-details",
-  "settings": [
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection list for best selling"
-    }
-  ],
-  "presets": [
-    {
-        "category": "content",
-        "name":"product-details"
-    }
-]
-}
+  {
+    "name": "Product Details",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collections",
+        "label": "Product Collections to Show"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "vendor",
+        "name": "Vendor",
+        "limit": 1
+      },
+      {
+        "type": "title",
+        "name": "Title",
+        "limit": 1
+      },
+      {
+        "type": "price",
+        "name": "Price",
+        "limit": 1
+      },
+      {
+        "type": "variant_selector",
+        "name": "Variant Selector",
+        "limit": 1
+      }, {
+        "type": "quantity",
+        "name": "Quantity",
+        "limit": 1
+      }, {
+        "type": "description",
+        "name": "Description",
+        "limit": 1
+      }, {
+        "type": "chekout_button",
+        "name": "Checkout Button",
+        "limit": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "product-details"
+      }
+    ]
+  }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
