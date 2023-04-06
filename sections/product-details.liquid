@@ -71,8 +71,8 @@
 
                                             <div class="my-2">
                                                 <select 
-                                                    name="options[{{ option.name | escape }}]" 
-                                                    id="Option-{{ section.id }}-{{ forloop.index0 }}" 
+                                                    name="options[{{option.name | escape}}]" 
+                                                    id="Option-{{section.id}}-{{forloop.index0}}" 
                                                     class="w-full border py-3 px-3"
                                                 >
                                                     {% for value in option.values %}
@@ -82,7 +82,7 @@
                                                                 selected="selected"
                                                             {% endif %}
                                                         >
-                                                            {{ value }}
+                                                            {{ value | upcase }}
                                                         </option>
                                                     {% endfor %}
                                                 </select>
