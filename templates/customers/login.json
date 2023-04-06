@@ -1,12 +1,5 @@
 {
   "sections": {
-    "02884367-cf1f-4d47-a570-f683781c8ae2": {
-      "type": "breadcrumb-area",
-      "settings": {
-        "background-img": "shopify:\/\/shop_images\/breadcrumb-bg.jpg",
-        "breadcrumb-header": "Login & Register"
-      }
-    },
     "main": {
       "type": "customer-login",
       "settings": {
@@ -14,7 +7,6 @@
     }
   },
   "order": [
-    "02884367-cf1f-4d47-a570-f683781c8ae2",
     "main"
   ]
 }
