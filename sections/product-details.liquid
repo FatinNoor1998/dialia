@@ -389,7 +389,9 @@
               const findings = !variant.options.map((option, index) => {
                 return this.options[index] === option;
               }).includes(false);
-      
+
+              
+      console.log(findings);
               if (findings) 
                 return variant;
               
