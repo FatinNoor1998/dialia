@@ -107,9 +107,9 @@
                                             <div class="tm-prodetails-categories">
                                                 <h6>Categories :</h6>
                                                 <ul>
-                                                    <li><a href="shop.html">Accessories</a></li>
-                                                    <li><a href="shop.html">Electronics</a></li>
-                                                    <li><a href="shop.html">White</a></li>
+                                                  {% for collection in collections %}
+                                                    <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
 
