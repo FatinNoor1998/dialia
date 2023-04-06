@@ -6,7 +6,7 @@
                     <ul> 
                         <li><a href="https://dialia-rmt-store.myshopify.com/">Home</a></li>
                         
-                        <li>{{ request.path | remove: "pages" | capitalize }}</li>
+                        <li><a href="{{ routes.account_login_url }}>"{{ request.path | remove: "pages" | capitalize }}</a></li>
                     </ul>
                 </div>
             </div>
