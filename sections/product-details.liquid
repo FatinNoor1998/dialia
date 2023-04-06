@@ -381,7 +381,6 @@
       
           getVariantJSON() {
             this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
-            console.log(this.variantData);
             return this.variantData;
           }
       
@@ -390,10 +389,8 @@
               const findings = !variant.options.map((option, index) => {
                 return this.options[index] === option;
               }).includes(false);
-              console.log(findings);
       
               if (findings) 
-                console.log(variant);
                 return variant;
               
             });
@@ -435,13 +432,6 @@
       
               if (oldPrice && newPrice) 
                 oldPrice.innerHTML = newPrice.innerHTML;
-
-               console.log(id);
-              
-               console.log(html);
-              
-               console.log(oldPrice);
-              console.log(newPrice);
               
             });
           }
