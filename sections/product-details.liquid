@@ -59,20 +59,20 @@
                                             </div>
                                             <p class="tm-prodetails-availability">Availalbe: <span>{% if product.available %} Stoke In {% else %} Stoke Out{% endif %}</span></p>
                                             <div class="tm-prodetails-price">
-                                                <span>{{ product.compare_at_price | money }}</span>
+                                                <span><del>{{ product.compare_at_price | money }}</del> {{ product.price | money }}</span>
                                             </div>
                                             <p>{{ product.content }}</p>
                                           
-                                          <div class="my-3 variants_selector">
+                                          <div class="my-3">
                                             {% unless product.has_only_default_variant %}
-                                           <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}" class="variants_options">
+                                           <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
                                         {% for option in product.options_with_values %}
-                                            <label for="Option-{{section.id}}-{{forloop.index0}}">{{ option.name }}</label>
+                                            <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
                                             <div class="my-2">
                                                 <select 
-                                                    name="options[{{option.name | escape}}]" 
-                                                    id="Option-{{section.id}}-{{forloop.index0}}" 
+                                                    name="options[{{ option.name | escape }}]" 
+                                                    id="Option-{{ section.id }}-{{ forloop.index0 }}" 
                                                     class="w-full border py-3 px-3"
                                                 >
                                                     {% for value in option.values %}
@@ -82,7 +82,7 @@
                                                                 selected="selected"
                                                             {% endif %}
                                                         >
-                                                            {{ value | upcase }}
+                                                            {{ value }}
                                                         </option>
                                                     {% endfor %}
                                                 </select>
@@ -107,9 +107,9 @@
                                             <div class="tm-prodetails-categories">
                                                 <h6>Categories :</h6>
                                                 <ul>
-                                                  {% for collection in collections %}
-                                                    <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
-                                                    {% endfor %}
+                                                    <li><a href="shop.html">Accessories</a></li>
+                                                    <li><a href="shop.html">Electronics</a></li>
+                                                    <li><a href="shop.html">White</a></li>
                                                 </ul>
                                             </div>
 
@@ -117,7 +117,7 @@
                                                 <h6>Tags :</h6>
                                                 <ul>
                                                   {% for tag in product.tags %}
-                                                    <li><a href="/">{{ tag }}</a></li>
+                                                    <li><a href="#">{{ tag }}</a></li>
                                                     {% endfor %}
                                                 </ul>
                                             </div>
@@ -354,81 +354,91 @@
 
                                   </script>
 
-<script>
-  class VariantSelector extends HTMLElement {
-    constructor() {
-      super();
-      this.onchange = (e) => {
-        this.onVariantChange();
-      };
-    }
-    {% comment %}
-      console.log(this);{% endcomment %}
-    onVariantChange() {
-      this.getSelectedOptions();
-      this.getSelectedVariant();
-      if (this.currentVariant) {
-        this.updateURL();
-        this.updateFormID();
-        this.updatePrice();
-      }
-    }
-    getSelectedOptions() {
-      this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
-      console.log(this.options);
-    }
-    getVariantJSON() {
-      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
-      return this.variantData;
-    }
-    getSelectedVariant() {
-      this.currentVariant = this.getVariantJSON().find((variant) => {
-        const findings = !variant.options.map((option, index) => {
-            // console.log(option, index);
-          return this.options[index] === option;
-        }).includes(false);
-        if (findings) 
-          return variant;
-        
-      });
-      console.log(this.currentVariant);
-    }
-    updateURL() {
-      if (!this.currentVariant) 
-        return;
+    <script>
+        class VariantSelector extends HTMLElement {
+          constructor() {
+            super();
+            this.onchange = (e)=> {
+            this.onVariantChange();
+            }
+          }
       
-      window.history.replaceState({}, '', `${
-        this.dataset.url
-      }?variant=${
-        this.currentVariant.id
-      }`);
-    }
-    updateFormID() {
-      const form_input = document.querySelector('#product-form').querySelector('input[name="id"]');
-      form_input.value = this.currentVariant.id;
-    }
-    updatePrice() {
-      fetch(`${
-        this.dataset.url
-      }?variant=${
-        this.currentVariant.id
-      }&section_id=${
-        this.dataset.section
-      }`).then((response) => response.text()).then((responseText) => {
-        const id = `price-${
-          this.dataset.section
-        }`;
-        const html = new DOMParser().parseFromString(responseText, 'text/html');
-        const oldPrice = document.getElementById(id);
-        const newPrice = html.getElementById(id);
-        if (oldPrice && newPrice) {
-          oldPrice.innerHTML = newPrice.innerHTML;
+          onVariantChange() {
+            this.getSelectedOptions();
+            this.getSelectedVariant();
+      
+            if (this.currentVariant) {
+              this.updateURL();
+              this.updateFormID();
+              this.updatePrice();
+            }
+          }
+      
+          getSelectedOptions() {
+            this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+            console.log(this.options);
+          }
+      
+          getVariantJSON() {
+            this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+            return this.variantData;
+          }
+      
+          getSelectedVariant() {
+            this.currentVariant = this.getVariantJSON().find((variant) => {
+              const findings = !variant.options.map((option, index) => {
+                return this.options[index] === option;
+              }).includes(false);
+  
+              if (findings) 
+                return variant;
+              
+            });
+      
+            console.log(this.currentVariant);
+          }
+      
+          updateURL() {
+            if (!this.currentVariant) 
+              return;
+            
+            window.history.replaceState({}, '', `${
+              this.dataset.url
+            }?variant=${
+              this.currentVariant.id
+            }`);
+          }
+      
+          updateFormID() {
+            const form_input = document.querySelector("#product-form").querySelector('input[name="id"]');
+            form_input.value = this.currentVariant.id;
+          }
+      
+          updatePrice() {
+            fetch(`${
+              this.dataset.url
+            }?variant=${
+              this.currentVariant.id
+            }&section_id=${
+              this.dataset.section
+            }`).then((response) => response.text()).then((responseText) => {
+              const id = `price-${
+                this.dataset.section
+              }`;
+              const html = new DOMParser().parseFromString(responseText, 'text/html');
+      
+              const oldPrice = document.getElementById(id);
+              const newPrice = html.getElementById(id);
+      
+              if (oldPrice && newPrice) 
+                oldPrice.innerHTML = newPrice.innerHTML;
+              
+            });
+          }
         }
-      })
-    }
-  }
-  customElements.define("variant-selector", VariantSelector);
-</script>    
+      
+        customElements.define("variant-selector", VariantSelector);
+</script>
 
                                   
 
