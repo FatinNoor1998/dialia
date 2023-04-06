@@ -1,3 +1,9 @@
+<style>
+  .red-color{
+    color: red;
+  }
+</style>
+        
         <!-- Breadcrumb Area -->
         <div class="tm-breadcrumb-area tm-padding-section" data-bgimage="https://cdn.shopify.com/s/files/1/0732/0607/1579/files/breadcrumb-bg.jpg?v=1680011307"
             data-black-overlay="4">
@@ -27,7 +33,7 @@
                                 <div class="tm-form-inner">
                               {% if form.errors %}
                               <div class="error" role="alert">
-                                <strong>Errorr!</strong>
+                                <strong class="red-color">Errorr!</strong>
                                 <p>{{ form.errors | default_errors }}</p>
                               </div>
                               {% endif %}
