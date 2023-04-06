@@ -9,7 +9,6 @@
     },
     "main": {
       "type": "customer-login",
-      "disabled": true,
       "settings": {
       }
     }
