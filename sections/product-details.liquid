@@ -63,7 +63,7 @@
                                             </div>
                                             <p>{{ product.content }}</p>
                                           
-                                          <div class="my-3">
+                                          <div class="my-3 variants_selector">
                                             {% unless product.has_only_default_variant %}
                                            <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
                                         {% for option in product.options_with_values %}
