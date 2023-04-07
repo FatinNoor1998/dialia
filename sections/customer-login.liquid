@@ -4,6 +4,9 @@
     margin-top: 30px;
     background: lightpink;
 }
+  .row.hide{
+    display: none;
+  }
 </style>
         
         <!-- Breadcrumb Area -->
@@ -27,7 +30,7 @@
             <!-- Login Register Area -->
             <div class="tm-section tm-login-register-area bg-white tm-padding-section">
                 <div class="container">
-                    <div class="row" x-data="{ loginForm: true, pwRecover: false }">
+                    <div class="row hide">
 
                         <div class="col-lg-6" x-show="loginForm">
                           {% form 'customer_login', class:'tm-form tm-login-form' %}
