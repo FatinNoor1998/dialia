@@ -696,11 +696,11 @@
         /* Login Password Shower */
         loginPassShower: function () {
             $('input[name="register-pass-show"]').on('change', function () {
-                var type = $('input[name="register-pass"]').attr('type');
+                var type = $('input[name="customer[password]"]').attr('type');
                 if (type == 'password') {
-                    $('input[name="register-pass"]').attr('type', 'text');
+                    $('input[name="customer[password]"]').attr('type', 'text');
                 } else {
-                    $('input[name="register-pass"]').attr('type', 'password');
+                    $('input[name="customer[password]"]').attr('type', 'password');
                 }
             });
         },
