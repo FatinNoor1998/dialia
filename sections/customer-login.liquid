@@ -60,7 +60,21 @@
                                 </div>
                            {% endform %}
                         </div>
+                      
 
+                       <div class="col-lg-6">
+                         {% form 'reset_customer_password' %}
+                          <h4>Reset Password</h4>
+                          <div class="tm-form-inner">
+                            <div class="tm-form-field">
+                                <label for="email">Email</label>
+                                 <input type="email" name="customer[email]" id="email" autocomplete="email" required>
+                            </div>
+                          </div>
+                         {% endform %}
+                       </div>
+
+                      
                         <div class="col-lg-6">
                             <form action="#" class="tm-form tm-register-form">
                                 <h4>Create an account</h4>
