@@ -95,13 +95,13 @@
             
                                 <h4>Create an account</h4>
 
-                          {% if form.errors %}
+                                <div class="tm-form-inner">
+                            {% if form.errors %}
                               <div class="error" role="alert">
                                 <strong class="red-color">Errorr!</strong>
                                 <p class="red-text">{{ form.errors | default_errors }}</p>
                               </div>
                           {% endif %}
-                                <div class="tm-form-inner">
                                     <div class="tm-form-field">
                                         <label for="first-name">First Name</label>
                                         <input type="text" id="first-name" name="customer[first_name]" required="required" autocomplete="text">
