@@ -94,18 +94,29 @@
                         {% form 'create_customer', class:'tm-form tm-register-form' %}
             
                                 <h4>Create an account</h4>
+
+                          {% if form.errors %}
+                              <div class="error" role="alert">
+                                <strong class="red-color">Errorr!</strong>
+                                <p class="red-text">{{ form.errors | default_errors }}</p>
+                              </div>
+                          {% endif %}
                                 <div class="tm-form-inner">
                                     <div class="tm-form-field">
-                                        <label for="register-username">Username</label>
-                                        <input type="text" id="register-username" required="required">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" name="customer[first_name]" required="required">
+                                    </div>
+                                   <div class="tm-form-field">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" name="customer[last_name]" required="required">
                                     </div>
                                     <div class="tm-form-field">
-                                        <label for="register-email">Email address</label>
-                                        <input type="email" id="register-email" required="required">
+                                        <label for="email">Email address</label>
+                                        <input type="email" id="email" name="customer[email]" required="required">
                                     </div>
                                     <div class="tm-form-field">
-                                        <label for="register-password">Password</label>
-                                        <input type="password" id="register-password" name="register-pass" required="required">
+                                        <label for="password">Password</label>
+                                        <input type="password" id="password" name="customer[password]" required="required">
                                     </div>
                                     <div class="tm-form-field">
                                         <div>
