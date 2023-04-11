@@ -99,11 +99,7 @@
                                                 <a href="#" class="edit-button">Edit</a>
                                                 <h3>Shipping Address</h3>
                                                 <address>
-                                                    Jonathon Doe<br>
-                                                    Example company<br>
-                                                    516 Wintheiser Circles <br>
-                                                    Lake Jordanmouth <br>
-                                                    Jordan
+                                                    {{ customer.default_address | format_address }}
                                                 </address>
                                             </div>
                                         </div>
