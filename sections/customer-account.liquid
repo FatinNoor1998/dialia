@@ -43,7 +43,7 @@
                                 <div class="tm-myaccount-orders">
                                     <div class="table-responsive">
 
-                       {% paginate customer.orders by 1 %}
+                       {% paginate customer.orders by 10 %}
                         {% assign number_of_orders = customer.orders | size %}
                             {% if number_of_orders > 0 %}
                                         <table class="table table-bordered mb-0">
