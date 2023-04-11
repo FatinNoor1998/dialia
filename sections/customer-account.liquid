@@ -31,7 +31,7 @@
                             <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
                                 aria-labelledby="account-dashboard-tab">
                                 <div class="tm-myaccount-dashboard">
-                                    <p>Hello <b>Jonathon Doe</b> (not <b>Jonathon Doe</b>? <a href="login-register.html">Log
+                                    <p>Hello <b>{{ customer.first_name }} {{ customer.last_name }}</b> (not <b>{{ customer.first_name }} {{ customer.last_name }}</b>? <a href="{{ routes.account_logout_url }}">Log
                                             out</a>)</p>
                                     <p>From your account dashboard you can view your recent orders, manage your
                                         shipping and billing addresses, and edit your password and account details.</p>
