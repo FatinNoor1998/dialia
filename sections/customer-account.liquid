@@ -77,11 +77,13 @@
                                          </div>
                                         {% endif %}
                       {% endpaginate %}
+
+                                        {% render 'pagination', pagination: paginate %}
                                     </div>
                                 </div>
                             </div>
 
-                          {% render 'pagination', pagination: paginate %}
+                        
                         
 
                             
