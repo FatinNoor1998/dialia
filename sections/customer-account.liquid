@@ -42,6 +42,8 @@
                             <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
                                 <div class="tm-myaccount-orders">
                                     <div class="table-responsive">
+
+                       {% paginate customer.orders by 10 %}
                         {% assign number_of_orders = customer.orders | size %}
                             {% if number_of_orders > 0 %}
                                         <table class="table table-bordered mb-0">
@@ -74,7 +76,7 @@
                                            <h2>Currently you hsave no order</h2>
                                          </div>
                                         {% endif %}
-                      
+                      {% endpaginate %}
                                     </div>
                                 </div>
                             </div>
