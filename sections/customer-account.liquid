@@ -91,6 +91,7 @@
                                                 <h3>Billing Address</h3>
                                                 <address>
                                                     {{ customer.default_address | format_address }}
+                                                    {{ order.billing_address }}
                                                 </address>
                                             </div>
                                         </div>
@@ -100,6 +101,7 @@
                                                 <h3>Shipping Address</h3>
                                                 <address>
                                                     {{ customer.default_address | format_address }}
+                                                    {{ order.shipping_address }}
                                                 </address>
                                             </div>
                                         </div>
