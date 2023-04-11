@@ -43,8 +43,7 @@
                                 <div class="tm-myaccount-orders">
                                     <div class="table-responsive">
                         {% assign number_of_orders = customer.orders | size %}
-                         {% if number_of_orders > 0 %}
-                           {% for order in customer.orders %}
+                            {% if number_of_orders > 0 %}
                                         <table class="table table-bordered mb-0">
                                             <thead>
 
@@ -56,6 +55,8 @@
                                                     <th class="tm-myaccount-orders-col-view">VIEW</th>
                                                 </tr>
                                             </thead>
+                          
+                                      {% for order in customer.orders %}
                                             <tbody>
                                                 <tr>
                                                     <td>{{ order.name }}</td>
@@ -65,8 +66,9 @@
                                                     <td><a href="{{ routes.cart_url }}" class="tm-button tm-button-sm">View <b></b></a></td>
                                                 </tr>
                                             </tbody>
+                                        {% endfor %}
                                         </table>
-                                         {% endfor %}
+                                         
                                          {% else %}
                                          <div>
                                            <p>Currently you hsave no order</p>
