@@ -60,9 +60,9 @@
                                                 <tr>
                                                     <td>{{ order.name }}</td>
                                                     <td>{{ order.created_at | date: '%d, %B, %Y' }}</td>
-                                                    <td>On Hold</td>
-                                                    <td>$132.00 for 2 items</td>
-                                                    <td><a href="#" class="tm-button tm-button-sm">View <b></b></a></td>
+                                                    <td>{{ order.financial_status }}</td>
+                                                    <td>{{ order.subtotal_price }} for {{ order.order_number }} items</td>
+                                                    <td><a href="{{ routes.cart_url }}" class="tm-button tm-button-sm">View <b></b></a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
