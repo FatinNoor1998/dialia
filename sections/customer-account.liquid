@@ -62,7 +62,7 @@
                                                     <td>{{ order.name }}</td>
                                                     <td>{{ order.created_at | date: '%d, %B, %Y' }}</td>
                                                     <td>{{ order.financial_status }}</td>
-                                                    <td>{{ order.subtotal_price| money }} for {{ order.order_number }} items</td>
+                                                    <td>{{ order.subtotal_price| money }} for {{ order.item_count }} items</td>
                                                     <td><a href="{{ routes.cart_url }}" class="tm-button tm-button-sm">View <b></b></a></td>
                                                 </tr>
                                             </tbody>
