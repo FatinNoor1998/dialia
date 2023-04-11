@@ -76,9 +76,10 @@
                                            <h2>Currently you hsave no order</h2>
                                          </div>
                                         {% endif %}
+                         {% render 'pagination', pagination: paginate %}
                       {% endpaginate %}
 
-                                        {% render 'pagination', pagination: paginate %}
+                                        
                                     </div>
                                 </div>
                             </div>
