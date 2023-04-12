@@ -15,7 +15,7 @@
       <div class="line-items">
         {% if line_item.image %}
         <div class="image">
-             <a href="{{ order.product.url }}"><img src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}"></a>
+             <a href="{{ line_item.product.url }}"><img src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}"></a>
         </div>
         {% else %}
         <div class="image">
