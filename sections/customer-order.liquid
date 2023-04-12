@@ -21,7 +21,7 @@
         <div class="image">
           {{ 'product-1' | placeholder_svg_tag: 'full-width' }}
         </div>
-        <p class="product-name">{{ line_item.title }}</p>
+        <p class="product-name">{{ line_item.title | link_to: line_item.product.url }}</p>
   {% endif %}
       </div>
     </div>
