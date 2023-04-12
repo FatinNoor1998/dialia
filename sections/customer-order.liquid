@@ -56,7 +56,7 @@
             </tbody>
           </table>
           <div class="product-description">
-            <p>{{ line_item.product.description }}</p>
+            <p>{{ line_item.product.description | truncatewords: 15 }}</p>
           </div>
         </div>
         
