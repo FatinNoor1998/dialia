@@ -3,9 +3,28 @@
     <div class="order-details">
       <h1 class="order-name">Order {{ order.name }}</h1>
       <p class="order-date">Placed on {{ order.created_at | date: format: 'date' }}</p>
+      <span class="financial-status">{{ order.financial_status_label }}</span>
     </div>
 
+    <a class="back-btn" href="{{ routes.account_url }}">Back to Account</a>
+
   </div>
+
+  {% for line_item in order.line_items %}
+    <div class="line-item-list">
+      <div class="line-items">
+        {% if line_item.image %}
+        <div class="image">
+             <img src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}">
+        </div>
+        {% else %}
+        <div class="image">
+          {{ 'product-1' | placeholder_svg_tag: 'full-width' }}
+        </div>
+  {% endif %}
+      </div>
+    </div>
+  {% endfor %}
 
 </div>
 
