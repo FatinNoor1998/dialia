@@ -38,6 +38,23 @@
          {% endif %}
         <div class="line-items-details">
           <p class="product-name">{{ line_item.title | link_to: line_item.product.url }}</p>
+          <table class="product-table">
+            <tbody>
+              <tr>
+                <td>Price</td>
+                <td>{{ line_item.original_price | money }}</td>
+              </tr>
+              <tr>
+                <td>Quantity</td>
+                <td>{{ line_item.quantity }}</td>
+              </tr>
+              <tr>
+                <td>Fianl price</td>
+                <td>{{ line_item.final_line_price | money }}</td>
+              </tr>
+              
+            </tbody>
+          </table>
         </div>
         
    
