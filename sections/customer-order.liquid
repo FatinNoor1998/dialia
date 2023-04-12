@@ -1,3 +1,14 @@
+<div class="customer-order-section">
+  <div class="customer-order-list">
+    <div class="order-details">
+      <h1 class="order-name">Order {{ order.name }}</h1>
+      <p class="order-date">Placed on {{ order.created_at | date: format: 'date' }}</p>
+    </div>
+
+  </div>
+
+</div>
+
 
 
 {% schema %}
