@@ -461,11 +461,7 @@
                 'value_bar_selector': '.tm-rangeslider-bar',
                 'value_changed_callback': function (cause, leftValue, rightValue) {
                     $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
-                    $(this).parent().find('.tm-rangeslider-rightlabel');
-                  console.log($(this).parent().find('.tm-rangeslider-rightlabel')[0]);
-                  var rightVal = $(this).parent().find('.tm-rangeslider-rightlabel').attr("value",rightValue);
-                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').val(rightVal));
-                                   
+                    $(this).parent().find('.tm-rangeslider-rightlabel').val(rightValue);                 
                 }
             });
         },
