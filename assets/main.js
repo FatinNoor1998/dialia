@@ -454,17 +454,17 @@
         },
 
         /* Range Slider Active */
-        // rangeSlider: function () {
-        //     $('.tm-rangeslider').nstSlider({
-        //         'left_grip_selector': '.tm-rangeslider-leftgrip',
-        //         'right_grip_selector': '.tm-rangeslider-rightgrip',
-        //         'value_bar_selector': '.tm-rangeslider-bar',
-        //         'value_changed_callback': function (cause, leftValue, rightValue) {
-        //             $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
-        //             $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);
-        //         }
-        //     });
-        // },
+        rangeSlider: function () {
+            $('.tm-rangeslider').nstSlider({
+                'left_grip_selector': '.tm-rangeslider-leftgrip',
+                'right_grip_selector': '.tm-rangeslider-rightgrip',
+                'value_bar_selector': '.tm-rangeslider-bar',
+                'value_changed_callback': function (cause, leftValue, rightValue) {
+                    $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
+                    $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);
+                }
+            });
+        },
 
         /* Nice Select Active */
         niceSelectActive: function () {
