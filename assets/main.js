@@ -463,7 +463,7 @@
                     $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
                      $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);
                   $(this).parent().find('.tm-rangeslider-rightlabel').attr("defaultValue",rightValue);
-                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').attr("defaultValue"));
+                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').val("defaultValue"));
                                     console.log($(this).parent().find('.tm-rangeslider-rightlabel'))
                 }
             });
