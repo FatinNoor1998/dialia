@@ -462,8 +462,8 @@
                 'value_changed_callback': function (cause, leftValue, rightValue) {
                     $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
                      $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);
-                  $(this).parent().find('.tm-rangeslider-rightlabel').textContent = rightValue;
-                  console.log($(this).parent().find('.tm-rangeslider-rightlabel'));
+                  $(this).parent().find('.tm-rangeslider-rightlabel').placeholder = rightValue;
+                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').placeholder);
                                     console.log($(this).parent().find('.tm-rangeslider-rightlabel'))
                 }
             });
