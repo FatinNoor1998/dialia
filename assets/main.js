@@ -463,7 +463,8 @@
                     $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
                     // $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);;
                   $(this).parent().find('.tm-rangeslider-rightlabel').textContent = rightValue;
-                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').textContent)
+                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').textContent);
+                                    console.log($(this).parent().find('.tm-rangeslider-rightlabel'))
                 }
             });
         },
