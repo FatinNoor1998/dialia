@@ -462,7 +462,7 @@
                 'value_changed_callback': function (cause, leftValue, rightValue) {
                     $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
                     $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);
-                  console.log($(this).parent().find('.tm-rangeslider-rightlabel'))
+                  console.log($(this).parent().find('.tm-rangeslider-rightlabel').value)
                 }
             });
         },
