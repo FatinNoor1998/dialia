@@ -102,7 +102,7 @@
 
                                     <!-- Single Widget -->
                            
-                             <form class="filter-form">     
+                             <form class="filter-form" id="price-filter">     
                                  {%- for filter in collection.filters -%}
                                    	{%- case filter.type -%}
                                        {%- when 'price_range' -%}
@@ -196,7 +196,7 @@
                                   
 <script>
 
-  document.querySelector('.filter-form').addEventListener('click', handleFiltering);
+  document.querySelector('#price-filter').addEventListener('click', handleFiltering);
 
 
 function handleFiltering(event) {
