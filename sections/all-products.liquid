@@ -208,6 +208,7 @@ function handleFiltering(event) {
   fetch(`/collections/all?filter.v.price.gte=${minValue}&filter.v.price.lte=${maxValue}`)
     .then(response => response.text())
     .then(filteredData => {
+      console.log(filteredData);
       document.querySelector('.tm-shop-products').innerHTML = filteredData;
     })
     .catch(error => console.error(error));
