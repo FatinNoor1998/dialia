@@ -211,7 +211,7 @@ function handleFiltering(event) {
   fetch(`/collections/all?{{ filter.min_value.param_name }}&{{ filter.max_value.param_name }}`)
     .then(response => response.text())
     .then(filteredData => {
-      document.getElementById('collectionItems').innerHTML = filteredData;
+      document.querySelector('.tm-shop-products').innerHTML = filteredData;
     })
     .catch(error => console.error(error));
 }
