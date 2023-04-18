@@ -211,7 +211,7 @@ function handleFiltering(event) {
      const tempElement = document.createElement('div');
        tempElement.innerHTML = filteredData;
       const section = tempElement.querySelector('.tm-shop-products');
-      console.log(section);
+      console.log(section.innerHTML);
       
        document.querySelector('.tm-shop-products .row.mt-30-reverse').innerHTML = section;
     })
