@@ -206,7 +206,7 @@ function handleFiltering(event) {
    let maxValue = document.querySelector("#Filter-max-price").value;
 
   fetch(`/collections/all?filter.v.price.gte=${minValue}&filter.v.price.lte=${maxValue}`)
-    .then(response => response.json())
+    .then(response => response.text())
     .then(filteredData => {
       console.log(filteredData);
       
