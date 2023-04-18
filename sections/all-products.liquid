@@ -119,11 +119,11 @@
                                               
                                               <div class="field">
                                                        <span class="widget-pricefilter-price">Price: $</span>
-                                                       <input class="tm-rangeslider-leftlabel" type="number" />
+                                                       <input class="tm-rangeslider-leftlabel" type="number" name="{{ filter.min_value.param_name }}"  id="Filter-{{ filter.min_value.param_name }}"/>
                                               </div>
                                                <div class="field">
                                                    <span class="text"> - $</span>
-                                                    <input class="tm-rangeslider-rightlabel" type="number"/>    
+                                                    <input class="tm-rangeslider-rightlabel" type="number" name="{{ filter.max_value.param_name }}" id="Filter-{{ filter.max_value.param_name }}"/>    
                                                </div>
                                                
                                             </div>
