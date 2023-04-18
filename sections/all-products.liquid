@@ -204,7 +204,7 @@ function handleFiltering(event) {
 
 
   const filterValue = document.getElementById('filterValue').value;
-   let minValue = document.querySelector("#Filter-{{ filter.min_value.param_name }}")
+   let minValue = document.querySelector("#Filter-min-price");
 
 
   fetch(`/collections/collection-handle?constraint=${filterValue}`)
