@@ -208,9 +208,11 @@ function handleFiltering(event) {
   fetch(`/collections/all?filter.v.price.gte=${minValue}&filter.v.price.lte=${maxValue}`)
     .then(response => response.text())
     .then(filteredData => {
-      const newSection = filteredData.('.tm-shop-products');
+     const tempElement = document.createElement('div');
+       tempElement.innerHTML = filteredData;
+      const section = tempElement.querySelector('.tm-shop-products');
       
-       document.querySelector('.tm-shop-products').innerHTML = newSection;
+       document.querySelector('.tm-shop-products').innerHTML = section;
     })
     .catch(error => console.error(error));
 }
