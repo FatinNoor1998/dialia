@@ -102,7 +102,7 @@
 
                                     <!-- Single Widget -->
                            
-<form class="filter-form">     
+                             <form class="filter-form">     
                                  {%- for filter in collection.filters -%}
                                    	{%- case filter.type -%}
                                        {%- when 'price_range' -%}
@@ -127,7 +127,7 @@
                                                </div>
                                                
                                             </div>
-                                           <input class="widget-pricefilter-button" type="submit" value="Filter">
+                                           <button class="widget-pricefilter-button" type="submit">Filter</button>
                                         </div>
                                     </div>
                                     <!--// Single Widget -->
@@ -192,6 +192,11 @@
     params.set('sort_by', sortOption);
     window.location.href = baseUrl + '?' + params.toString();
   };
+</script>
+
+<script>
+ document.querySelector('.filter-form').addEventListener("click", function(e){
+    e.preventDefault()});
 </script>
 
 {% schema %}
