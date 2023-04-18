@@ -102,7 +102,7 @@
 
                                     <!-- Single Widget -->
                            
-                             <form class="filter-form" method="POST">     
+                             <form class="filter-form">     
                                  {%- for filter in collection.filters -%}
                                    	{%- case filter.type -%}
                                        {%- when 'price_range' -%}
@@ -194,13 +194,13 @@
   };
 </script>
                                   
-<script>
+<!-- <script>
 
   document.getElementById('filterButton').addEventListener('click', handleFiltering);
 
 
 function handleFiltering(event) {
-  // event.preventDefault();
+  event.preventDefault();
 
 
  
@@ -216,7 +216,7 @@ function handleFiltering(event) {
     .catch(error => console.error(error));
 }
   
-</script>
+</script> -->
 
 
 
