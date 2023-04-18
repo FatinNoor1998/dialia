@@ -213,7 +213,7 @@ function handleFiltering(event) {
       const section = tempElement.querySelector('.tm-shop-products');
       console.log(section);
       
-       document.querySelector('.tm-shop-products').innerHTML = section;
+       document.querySelector('.tm-shop-products .row.mt-30-reverse').innerHTML = section;
     })
     .catch(error => console.error(error));
 }
