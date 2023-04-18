@@ -212,7 +212,7 @@ function handleFiltering(event) {
        tempElement.innerHTML = filteredData;
        const newSection = tempElement.querySelector('#all-products');
 
-       const oldSection = document.querySelector('#all-products .sticky-sidebar');
+       const oldSection = document.querySelector('#all-products');
 
       oldSection.parentNode.replaceChild(newSection, oldSection);
     })
