@@ -46,20 +46,6 @@
                                               {% endfor %}
                                             </select>                                                         
                                      </form>
-                                                    
-<script>
-  document.getElementById('sort-by').onchange = ()=> {
-    var select = document.getElementById('sort-by');
-    var sortOption = select.options[select.selectedIndex].value;
-    var url = window.location.href;
-    var baseUrl = url.split('?')[0];
-    var query = url.split('?')[1];
-    var params = new URLSearchParams(query);
-    params.set('sort_by', sortOption);
-    window.location.href = baseUrl + '?' + params.toString();
-  };
-</script>
-
 
                               {% paginate collection.products by section.settings.products_per_page %}
                                 <div class="tm-shop-products">
@@ -147,10 +133,6 @@
                                       {% endcase %}
                                    {% endfor %}
                                     <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
-
-                                  {%- if filter.active_values.size > 0 -%}
-            <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
-          {%- endif -%}
                                </form>
 
                           <!-- Single Widget -->
@@ -196,6 +178,20 @@
             <!--// Products Page Content -->
 
         </main>
+
+                                                                                      
+<script>
+  document.getElementById('sort-by').onchange = ()=> {
+    var select = document.getElementById('sort-by');
+    var sortOption = select.options[select.selectedIndex].value;
+    var url = window.location.href;
+    var baseUrl = url.split('?')[0];
+    var query = url.split('?')[1];
+    var params = new URLSearchParams(query);
+    params.set('sort_by', sortOption);
+    window.location.href = baseUrl + '?' + params.toString();
+  };
+</script>
 
 {% schema %}
   {
