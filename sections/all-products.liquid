@@ -31,7 +31,7 @@
             <div class="tm-section products-page-content tm-padding-section bg-white">
                 <div class="container">
                     <div class="row">           
-                        <div class="col-lg-9 col-12">
+                        <div class="col-lg-9 col-12" id="all-products">
                             
                             <div class="sticky-sidebar">
                                 <form class="tm-shop-header filter-form">
@@ -86,7 +86,7 @@
                       {% endpaginate %}
                             </div>
                         </div>
-                        <div class="col-lg-3 col-12">
+                        <div class="col-lg-3 col-12" id="side-bar">
                             <div class="sticky-sidebar">
                                 <div class="widgets">
 
@@ -210,9 +210,9 @@ function handleFiltering(event) {
     .then(filteredData => {
      const tempElement = document.createElement('div');
        tempElement.innerHTML = filteredData;
-       const newSection = tempElement.querySelector('.tm-shop-products');
+       const newSection = tempElement.querySelector('#all-products');
 
-       const oldSection = document.querySelector('.tm-shop-products .row.mt-30-reverse');
+       const oldSection = document.querySelector('#all-products .sticky-sidebar');
 
       oldSection.parentNode.replaceChild(newSection, oldSection);
     })
