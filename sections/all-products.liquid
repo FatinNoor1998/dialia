@@ -202,14 +202,10 @@
 function handleFiltering(event) {
   event.preventDefault();
 
-
- 
    let minValue = document.querySelector("#Filter-min-price").value;
    let maxValue = document.querySelector("#Filter-max-price").value;
 
-
   fetch(`/collections/all?filter.v.price.gte=${"minValue"}&filter.v.price.lte=${"maxValue"}`)
-
     .then(response => response.text())
     .then(filteredData => {
       document.querySelector('.tm-shop-products').innerHTML = filteredData;
@@ -218,10 +214,6 @@ function handleFiltering(event) {
 }
   
 </script>
-
-
-
-                                
 
 
 {% schema %}
