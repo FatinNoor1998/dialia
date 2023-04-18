@@ -147,6 +147,10 @@
                                       {% endcase %}
                                    {% endfor %}
                                     <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
+
+                                  {%- if filter.active_values.size > 0 -%}
+            <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
+          {%- endif -%}
                                </form>
 
                           <!-- Single Widget -->
