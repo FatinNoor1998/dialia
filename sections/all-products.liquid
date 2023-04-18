@@ -194,7 +194,7 @@
   };
 </script>
                                   
-<!-- <script>
+<script>
 
   document.getElementById('filterButton').addEventListener('click', handleFiltering);
 
@@ -208,7 +208,8 @@ function handleFiltering(event) {
    let maxValue = document.querySelector("#Filter-max-price").value;
 
 
-  fetch(`/collections/all?filter.v.price.gte=${"minValue"}&filter.v.price.lte=${"maxValue"}`)
+  // fetch(`/collections/all?filter.v.price.gte=${"minValue"}&filter.v.price.lte=${"maxValue"}`)
+  fetch(`https://dialia-rmt-store.myshopify.com/collections/all?filter.v.price.gte=200&filter.v.price.lte=550`)
     .then(response => response.text())
     .then(filteredData => {
       document.querySelector('.tm-shop-products').innerHTML = filteredData;
@@ -216,7 +217,7 @@ function handleFiltering(event) {
     .catch(error => console.error(error));
 }
   
-</script> -->
+</script>
 
 
 
