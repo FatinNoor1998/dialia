@@ -185,9 +185,9 @@
               <input type="submit" value="Apply">
             </div>
           {%- when 'price_range' -%}
-            <div class="filter-group-display__price-range">
+            <div class="single-widget widget-pricefilter">
               <div class="filter-group-display__price-range-from">
-                <span>{{ cart.currency.symbol }}</span>
+               <h5 class="widget-title">Filter by Price</h5>
 
                 <input name="{{ filter.min_value.param_name }}"
                   id="Filter-{{ filter.min_value.param_name }}"
