@@ -102,7 +102,7 @@
 
                                     <!-- Single Widget -->
                            
-                             <form class="filter-form">     
+                             <form class="filter-form" method="POST">     
                                  {%- for filter in collection.filters -%}
                                    	{%- case filter.type -%}
                                        {%- when 'price_range' -%}
