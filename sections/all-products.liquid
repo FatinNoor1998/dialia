@@ -203,11 +203,12 @@ function handleFiltering(event) {
   event.preventDefault();
 
 
-  const filterValue = document.getElementById('filterValue').value;
+ 
    let minValue = document.querySelector("#Filter-min-price");
+   let maxValue = document.querySelector("#Filter-max-price");
 
 
-  fetch(`/collections/collection-handle?constraint=${filterValue}`)
+  fetch(`/collections/all?{{ filter.min_value.param_name }}&{{ filter.max_value.param_name }}`)
     .then(response => response.text())
     .then(filteredData => {
       document.getElementById('collectionItems').innerHTML = filteredData;
