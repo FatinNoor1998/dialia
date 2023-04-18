@@ -210,10 +210,11 @@ function handleFiltering(event) {
     .then(filteredData => {
      const tempElement = document.createElement('div');
        tempElement.innerHTML = filteredData;
-      const section = tempElement.querySelector('.tm-shop-products');
-      console.log(section);
-      
-       document.querySelector('.tm-shop-products .row.mt-30-reverse').innerHTML = section;
+       const newSection = tempElement.querySelector('.tm-shop-products');
+
+       const oldSection = document.querySelector('.tm-shop-products .row.mt-30-reverse');
+
+      oldSection.parentNode.replaceChild(newSection, oldSection);
     })
     .catch(error => console.error(error));
 }
