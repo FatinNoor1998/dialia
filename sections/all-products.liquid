@@ -209,9 +209,10 @@ function handleFiltering(event) {
     .then(response => response.text())
     .then(filteredData => {
       console.log(filteredData);
-      
+      console.log(filteredData.querySelector(".tm-shop-products"));
+       document.querySelector('.tm-shop-products').innerHTML = filteredData;
     })
-    .catch(error => console.log(error));
+    .catch(error => console.error(error));
 }
   
 </script>
