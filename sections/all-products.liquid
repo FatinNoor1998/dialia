@@ -224,7 +224,7 @@ priceFilterForm.addEventListener('submit', (event) => {
     params.delete('max_price');
   }
 
-  window.location.href = baseUrl + '?' + params.toString();
+  window.location.href = url + '&' + params.toString();
 });
 
 
