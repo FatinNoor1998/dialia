@@ -197,31 +197,25 @@
                                   
 <script>
 const priceFilterForm = document.querySelector('#price-filter');
+const minPriceInput = document.querySelector('#Filter-min-price');
+const maxPriceInput = document.querySelector('#Filter-max-price');
+const filterButton = document.querySelector('#filterButton');
 
-priceFilterForm.addEventListener('submit', (event) => {
+filterButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const minValue = parseInt(document.querySelector('#Filter-min-price').value);
-  const maxValue = parseInt(document.querySelector('#Filter-max-price').value);
+  const minValue = parseInt(minPriceInput.value);
+  const maxValue = parseInt(maxPriceInput.value);
 
-  // Use fetch to get the filtered products
-  fetch(`/collections/all?filter.v.price.gte=${minValue}&filter.v.price.lte=${maxValue}`)
-    .then(response => response.text())
-    .then(filteredData => {
-      // Create a temporary element to hold the filtered data
-      const tempElement = document.createElement('div');
-      tempElement.innerHTML = filteredData;
-
-      // Get the new product items
-      const newProducts = tempElement.querySelectorAll('.product-item');
-
-      // Replace the old product items with the new ones
-      const oldProducts = document.querySelectorAll('.product-item');
-      oldProducts.forEach(product => product.parentNode.removeChild(product));
-      const allProducts = document.querySelector('.row.mt-30-reverse');
-      newProducts.forEach(product => allProducts.appendChild(product));
-    })
-    .catch(error => console.error(error));
+  const products = document.querySelectorAll('.product-item');
+  for (const product of products) {
+    const price = parseInt(product.querySelector('.price').textContent);
+    if (price >= minValue && price <= maxValue) {
+      product.style.display = '';
+    } else {
+      product.style.display = 'none';
+    }
+  }
 });
 
 </script>
