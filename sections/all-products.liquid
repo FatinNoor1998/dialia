@@ -196,7 +196,29 @@
 </script>
                                   
 <script>
+document.querySelector('#price-filter').addEventListener('submit', handleFiltering);
 
+
+function handleFiltering(event) {
+  event.preventDefault();
+
+   let minValue = document.querySelector("#Filter-min-price").value;
+   let maxValue = document.querySelector("#Filter-max-price").value;
+
+  fetch(`/collections/all?filter.v.price.gte=${minValue}&filter.v.price.lte=${maxValue}`)
+    .then(response => response.text())
+    .then(filteredData => {
+     const tempElement = document.createElement('div');
+       tempElement.innerHTML = filteredData;
+       const newSection = tempElement.querySelector('#all-products');
+
+       const oldSection = document.querySelector('#all-products');
+
+      oldSection.parentNode.replaceChild(newSection, oldSection);
+     
+    })
+    .catch(error => console.error(error));
+}
 
 </script>
 
