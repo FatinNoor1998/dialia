@@ -199,24 +199,32 @@
 const priceFilterForm = document.querySelector('#price-filter');
 const minPriceInput = document.querySelector('#Filter-min-price');
 const maxPriceInput = document.querySelector('#Filter-max-price');
-const filterButton = document.querySelector('#filterButton');
 
-filterButton.addEventListener('click', (event) => {
+priceFilterForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  
+  const minPrice = minPriceInput.value;
+  const maxPrice = maxPriceInput.value;
 
-  const minValue = parseInt(minPriceInput.value);
-  const maxValue = parseInt(maxPriceInput.value);
+  const url = window.location.href;
+  const baseUrl = url.split('?')[0];
+  const query = new URLSearchParams(window.location.search);
 
-  const products = document.querySelectorAll('.product-item');
-  for (const product of products) {
-    const price = parseInt(product.querySelector('.price').textContent);
-    if (price >= minValue && price <= maxValue) {
-      product.style.display = '';
-    } else {
-      product.style.display = 'none';
-    }
+  if (minPrice) {
+    query.set('min_price', minPrice);
+  } else {
+    query.delete('min_price');
   }
+
+  if (maxPrice) {
+    query.set('max_price', maxPrice);
+  } else {
+    query.delete('max_price');
+  }
+
+  window.location.href = baseUrl + '?' + query.toString();
 });
+
 
 </script>
 
