@@ -218,7 +218,7 @@ priceFilterForm.addEventListener('submit', (event) => {
       // Replace the old product items with the new ones
       const oldProducts = document.querySelectorAll('#all-products);
       oldProducts.forEach(product => product.parentNode.removeChild(product));
-      const allProducts = document.querySelector('.row.mt-30-reverse');
+      const allProducts = document.querySelector('#main-container');
       newProducts.forEach(product => allProducts.appendChild(product));
     })
     .catch(error => console.error(error));
