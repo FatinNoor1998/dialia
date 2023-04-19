@@ -204,7 +204,7 @@ priceFilterForm.addEventListener('submit', (event) => {
   const minValue = parseInt(document.querySelector('#Filter-min-price').value);
   const maxValue = parseInt(document.querySelector('#Filter-max-price').value);
 
-  const products = document.querySelectorAll('.product-item');
+  const products = document.querySelectorAll('.tm-product');
   for (const product of products) {
    let price = parseInt(document.querySelector('.tm-product-price').innerText.split(" ")[1]);
     console.log(price);
