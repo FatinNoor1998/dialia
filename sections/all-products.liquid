@@ -183,7 +183,8 @@
 
                                                                                       
 <script>
-  document.getElementById('sort-by').onchange = ()=> {
+  document.getElementById('sort-by').onchange = (e)=> {
+     e.preventDefault();
     var select = document.getElementById('sort-by');
     var sortOption = select.options[select.selectedIndex].value;
     var url = window.location.href;
@@ -201,7 +202,7 @@ const minPriceInput = document.querySelector('#Filter-min-price');
 const maxPriceInput = document.querySelector('#Filter-max-price');
 
 priceFilterForm.addEventListener('submit', (event) => {
-  // event.preventDefault();
+  event.preventDefault();
   
   const minPrice = minPriceInput.value;
   const maxPrice = maxPriceInput.value;
