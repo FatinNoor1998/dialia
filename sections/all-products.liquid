@@ -206,7 +206,7 @@ priceFilterForm.addEventListener('submit', (event) => {
 
   const products = document.querySelectorAll('.product-item');
   for (const product of products) {
-    const price = parseInt(product.querySelector('.tm-product-price').textContent);
+   let price = parseInt(document.querySelector('.tm-product-price').innerText.split(" ")[1]);
     if (price >= minValue && price <= maxValue) {
       product.style.display = 'block';
     } else {
