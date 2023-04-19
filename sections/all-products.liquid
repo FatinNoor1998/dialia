@@ -197,7 +197,7 @@
                                   
 <script>
 
-document.querySelector('.nice-select').addEventListener('onchange', handleFiltering);
+document.querySelector('#sort-by').addEventListener('onchange', handleFiltering);
 
 function handleFiltering(event) {
   // event.preventDefault();
@@ -219,8 +219,8 @@ const selectedValue = selectElement.value;
        const oldSection = document.querySelector('#all-products').innerHTML;
         oldSection = newSection;
 
-      history.replaceState(null, null, '?sort_by=${selectedValue}');
-      // oldSection.parentNode.replaceChild(newSection, oldSection);
+    
+      oldSection.parentNode.replaceChild(newSection, oldSection);
      
     })
     .catch(error => console.error(error));
