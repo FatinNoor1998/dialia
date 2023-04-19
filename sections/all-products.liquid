@@ -31,7 +31,7 @@
             <!-- Products Page Content -->
             <div class="tm-section products-page-content tm-padding-section bg-white" id="products-section">
                 <div class="container">
-                    <div class="row">           
+                    <div class="row" id="main-container">           
                         <div class="col-lg-9 col-12" id="all-products">
                             
                             <div class="sticky-sidebar">
@@ -213,10 +213,10 @@ priceFilterForm.addEventListener('submit', (event) => {
       tempElement.innerHTML = filteredData;
 
       // Get the new product items
-      const newProducts = tempElement.querySelectorAll('.product-item');
+      const newProducts = tempElement.querySelectorAll('#all-products');
 
       // Replace the old product items with the new ones
-      const oldProducts = document.querySelectorAll('.product-item');
+      const oldProducts = document.querySelectorAll('#all-products);
       oldProducts.forEach(product => product.parentNode.removeChild(product));
       const allProducts = document.querySelector('.row.mt-30-reverse');
       newProducts.forEach(product => allProducts.appendChild(product));
