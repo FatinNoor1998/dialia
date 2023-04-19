@@ -35,7 +35,7 @@
                         <div class="col-lg-9 col-12" id="all-products">
                             
                             <div class="sticky-sidebar">
-                                <form class="tm-shop-header filter-form">
+                                <form class="tm-shop-header filter-form" id="sorting">
                                     <p class="tm-shop-countview">Showing {{ collection.products_count }} Products of {{ collection.all_products_count }}</p>
                                          <select id="sort-by">
                                               {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
@@ -195,9 +195,9 @@
   };
 </script>
                                   
-<script>
+<!-- <script>
 
-  document.querySelector('#price-filter').addEventListener('submit', handleFiltering);
+  document.querySelector('#sorting').addEventListener('submit', handleFiltering);
 
 
 function handleFiltering(event) {
@@ -221,7 +221,7 @@ function handleFiltering(event) {
     .catch(error => console.error(error));
 }
   
-</script>
+</script> -->
 
 
 {% schema %}
