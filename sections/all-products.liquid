@@ -54,7 +54,7 @@
 
                                    {% for product in collection.products %}
                                         <!-- Single Product -->
-                                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-30">
+                                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-30 product-item">
                                             <div class="tm-product">
                                                 <div class="tm-product-image">
                                                     <a class="tm-product-imagelink" href="{{ product.url }}">
@@ -196,6 +196,24 @@
 </script>
                                   
 <script>
+const priceFilterForm = document.querySelector('#price-filter');
+
+priceFilterForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const minValue = parseInt(document.querySelector('#Filter-min-price').value);
+  const maxValue = parseInt(document.querySelector('#Filter-max-price').value);
+
+  const products = document.querySelectorAll('.product-item');
+  for (const product of products) {
+    const price = parseInt(product.querySelector('.tm-product-price').textContent);
+    if (price >= minValue && price <= maxValue) {
+      product.style.display = '';
+    } else {
+      product.style.display = 'none';
+    }
+  }
+});
 
 
 </script>
