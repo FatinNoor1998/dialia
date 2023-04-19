@@ -460,8 +460,8 @@
                 'right_grip_selector': '.tm-rangeslider-rightgrip',
                 'value_bar_selector': '.tm-rangeslider-bar',
                 'value_changed_callback': function (cause, leftValue, rightValue) {
-                    $(this).parent().find('.tm-rangeslider-leftlabel').text(leftValue);
-                    $(this).parent().find('.tm-rangeslider-rightlabel').text(rightValue);                 
+                    $(this).parent().find('.tm-rangeslider-leftlabel').val(leftValue);
+                    $(this).parent().find('.tm-rangeslider-rightlabel').val(rightValue);                 
                 }
             });
         },
