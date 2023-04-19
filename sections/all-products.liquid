@@ -29,7 +29,7 @@
         <main class="main-content">
 
             <!-- Products Page Content -->
-            <div class="tm-section products-page-content tm-padding-section bg-white">
+            <div class="tm-section products-page-content tm-padding-section bg-white" id="products-section">
                 <div class="container">
                     <div class="row">           
                         <div class="col-lg-9 col-12" id="all-products">
@@ -181,7 +181,7 @@
 
         </main>
 
-<!--                                                                                       
+                                                                                      
 <script>
   document.getElementById('sort-by').onchange = ()=> {
     var select = document.getElementById('sort-by');
@@ -193,39 +193,11 @@
     params.set('sort_by', sortOption);
     window.location.href = baseUrl + '?' + params.toString();
   };
-</script> -->
+</script>
                                   
 <script>
 
-document.querySelector('#sort-by').addEventListener('onchange', handleFiltering);
 
-function handleFiltering(event) {
-  // event.preventDefault();
-  console.log("hello");
-
-const selectElement = document.querySelector('#sort-by');
-const selectedValue = selectElement.value;
-
-  fetch(`/collections/all?sort_by=${selectedValue}`)
-    .then(response => response.text())
-    .then(filteredData => {
-     const tempElement = document.createElement('div');
-       tempElement.innerHTML = filteredData;
-      
-       const newSection = tempElement.querySelector('#all-products').innerHTML;
-
-      console.log(newSection);
-
-       const oldSection = document.querySelector('#all-products').innerHTML;
-        oldSection = newSection;
-
-    
-      oldSection.parentNode.replaceChild(newSection, oldSection);
-     
-    })
-    .catch(error => console.error(error));
-}
-  
 </script>
 
 
