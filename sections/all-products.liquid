@@ -195,6 +195,23 @@
     window.location.href = baseUrl + '?' + params.toString();
   };
 </script>
+<script>
+   const sortBySelect = document.getElementById('sort-by');
+
+sortBySelect.addEventListener('change', (event) => {
+  const sortOption = event.target.value;
+  
+  const url = new URL(window.location.href);
+  const query = url.searchParams;
+  
+  query.set('sort_by', sortOption);
+  
+  window.history.pushState({}, null, url);
+  
+});
+</script>
+                                                     
+
                                   
 {% schema %}
   {
