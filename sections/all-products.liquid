@@ -196,19 +196,70 @@
   };
 </script> -->
 <script>
-   const sortBySelect = document.getElementById('sort-by');
+   function updateProductsList(sortBy) {
+  const productsContainer = document.querySelector('.row.mt-30-reverse');
 
-sortBySelect.addEventListener('change', (event) => {
+  fetch(`/collections/all?sort_by=${sortBy}`, {
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    productsContainer.innerHTML = '';
+    data.forEach(product => {
+      // create HTML elements for the product and append to products container
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product');
+      productDiv.innerHTML = `
+    
+                                   
+                                     
+                                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-30 product-item">
+                                            <div class="tm-product">
+                                                <div class="tm-product-image">
+                                                    <a class="tm-product-imagelink" href=${product.url}>
+                                                        <img src=${product.featured_image} alt=${product.featured_image.alt}>
+                                                    </a>
+                                                    <ul class="tm-product-actions">
+                                                        <li><button type="button" data-fancybox data-src="#tm-product-quickview"> <i class="fa-sharp fa-regular fa-eye"></i></button></li>
+                                                        <li><a href=${routes.cart_url}><i class="fa-solid fa-cart-shopping"></i></a></li>
+                                                        <li><a href=${ routes.cart_url }><i class="fa-sharp fa-solid fa-heart"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tm-product-content">
+                                                    <h5 class="tm-product-title"><a href=${ product.url }>${ product.title }</a></h5>
+                                                    <div class="tm-product-rating">
+                                                        <span class="active"><i class="fa-sharp fa-solid fa-star" style="color: #ffc800;"></i></span>
+                                                        <span class="active"><i class="fa-sharp fa-solid fa-star" style="color: #ffc800;"></i></span>
+                                                        <span class="active"><i class="fa-sharp fa-solid fa-star" style="color: #ffc800;"></i></span>
+                                                        <span class="active"><i class="fa-sharp fa-solid fa-star" style="color: #ffc800;"></i></span>
+                                                        <span class="active"><i class="fa-sharp fa-solid fa-star" style="color: #ffc800;"></i></span>
+                                                    </div>
+                                                    <h6 class="tm-product-price">${ product.price} <del> ${product.compare_at_price}</del></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                     
+                                    
+      `;
+      productsContainer.appendChild(productDiv);
+    });
+  })
+  .catch(error => console.log(error));
+}
+
+const selectSort = document.getElementById('sort-by');
+selectSort.addEventListener('change', (event) => {
   const sortOption = event.target.value;
-  
-  const url = new URL(window.location.href);
-  const query = url.searchParams;
-  
-  query.set('sort_by', sortOption);
-  
-  window.history.pushState({}, null, url);
-  
+  const urlParams = new URLSearchParams(window.location.search);
+  urlParams.set('sort_by', sortOption);
+  const newUrl = window.location.pathname + '?' + urlParams.toString();
+  window.history.pushState({path: newUrl}, '', newUrl);
+  updateProductsList(sortOption);
 });
+
 </script>
                                                      
 
