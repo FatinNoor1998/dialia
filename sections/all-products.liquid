@@ -196,46 +196,6 @@
   };
 </script>
                                   
-<script>
-const priceFilterForm = document.querySelector('#price-filter');
-const minPriceInput = document.querySelector('#Filter-min-price');
-const maxPriceInput = document.querySelector('#Filter-max-price');
-
-priceFilterForm.addEventListener('submit', (event) => {
-  // event.preventDefault();
-  
-  const minPrice = minPriceInput.value;
-  const maxPrice = maxPriceInput.value;
-
-  const url = window.location.href;
-  const baseUrl = url.split('?')[0];
-  const query = url.split('?')[1];
-  var params = new URLSearchParams(query);
-
-  if (minPrice) {
-    params.set('min_price', minPrice);
-  } else {
-    params.delete('min_price');
-  }
-
-  if (maxPrice) {
-    params.set('max_price', maxPrice);
-  } else {
-    params.delete('max_price');
-  }
-if (window.location.href.includes('?')) {
-  window.location.href = window.location.href + '&' + params.toString();
-}
-  else{
-    window.location.href = baseUrl + '?' + params.toString();
-  }
-  
-});
-
-
-</script>
-
-
 {% schema %}
   {
     "name": "all-products",
