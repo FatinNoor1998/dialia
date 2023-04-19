@@ -209,21 +209,22 @@ priceFilterForm.addEventListener('submit', (event) => {
 
   const url = window.location.href;
   const baseUrl = url.split('?')[0];
-  const query = new URLSearchParams(window.location.search);
+  const query = url.split('?')[1];
+  var params = new URLSearchParams(query);
 
   if (minPrice) {
-    query.set('min_price', minPrice);
+    params.set('min_price', minPrice);
   } else {
-    query.delete('min_price');
+    params.delete('min_price');
   }
 
   if (maxPrice) {
-    query.set('max_price', maxPrice);
+    params.set('max_price', maxPrice);
   } else {
-    query.delete('max_price');
+    params.delete('max_price');
   }
 
-  window.location.href = baseUrl + '?' + query.toString();
+  window.location.href = baseUrl + '?' + params.toString();
 });
 
 
