@@ -223,8 +223,13 @@ priceFilterForm.addEventListener('submit', (event) => {
   } else {
     params.delete('max_price');
   }
-
-  window.location.href = url + '&' + params.toString();
+if (window.location.href.includes('?')) {
+  window.location.href = window.location.href + '&' + params.toString();
+}
+  else{
+    window.location.href = baseUrl + '?' + params.toString();
+  }
+  
 });
 
 
