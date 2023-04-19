@@ -201,6 +201,7 @@ document.querySelector('#sorting').addEventListener('submit', handleFiltering);
 
 function handleFiltering(event) {
   event.preventDefault();
+  console.log("hello");
 
 const selectElement = document.querySelector('#sort-by');
 const selectedValue = selectElement.value;
