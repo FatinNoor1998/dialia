@@ -375,6 +375,10 @@
               this.updatePrice();
             }
           }
+        filterImgVariant(){
+          console.log("hello", this.currentVariant);
+        }
+          
       
           getSelectedOptions() {
             this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
