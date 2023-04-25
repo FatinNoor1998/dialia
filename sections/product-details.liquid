@@ -34,7 +34,7 @@
                                             </div>
                                             <div class="tm-prodetails-thumbnails">
                                               {% for image in product.images %}
-                                                <div class="tm-prodetails-thumbnail">
+                                                <div class="tm-prodetails-thumbnail" thumbnail-alt={{ image.alt }}>
                                                     <img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt }}">
                                                 </div>
                                               {% endfor %}
