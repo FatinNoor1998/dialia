@@ -26,7 +26,7 @@
                                               {% for image in product.images %}
                                                 <div class="tm-prodetails-largeimage">
                                                     <a data-fancybox="tm-prodetails-imagegallery" href="{{ image | img_url : 'master' }}"
-                                                        data-caption="Product Zoom Image 1" thumbnail-alt={{ image.alt }}>
+                                                        data-caption="Product Zoom Image 1">
                                                         <img src="{{ image | img_url: 'master' }}" alt="" style="margin: 0 auto !important">
                                                     </a>
                                                 </div> 
@@ -34,7 +34,7 @@
                                             </div>
                                             <div class="tm-prodetails-thumbnails">
                                               {% for image in product.images %}
-                                                <div class="tm-prodetails-thumbnail">
+                                                <div class="tm-prodetails-thumbnail" thumbnail-alt={{ image.alt }}>
                                                     <img src="{{ image.src | img_url: 'medium' }}" alt="{{ image.alt }}">
                                                 </div>
                                               {% endfor %}
