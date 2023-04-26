@@ -375,15 +375,15 @@
               this.updatePrice();
             }
           }
-        filterImgVariant(){
-         if(this.currentVariant.featured_image && this.currentVariant.featured_image.alt){
-           document.querySelectorAll('[thumbnail-alt]').foreach(img => img.style.display = 'none')
-           const curentImg = this.currentVariant.featured_image.alt;
-          const imgSelector = `[thumbnail-alt = '${curentImg}']`;
-           document.querySelectorAll(imgSelector).foreach(img => img.style.display = 'block')
+        // filterImgVariant(){
+        //  if(this.currentVariant.featured_image && this.currentVariant.featured_image.alt){
+        //    document.querySelectorAll('[thumbnail-alt]').foreach(img => img.style.display = 'none')
+        //    const curentImg = this.currentVariant.featured_image.alt;
+        //   const imgSelector = `[thumbnail-alt = '${curentImg}']`;
+        //    document.querySelectorAll(imgSelector).foreach(img => img.style.display = 'block')
            
-         }
-        }
+        //  }
+        // }
           
       
           getSelectedOptions() {
