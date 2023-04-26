@@ -378,7 +378,6 @@
         filterImgVariant(){
          if(this.currentVariant.featured_image && this.currentVariant.featured_image.alt){
            document.querySelectorAll('[thumbnail-alt]').forEach((e) => {
-             console.log( " im in for loop");
              if( this.currentVariant.featured_image.alt == e.getAttribute('thumbnail-alt')){
                e.click();
              }
