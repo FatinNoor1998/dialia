@@ -1,12 +1,18 @@
 {
   "sections": {
-    "header": {
-      "type": "header",
+    "main": {
+      "type": "hero-affiliation",
       "settings": {
+        "hero-title": "Join the Ninety Percent Affiliate Programme",
+        "sub-title": "Through the Ninety Percent Affiliate Programme, selected fashion and lifestyle websites can earn a commission by promoting Ninety Percent products.",
+        "description": "<p>If your application is accepted, you will be able to earn up to 6% commission on valid sales referred by your website.<\/p><p><\/p><p> Get started by filling out our affiliate application here.<\/p>",
+        "btn-text": "Apply now",
+        "button_link": "",
+        "show_button": true
       }
     }
   },
   "order": [
-    "header"
+    "main"
   ]
 }
