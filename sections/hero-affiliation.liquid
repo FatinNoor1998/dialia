@@ -1,0 +1,100 @@
+<div class="hero-section-{{ section.id }} affiliation">
+    <div class="hero-main-title">
+        <h1 class="title">{{ section.settings.hero-title }}</h1>
+    </div>
+    <div class="hero-sub-title">
+        <h3 class="sub-title">{{ section.settings.sub-title }}</h3>
+    </div>
+    <div class="hero-description">
+       <p class="description">{{ section.settings.description }}</p> 
+    </div>
+     <div class="hero-button {% if section.settings.show_button == false %}hide-btn{% endif %}">
+        <a class="hero-btn" href="{{ section.settings.button_link }}">{{ section.settings.btn-text }}</a>
+    </div>
+</div>
+
+
+<style>
+    .hero-section-{{ section.id }}.affiliation{
+        max-width: 934px;
+        margin: 0 auto;
+        padding: 46px 0px 0px 67px;
+    }
+    .hero-section-{{ section.id }}.affiliation .hero-main-title .title{
+        max-width: 934px;
+        width: 100%;
+        font-family: 'Silvana';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 100px;
+        line-height: 105px;
+        letter-spacing: -0.03em;
+        color: #2B2725;
+    }
+</style>
+
+
+
+
+
+
+{% schema %}
+    {
+      "name": "hero-affiliation",
+      "settings": [
+        {
+            "type": "text",
+            "id":"hero-title",
+            "default": "Join the Ninety Percent Affiliate Programme",
+            "label": "Hero Title"
+        },
+        {
+            "type": "text",
+            "id": "sub-title",
+            "default": "Through the Ninety Percent Affiliate Programme, selected fashion and lifestyle websites can earn a commission by promoting Ninety Percent products.",
+            "label": "Hero sub title"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "default": "<p>If your application is accepted, you will be able to earn up to 6% commission on valid sales referred by your website. Get started by filling out our affiliate application here.</p>",
+            "label": "Hero description"
+        },
+        {
+            "type": "header",
+            "content": "For Button"
+        },
+        {
+            "type": "text",
+            "id": "btn-text",
+            "default": "Apply now",
+            "label": "Button Text"
+        },
+        {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+        },
+        {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show Button",
+        "default": true
+        }
+      ],
+      "presets": [
+      {
+          "category": "content",
+          "name":"hero-affiliation"
+      }
+  ]
+     
+    }
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
+
