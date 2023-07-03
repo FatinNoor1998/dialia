@@ -205,6 +205,7 @@
     },
     "726afe5b-7461-44f9-80d4-aa7e4af40170": {
       "type": "instafeed",
+      "disabled": true,
       "settings": {
         "heading_size": 20,
         "feed_width": 100,
