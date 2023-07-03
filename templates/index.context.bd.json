@@ -1,0 +1,17 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "bd"
+  },
+  "sections": {
+    "heroslider-area": {
+      "blocks": {
+        "ef5fd740-754a-4f76-8ec9-b59854a6eb5c": {
+          "settings": {
+            "slider_title": "hello banhladesh!!!!!"
+          }
+        }
+      }
+    }
+  }
+}
