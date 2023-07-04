@@ -2051,13 +2051,140 @@
         "other": "Hvis de ikke ble mottatt,"
       },
       "list_layout_accessibility_label": "Oppsettalternativer",
-      "list_title": "Bestillinger"
+      "list_title": "Bestillinger",
+      "let_us_know": "Gi oss beskjed",
+      "contact_us": "kontakt oss."
     },
     "order_details": {
       "login_to_view_all_order_details": "Logg inn for å se alle ordredetaljer.",
       "log_in": "Logg Inn",
       "logged_in_account_no_permission_to_order": "Du er logget på som {{email}} . Denne kontoen har ikke tillatelse til å administrere denne bestillingen.",
-      "log_in_to_a_different_account": "Logg på en annen konto"
+      "log_in_to_a_different_account": "Logg på en annen konto",
+      "shipment_timeline": {
+        "expand_events_label": "Vis detaljer",
+        "expand_events_accessibility_label": "Vis bestillingsforsendelsesdetaljer",
+        "hide_events_label": "Skjul detaljer",
+        "hide_events_accessibility_label": "Skjul ordreforsendelsesdetaljer"
+      },
+      "addresses_section_title": "Fakturering og frakt",
+      "order_details": "Ordre detaljer",
+      "order_details_skeleton_accessibility_label": "Logg inn for å se alle ordredetaljer.",
+      "billing_address": "Fakturaadresse",
+      "card_ending_with": "slutter med {{lastDigits}}",
+      "contact": "Kontakt",
+      "contact_information": "Kontaktinformasjon",
+      "company": "Selskap",
+      "fully_refunded_label": "REFUNDERT",
+      "group_title_label": "Del av: {{groupTitle}}",
+      "discount": "Rabatt",
+      "hide_items": "Skjul elementer",
+      "loading": "Laster bestillingsdetaljer",
+      "loading_finished_accessibility_message": "Bestillingsdetaljer er lastet inn",
+      "location": "plassering",
+      "image_gallery": {
+        "next": "Vis neste elementer",
+        "previous": "Vis tidligere elementer"
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Vis ordresammendrag",
+        "closed": "Skjul ordresammendrag"
+      },
+      "no_data": "Ingen",
+      "no_data_provided_accessibility_label": "{{fieldName}} er tom",
+      "paid_amount": "Betalt",
+      "partially_refunded_label": "DELVIS REFUNDERT",
+      "payment": {
+        "status_in_review": "Betaling forfaller etter gjennomgang",
+        "status_unpaid": "Betaling forfaller {{date}}",
+        "title": "innbetaling",
+        "card_payment_details": "slutter med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "slutter med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Delbetales med Shop Pay.",
+          "view_schedule": "Se tidsplan"
+        },
+        "manual_payment_methods": {
+          "money_order": "Postanvisning – {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Postoppkrav (COD) – {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankinnskudd – {{formattedTransactionAmount}}"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Betales med Shop Pay avdrag",
+        "description": "Hold deg oppdatert på betalingsplanen din med påminnelser i Shop-appen.",
+        "payment_reminders_button": "Få betalingspåminnelser",
+        "desktop_qr_code_content": {
+          "title": "Skann etter påminnelser",
+          "description": "Få påminnelser om avdragene dine med Shop."
+        }
+      },
+      "refunded_amount": "Refundert",
+      "request_return_failed": "Det oppsto et problem under behandlingen av forespørselen din. Vær så snill, prøv på nytt.",
+      "remaining_amount": "Gjenstående",
+      "marketing_section_title": "Nyheter og tilbud",
+      "marketing_description": "Du vil motta markedsførings-e-poster. Du kan melde deg av når som helst.",
+      "marketing_checkbox_label": "Send meg en e-post med nyheter og tilbud",
+      "marketing_checkmark_label": "Du abonnerer på å motta nyheter og tilbud på e-post",
+      "returns": {
+        "expand_events_label": "Vis detaljer",
+        "hide_events_label": "Skjul detaljer",
+        "ineligible_return_message": "Ingen varer i denne bestillingen er kvalifisert for retur.",
+        "ineligible_return_message_when_returned": "Ingen ekstra varer i denne bestillingen er kvalifisert for retur.",
+        "print_shipping_label": "Skriv ut fraktetikett",
+        "return_and_refund_modal_header": "Angrerett",
+        "tracking_number": "Sporingsnummer:"
+      },
+      "shipping": {
+        "address": "Sendingsadresse",
+        "address_map_marker": "Sendingsadresse",
+        "method": "Forsendelsesmetode",
+        "free": "Gratis",
+        "free_shipping_discount": "Gratis frakt",
+        "one_time": "Engangsfrakt",
+        "subscription": "Abonnementsfrakt"
+      },
+      "pickup": {
+        "pickup": "Plukke opp",
+        "pickup_location": "Hentested"
+      },
+      "show_items": "Vis elementer",
+      "show_order_summary": "Vis ordresammendrag",
+      "hide_order_summary": "Skjul ordresammendrag",
+      "subtitle": "Bekreftet {{date}}",
+      "subtotal": "Delsum",
+      "summary_list_title_accessibility_label": "Bestill varer",
+      "summary_title": "Bestillingssammendrag",
+      "summary_totals_title_accessibility_label": "Bestillingssummer",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Last ned Shop for å spore pakken",
+        "track_order_with_shop": "Spor bestilling med butikk",
+        "title_header": "Skann med telefonen",
+        "real_time_delivery_updates": "Shop vil sende deg leveringsoppdateringer i sanntid når bestillingen din er sendt."
+      },
+      "edit_summary": {
+        "added": "La til",
+        "added_with_quantity": "{{quantity}} lagt til",
+        "removed": "Fjernet",
+        "removed_with_quantity": "{{quantity}} fjernet",
+        "updated_at": "Bestillingen din ble oppdatert {{date}}"
+      },
+      "shop_pay": {
+        "order_completed_with": "Bestilling fullført med",
+        "learn_more": "Lære mer"
+      },
+      "taxes": "Skatter",
+      "duties": "Plikter",
+      "ok_duties_tooltip": "Denne bestillingen sendes fra et annet land, så avgifter er lagt til bestillingen din.",
+      "error_duties_tooltip": "Denne bestillingen sendes fra et annet land, så toll og avgifter kan bli belastet ved levering.",
+      "zero_duties_tooltip": "Denne bestillingen sendes fra et annet land. Toll belastes ikke for bestillinger av denne verdien.",
+      "tip": "Tips",
+      "title": "Bestill {{name}}",
+      "unit_price": "{{price}} \/ea",
+      "pagination": {
+        "load_more": "Last mer",
+        "load_more_accessibility_label": "Last inn flere varer",
+        "loading_accessibility_label": "Laster varer"
+      }
     },
     "addresses": {
       "add_button": "Legg til adresse",
