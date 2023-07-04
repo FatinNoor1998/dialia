@@ -1539,6 +1539,18 @@
         "delete_and_replace_button_accessibility_label": "Slett {{currentPaymentMethodName}} og erstatt med {{newPaymentMethodName}} .",
         "deleted_successfully": "Betalingsmåten ble slettet.",
         "loading_available_payment_methods_accessibility_label": "Laster tilgjengelige betalingsmåter"
+      },
+      "add_payment_method": {
+        "title": "Legg til betalingsmåte",
+        "payment_method_added_confirmation": "Betalingsmåte lagt til",
+        "billing_address": {
+          "title": "Fakturaadresse",
+          "add_billing_address_button": "Legg til ny",
+          "add_billing_address_button_accessibility_label": "Legg til ny faktureringsadresse",
+          "choose_billing_address_from_list_button": "Velg fra listen",
+          "choose_billing_address_from_list_button_accessibility_label": "Velg en faktureringsadresse fra listen",
+          "missing_billing_address_error_message": "Vennligst spesifiser en faktureringsadresse"
+        }
       }
     },
     "orders": {
@@ -1934,6 +1946,20 @@
         }
       },
       "add_button": "Legg til"
+    },
+    "payment_method_brands": {
+      "visa": "Visum",
+      "discover": "Oppdage",
+      "hipercard": "Hiperkort"
+    },
+    "shop_policies": {
+      "legal_notice": "Juridisk varsel",
+      "privacy_policy": "Personvernerklæring",
+      "refund_policy": "Angrerett",
+      "shipping_policy": "Fraktpolicy",
+      "subscription_policy": "Regler for abonnement",
+      "terms_of_sale": "Salgsbetingelser",
+      "terms_of_service": "Vilkår for bruk"
     }
   }
 }
