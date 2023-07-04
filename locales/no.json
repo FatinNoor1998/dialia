@@ -1025,7 +1025,129 @@
     "attributes": {
       "email": "e-post",
       "password": "passord",
-      "password_confirmation": "Passordbekreftelsen"
+      "password_confirmation": "Passordbekreftelsen",
+      "first_name": "fornavn",
+      "last_name": "etternavn",
+      "body": "kropp",
+      "signature": "Adresse"
+    },
+    "addresses": {
+      "zip_code": "post kode",
+      "postal_code": "Postnummer",
+      "postcode": "postnummer",
+      "pincode": "Pinkode",
+      "prefecture": "Prefektur",
+      "province": "Provins",
+      "state": "Stat",
+      "state_and_territory": "Stat\/territorium",
+      "county": "fylke",
+      "emirate": "Emirat",
+      "confirm": "Er du sikker på at du vil slette denne adressen?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Utvalgte",
+        "best_selling": "Bestselger",
+        "az": "Alfabetisk, AZ",
+        "za": "Alfabetisk, ZA",
+        "price_ascending": "Pris, lav til høy",
+        "price_descending": "Pris, høy til lav",
+        "date_ascending": "Dato, gammelt til nytt",
+        "date_descending": "Dato, nytt til gammelt"
+      }
+    },
+    "errors": {
+      "blank": "kan ikke være blank",
+      "blocked_address": "Denne plasseringen støttes ikke.",
+      "credit_card_session_expired": "Kredittkortautorisasjonen er utløpt, skriv inn betalingsinformasjonen din på nytt. Kortet ditt er ikke belastet.",
+      "empty": "kan ikke være tom",
+      "invalid_email": "Må være en gyldig e-postadresse",
+      "discount_disabled": "Denne rabatten er deaktivert",
+      "discount_expired": "Denne rabatten er ikke gyldig lenger",
+      "discount_limit_reached": "Denne rabatten har nådd sin bruksgrense",
+      "discount_not_found": "Kan ikke finne en gyldig rabatt som samsvarer med koden som er oppgitt",
+      "customer_already_used_once_per_customer_discount_notice": "Denne rabatten har nådd sin bruksgrense",
+      "gift_card_already_applied": "Koden er allerede brukt på kassen din",
+      "gift_card_code_invalid": "Koden er ugyldig",
+      "gift_card_currency_mismatch": "Gavekortet ditt er i %{gift_card_currency}. Kontakt oss for å få den utstedt på nytt i %{checkout_currency}.",
+      "gift_card_depleted": "Det er ingen midler igjen på dette gavekortet",
+      "gift_card_disabled": "Gavekortet er deaktivert",
+      "gift_card_expired": "Gavekortet er utløpt",
+      "invalid": "er ugyldig",
+      "bad_domain": "inneholder et ugyldig domenenavn",
+      "taken": "har allerede blitt tatt",
+      "contains_html_tags": "kan ikke inneholde HTML-koder",
+      "too_short": "er for kort (minimum er %{count} tegn)",
+      "too_long": "er for lang (maksimum er %{count} tegn)",
+      "password_mismatch": "må samsvare med det angitte passordet",
+      "contains_spaces": "starter eller slutter med mellomrom.",
+      "email_domain_invalid": "leverandøren støttes ikke",
+      "invalid_for_country": "er ikke gyldig for %{country}",
+      "invalid_for_country_and_province": "er ikke gyldig for %{province} og %{country}",
+      "invalid_province_in_country": "er ikke en gyldig provins i %{country}",
+      "invalid_state_in_country": "er ikke en gyldig tilstand i %{country}",
+      "invalid_region_in_country": "er ikke en gyldig region i %{country}",
+      "less_than_or_equal_to": "må være mindre enn eller lik %{count}",
+      "not_supported": "er ikke støttet",
+      "full_name_required": "Skriv inn fornavn og etternavn",
+      "invalid_for_card_type": "er ikke gyldig",
+      "invalid_type": "beklager, vi godtar ikke kort av denne typen",
+      "invalid_format": "formatet er ikke gyldig",
+      "expired": "har utgått",
+      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller utstedelsesnummer kreves",
+      "invalid_expiry_year": "er ikke et gyldig utløpsår",
+      "reset_password_html": "Denne e-postadressen er allerede knyttet til en konto. Hvis denne kontoen er din, kan du <a href=\"\/account\/login#recover\">tilbakestille passordet ditt<\/a>",
+      "verify_email": "Vi har sendt en e-post til %{customer_email}, vennligst klikk på koblingen for å bekrefte e-postadressen din.",
+      "product_not_available": "produktet er ikke publisert for denne kunden."
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Feil ved tilbakestilling av passord",
+        "no_account_found": "Fant ingen konto med den e-posten.",
+        "invalid_credentials": "Feil email eller passord.",
+        "denylisted_reset_password": "Kontoen din fikk ikke tilgang fordi det gjeldende passordet ikke er sikkert. Du vil motta en e-post for å oppdatere passordet ditt."
+      },
+      "address": {
+        "updated": "Adressen er oppdatert.",
+        "error_updating": "Feil under oppdatering av adresse",
+        "created": "Vellykket opprettet adresse",
+        "error_creating": "Feil ved opprettelse av adresse.",
+        "deleted": "Adressen er slettet",
+        "error_deleting": "Feil ved sletting av adresse."
+      },
+      "order": {
+        "not_available": "Denne bestillingen er ikke tilgjengelig",
+        "financial_status": {
+          "authorized": "Autorisert",
+          "pending": "Avventer",
+          "paid": "Betalt",
+          "unpaid": "Ubetalt",
+          "voided": "Ugyldig",
+          "partially_paid": "Delvis betalt",
+          "partially_refunded": "Delvis refundert",
+          "refunded": "Refundert",
+          "expired": "Utløpt"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Oppfylt",
+          "complete": "Fullstendig",
+          "partial": "Delvis",
+          "unfulfilled": "Uoppfylt",
+          "restocked": "Lagret på nytt"
+        },
+        "transaction_status": {
+          "success": "Suksess",
+          "pending": "Avventer",
+          "failure": "Feil",
+          "error": "Feil"
+        },
+        "cancel_reason": {
+          "declined": "Betaling avvist",
+          "inventory": "Varer er utilgjengelige",
+          "fraud": "Uredelig ordre",
+          "customer": "Kunden endret\/kansellerte ordre"
+        }
+      }
     }
   },
   "customer_accounts": {
